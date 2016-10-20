@@ -121,8 +121,8 @@
 		038F57191DAFBC2B00009E27 /* AH_LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_LocationManager.m; sourceTree = "<group>"; };
 		038F571A1DAFBC2B00009E27 /* CLLocation+bearing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+bearing.h"; sourceTree = "<group>"; };
 		038F571B1DAFBC2B00009E27 /* CLLocation+bearing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+bearing.m"; sourceTree = "<group>"; };
-		0391688E1DB629EE00592593 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		0391688F1DB629EE00592593 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0391688E1DB629EE00592593 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		0391688F1DB629EE00592593 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		0399B8411DB36DAD0048055E /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		03A24EB81DAD066100610413 /* RunningScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RunningScrollView.h; path = ../RunningScrollView.h; sourceTree = "<group>"; };
 		03A24EB91DAD066100610413 /* RunningScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RunningScrollView.m; path = ../RunningScrollView.m; sourceTree = "<group>"; };
@@ -239,6 +239,15 @@
 			name = IMG_CountDown;
 			sourceTree = "<group>";
 		};
+		036E6E6F1DB8FCA80069E2CE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0391688E1DB629EE00592593 /* MainViewController.h */,
+				0391688F1DB629EE00592593 /* MainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		039168121DB5E93F00592593 /* HistoryData */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,8 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				03F126DB1D97C1A500531F90 /* Main.storyboard */,
-				0391688E1DB629EE00592593 /* MainViewController.h */,
-				0391688F1DB629EE00592593 /* MainViewController.m */,
 				0399B8411DB36DAD0048055E /* History.storyboard */,
 				03064AED1DB11A67006F1D6A /* Login.storyboard */,
 				03A39A451DA9FA6500D579CA /* Running.storyboard */,
@@ -389,6 +396,7 @@
 			children = (
 				03D423001DB335AA0068BFA2 /* Storyboard */,
 				030A77871DAF991100400AB8 /* RunningMap_LevelMap.entitlements */,
+				036E6E6F1DB8FCA80069E2CE /* Main */,
 				036443411DAF3D2C00610CDE /* CountDownViewController.h */,
 				036443421DAF3D2C00610CDE /* CountDownViewController.m */,
 				037DA8BA1DACCE7500381E7F /* AH_PerformAnimationManager.h */,

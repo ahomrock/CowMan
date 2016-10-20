@@ -30,6 +30,8 @@
     // Set the coordinates of the location to be used for calculating the angle
     ah_locationPoint.latitudeOfTargetedPoint = 24.967937;
     ah_locationPoint.longitudeOfTargetedPoint = 121.191774 ;
+
+    NSLog(@"ssss") ;
     [ah_locationPoint start] ;
 
     // Do any additional setup after loading the view.
