@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun1.png" translatesAutoresizingMaskIntoConstraints="NO" id="inQ-gz-qkU"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box1.png" translatesAutoresizingMaskIntoConstraints="NO" id="iYE-oS-5kN">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="NZq-Th-MUe"/>
+                                    <constraint firstAttribute="height" constant="180" id="gxq-vU-a9R"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，請選擇帳號請登入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-Bh-YYj">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="1"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.5"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYV-Xi-xUw" customClass="FBSDKLoginButton">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="0.5"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jhw-X1-vPU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-n6-can">
+                                <state key="normal" title="Google Sign In"/>
+                                <connections>
+                                    <action selector="googleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96G-0e-Kih"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Ymm-n6-can" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2zq-tD-PSp"/>
+                            <constraint firstItem="inQ-gz-qkU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Mw-Nh-Bcs"/>
+                            <constraint firstItem="iYE-oS-5kN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="90f-5u-aoo"/>
+                            <constraint firstItem="Ymm-n6-can" firstAttribute="top" secondItem="uy3-Bh-YYj" secondAttribute="bottom" constant="24.5" id="Drj-Xy-1Wq"/>
+                            <constraint firstItem="uy3-Bh-YYj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WCA-Wh-z5S"/>
+                            <constraint firstItem="iYE-oS-5kN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHj-lY-sxx"/>
+                            <constraint firstItem="inQ-gz-qkU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="plZ-Qb-ZZ1"/>
+                            <constraint firstItem="SYV-Xi-xUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s86-hE-k7N"/>
+                            <constraint firstItem="SYV-Xi-xUw" firstAttribute="top" secondItem="Ymm-n6-can" secondAttribute="bottom" constant="16.5" id="vwC-nH-wAx"/>
+                            <constraint firstItem="Ymm-n6-can" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zXP-TT-1Gn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eDH-0U-p1J"/>
+                    <connections>
+                        <outlet property="fbSDKLoginButton" destination="SYV-Xi-xUw" id="nmU-E7-EhP"/>
+                        <outlet property="googleBtn" destination="Ymm-n6-can" id="gVa-qR-2hD"/>
+                        <outlet property="loginInLabel" destination="uy3-Bh-YYj" id="cKx-CM-86J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-10"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="box1.png" width="729" height="389"/>
+        <image name="sun1.png" width="1920" height="1200"/>
+    </resources>
+</document>
