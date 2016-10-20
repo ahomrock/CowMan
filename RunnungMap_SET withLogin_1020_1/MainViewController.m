@@ -31,7 +31,8 @@
     ah_locationPoint.latitudeOfTargetedPoint = 24.967937;
     ah_locationPoint.longitudeOfTargetedPoint = 121.191774 ;
 
-    NSLog(@"ssss") ;
+
+    NSLog(@"test2") ; // this two
     [ah_locationPoint start] ;
 
     // Do any additional setup after loading the view.
