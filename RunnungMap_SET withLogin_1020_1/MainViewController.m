@@ -7,11 +7,8 @@
 //
 
 #import "MainViewController.h"
-#import "AH_LocationManager.h"
 
-@interface MainViewController () {
-    AH_LocationManager *ah_locationPoint;
-}
+@interface MainViewController ()
 
 @end
 
@@ -19,21 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [[AH_LocationManager create] start];
-
-
-    ah_locationPoint = [AH_LocationManager create];
-    [ah_locationPoint clear] ;
-    // Add the image to be used as the compass on the GUI
-//    [ah_locationPoint setArrowImageView:mainStateView];
-//    [ah_locationPoint setDistanceLabel:labelHeading] ;
-    // Set the coordinates of the location to be used for calculating the angle
-    ah_locationPoint.latitudeOfTargetedPoint = 24.967937;
-    ah_locationPoint.longitudeOfTargetedPoint = 121.191774 ;
-
-
-    NSLog(@"test2") ; // this two
-    [ah_locationPoint start] ;
 
     // Do any additional setup after loading the view.
 }

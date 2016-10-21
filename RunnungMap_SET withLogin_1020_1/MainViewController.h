@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+
+/**
+ When the User Open this app, alway visit MainViewController first
+ and by login or not ,choose page present for USER
+ */
 @interface MainViewController : UIViewController
 
 @end

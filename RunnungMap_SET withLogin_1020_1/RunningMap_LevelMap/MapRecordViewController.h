@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Present the History data
+ */
 @interface MapRecordViewController : UIViewController
 
 @end

@@ -13,6 +13,9 @@
 #define DURATION_DEFAULT 0.4
 
 
+/**
+ Perform Animation when We Need 
+ */
 @interface AH_PerformAnimationManager : NSObject
 
 

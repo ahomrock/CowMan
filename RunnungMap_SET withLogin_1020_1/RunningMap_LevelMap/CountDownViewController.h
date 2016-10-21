@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ Before Start Running 
+ CountDown and dissmiss this VC and start running !!
+ */
 @interface CountDownViewController : UIViewController
 
 @end

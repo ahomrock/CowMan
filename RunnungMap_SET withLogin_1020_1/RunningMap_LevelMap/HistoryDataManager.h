@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "HistoryPoint.h"
-#import <UIKit/UIKit.h>
 
+/**
+ historyPoints store historyPoint (contain Paths, timeStamp, totalTime, mapTitle)
+ message for KVO that change message and HistoryViewController.table will reloadDate
 
+ selectPoint when  HistoryViewController.table select the CELL,and selectPoint will save what the USER select to Present the Datas(Paths Title..) to MapViewController 
+ */
 @interface HistoryDataManager : NSObject
 
 @property(nonatomic,strong)NSMutableArray *historyPoints ;
-@property(nonatomic,strong)UITableView *tableView ;
 
 @property (nonatomic,strong)NSString *message ;
 @property(nonatomic,strong)HistoryPoint *selectPoint ;

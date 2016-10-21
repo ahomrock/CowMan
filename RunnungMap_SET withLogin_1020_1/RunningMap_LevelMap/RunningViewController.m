@@ -61,44 +61,15 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 @implementation RunningViewController
 
-
-- (void) countDown {
-    CGRect countDownViewFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) ;
-    UIView *cd_view = [[UIView alloc]initWithFrame:countDownViewFrame ] ;
-    cd_view.backgroundColor = [UIColor blackColor] ;
-  //  [self.view addSubview:cd_view] ;
-    //[cd_view performSelector:@selector(handleTimer:) withObject:self afterDelay:3.0] ;
-
-//    CountDownViewController *cdVC = [[UIViewController alloc] initWithNibName:@"CountDownViewController" bundle:nil ];
-//    [self presentViewController:cdVC animated:true completion:nil] ;
-//[
-    
-
-
-}
-
-- (void)handleTimer:(UIImageView *)sender {
-    //[view stopAnimating] ;
-    //[sender removeFromSuperview]  ;
-
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [_mainScrollView setScrollEnabled:false ];
 
-
-    
-
     ah_PAManager = [[AH_PerformAnimationManager alloc]init ] ;
 
-   // [self countDown] ;
-
-    // Timer Label
     mzStopWatchLabel = [[MZTimerLabel alloc] initWithLabel:_stopWatchLabel andTimerType:MZTimerLabelTypeStopWatch];
     mzStopWatchLabel.timeFormat = @"HH:mm:ss SS";
-
-
     [self startOrResumeStopwatch:nil] ;
 
 
@@ -135,10 +106,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     point.coordinate = coordinate ;
     [_mapView addAnnotation:point] ;
 
-
-
     historyPoint =[ [HistoryPoint alloc]init ] ;
-
+}
+- (void)loadTargetData {
+    
 }
 
 - (void) createTargetPointWithLat:(CLLocationDegrees)targetLat withLon:(CLLocationDegrees)targetLon {
