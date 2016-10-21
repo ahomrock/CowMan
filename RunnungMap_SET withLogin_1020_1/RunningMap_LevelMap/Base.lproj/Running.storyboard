@@ -83,6 +83,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riO-N0-8a7">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -94,11 +99,14 @@
                             <constraint firstAttribute="bottom" secondItem="S5l-Uq-egG" secondAttribute="bottom" id="Psu-Lt-btF"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="centerY" secondItem="HeW-B1-820" secondAttribute="centerY" id="bCB-t6-BN6"/>
                             <constraint firstAttribute="trailing" secondItem="S5l-Uq-egG" secondAttribute="trailing" id="fhV-FG-Etm"/>
+                            <constraint firstItem="riO-N0-8a7" firstAttribute="centerX" secondItem="HeW-B1-820" secondAttribute="centerX" id="gwC-ro-mbU"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="leading" secondItem="HeW-B1-820" secondAttribute="leading" id="yAM-9p-qbk"/>
+                            <constraint firstItem="riO-N0-8a7" firstAttribute="centerY" secondItem="HeW-B1-820" secondAttribute="centerY" id="yl6-MN-fLw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="labelHeading" destination="IMk-KR-k5s" id="rsH-Sb-nwW"/>
+                        <outlet property="locatePointLabel" destination="riO-N0-8a7" id="2hn-eX-sPv"/>
                         <outlet property="mainScrollView" destination="T2v-0q-ksr" id="Yp8-Ec-aDp"/>
                         <outlet property="mapTitleLabel" destination="dMW-rq-kdk" id="UTF-7l-h3D"/>
                         <outlet property="mapView" destination="tAc-eJ-DKW" id="F2b-Zm-MT6"/>

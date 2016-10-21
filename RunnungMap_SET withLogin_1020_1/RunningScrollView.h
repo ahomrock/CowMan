@@ -32,4 +32,6 @@ typedef NS_ENUM(NSInteger,ImageState) {
 - (void)exchageImage ;
 - (CGRect) getFrameWithImageState:(ImageState)imageState ;
 
+
+- (CGPoint)getMapInMainCenterPoint;
 @end

@@ -95,6 +95,7 @@
         ratio = mapImageSize.height / mapImageSize.width ;
         frameWidth = self.frame.size.width*1 ;
         frameHeight = frameWidth * ratio ;
+        NSLog(@"IMAGE x:%0.3f ,y:%0.3f",_mainImageView.center.x,_mainImageView.center.y) ;
         return CGRectMake(0, self.frame.origin.y + self.frame.size.height*0.3, frameWidth, frameHeight) ;
     }
     else if (imageState == ImageState_MAP_SECOND) {
@@ -120,6 +121,11 @@
 }
 
 
+
+
+- (CGPoint)getMapInMainCenterPoint {
+    return CGPointMake(_mainImageView.center.x, _mainImageView.center.y) ;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

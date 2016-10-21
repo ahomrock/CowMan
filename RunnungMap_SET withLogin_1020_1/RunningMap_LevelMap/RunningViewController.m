@@ -18,12 +18,13 @@
 #import "HistoryViewController.h"
 
 #import "AH_PhotoDataManager.h"
-//
-//typedef NS_ENUM(NSInteger, MainState) {
-//    MainState_MapImage,
-//    MainState_Compass,
-//    SecondState
-//};
+#import "CLLocation+CoordinateToImage.h"
+
+typedef NS_ENUM(NSInteger, MapLocateSIGN) {
+    MapLocateSIGN_FORLOCATE_A ,
+    MapLocateSIGN_FORLOCATE_B,
+    MapLocateSIGN_TARGET
+};
 
 @interface RunningViewController (){
     IBOutlet UILabel *labelHeading;
@@ -40,6 +41,7 @@
 }
 
 
+@property (weak, nonatomic) IBOutlet UILabel *locatePointLabel;
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -70,6 +72,8 @@
 //    CountDownViewController *cdVC = [[UIViewController alloc] initWithNibName:@"CountDownViewController" bundle:nil ];
 //    [self presentViewController:cdVC animated:true completion:nil] ;
 //[
+    
+
 
 }
 
@@ -81,6 +85,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_mainScrollView setScrollEnabled:false ];
+
+
     
 
     ah_PAManager = [[AH_PerformAnimationManager alloc]init ] ;
@@ -104,14 +111,9 @@
 
     _mapView.hidden = true ;
 
-    UIImage *imagePoint = [UIImage imageNamed:@"compass.png"] ;
-
-    UIImageView *imagePointView = [[UIImageView alloc]initWithFrame: CGRectMake(100, 150, 50, 50)] ;
-    imagePointView.image = imagePoint ;
-    imagePointView.hidden = true ;
-    [mainStateView addSubview:imagePointView] ;
-
-//     Create the image for the compass
+    // Create the First TargetPoint
+    [self createTargetPointWithLat:24.965894 withLon:121.195434] ;
+    // Create the image for the compass
 
 
     ah_locationPoint = [AH_LocationManager create];
@@ -139,6 +141,53 @@
 
 }
 
+- (void) createTargetPointWithLat:(CLLocationDegrees)targetLat withLon:(CLLocationDegrees)targetLon {
+
+
+
+    CLLocation *tempLocation = [[CLLocation alloc] init];
+
+    CGPoint mapLocateA = CGPointMake(150.0, 120.0) ;
+    CGPoint mapLocateB = CGPointMake(100.0, 150.0);
+
+    CLLocation *realLocateA =[ [CLLocation alloc ]initWithLatitude:24.968539 longitude:121.192830] ;
+    CLLocation *realLocateB =[[CLLocation alloc]initWithLatitude:24.969689 longitude: 121.191453] ;
+
+     CLLocation *targetLocate =[[CLLocation alloc]initWithLatitude:targetLat longitude: targetLon] ;
+
+    CGPoint targetPoint = [tempLocation getPointWithRealLocateA:realLocateA
+                                                 witRealLocateB:realLocateB
+                                               withTargetLocate:targetLocate
+                                                withImagePointA:mapLocateA
+                                                withImagePointB:mapLocateB ] ;
+
+    UIImage *locateImg = [UIImage imageNamed:@"compass.png"] ;
+
+
+//    UIImageView *mapLocateAView = [[UIImageView alloc]initWithFrame: CGRectMake(mapLocateA.x,mapLocateA.y, 50, 50)] ;
+//    mapLocateAView.image = locateImg ;
+//    mapLocateAView.hidden = true ;
+//    [mainStateView addSubview:mapLocateAView] ;
+//
+//    UIImageView *mapLocateBView = [[UIImageView alloc]initWithFrame: CGRectMake(mapLocateB.x    , mapLocateB.y, 50, 50)] ;
+//    mapLocateBView.image = locateImg ;
+//    mapLocateBView.hidden = true ;
+//    [mainStateView addSubview:mapLocateBView];
+//
+
+    UIImageView *targetView = [[UIImageView alloc]initWithFrame: CGRectMake(targetPoint.x,targetPoint.y, 50, 50)] ;
+    targetView.image = locateImg ;
+    targetView.tag = MapLocateSIGN_TARGET ;
+    targetView.hidden = true ;
+    for(int i = 0 ; i < mainStateView.subviews.count ; i++ ) {
+        if (mainStateView.subviews[i].tag == MapLocateSIGN_TARGET) {
+            mainStateView.subviews[i].frame = targetView.frame ;
+            return ;
+        }
+    }
+
+    [mainStateView addSubview:targetView];
+}
 
 -(NSString*)selectedMap{
 
@@ -159,6 +208,7 @@
 
  @param sender <#sender description#>
  */
+
 - (IBAction)secondImageSwipeDown:(UISwipeGestureRecognizer *)sender {
     [ah_locationPoint rotateArrowView:mainStateView degrees:0] ;
     [ah_locationPoint rotateArrowView:secondStateView degrees:0] ;
@@ -170,6 +220,7 @@
         [ah_locationPoint setArrowImageView:secondStateView];
         for( int i = 0 ; i < mainStateView.subviews.count ; i++ )
             mainStateView.subviews[i].hidden = false ;
+
     }
 
     else if(secondStateView.tag == ImageState_COMPASS_SECOND) {
@@ -221,7 +272,7 @@
 //    for (int i = 0 ; i <historyPoint.locationPaths.count; i++)
 //        NSLog(@"cccc ccvv:%f",[historyPoint.locationPaths[i] coordinate].latitude );
 
-
+    [self createTargetPointWithLat:24.970747 withLon:121.189991] ;
 
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"YOU GET THE TARGET" preferredStyle:UIAlertControllerStyleAlert] ;
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil] ;
@@ -258,5 +309,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
 
 @end

@@ -11,6 +11,7 @@
 		03064AEC1DB1168A006F1D6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03064AEB1DB1168A006F1D6A /* GoogleService-Info.plist */; };
 		03064AEE1DB11A67006F1D6A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03064AED1DB11A67006F1D6A /* Login.storyboard */; };
 		03064AF61DB11F3C006F1D6A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03064AF51DB11F3C006F1D6A /* LoginViewController.m */; };
+		0330D8121DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */; };
 		036443361DAE792F00610CDE /* gameMap_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443321DAE792F00610CDE /* gameMap_01.jpg */; };
 		036443371DAE792F00610CDE /* gameMap_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443331DAE792F00610CDE /* gameMap_02.jpg */; };
 		036443381DAE792F00610CDE /* selectMap01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443341DAE792F00610CDE /* selectMap01.jpg */; };
@@ -104,6 +105,8 @@
 		03064AF51DB11F3C006F1D6A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		030A77871DAF991100400AB8 /* RunningMap_LevelMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_LevelMap.entitlements; sourceTree = "<group>"; };
 		030A77881DAF993000400AB8 /* RunningMap_Gaming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_Gaming.entitlements; sourceTree = "<group>"; };
+		0330D8101DB9E0FB00449BCA /* CLLocation+CoordinateToImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+CoordinateToImage.h"; sourceTree = "<group>"; };
+		0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+CoordinateToImage.m"; sourceTree = "<group>"; };
 		036443321DAE792F00610CDE /* gameMap_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameMap_01.jpg; sourceTree = "<group>"; };
 		036443331DAE792F00610CDE /* gameMap_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameMap_02.jpg; sourceTree = "<group>"; };
 		036443341DAE792F00610CDE /* selectMap01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectMap01.jpg; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 			children = (
 				038F57181DAFBC2B00009E27 /* AH_LocationManager.h */,
 				038F57191DAFBC2B00009E27 /* AH_LocationManager.m */,
+				0330D8101DB9E0FB00449BCA /* CLLocation+CoordinateToImage.h */,
+				0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */,
 				038F571A1DAFBC2B00009E27 /* CLLocation+bearing.h */,
 				038F571B1DAFBC2B00009E27 /* CLLocation+bearing.m */,
 			);
@@ -744,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F126E01D97C1A500531F90 /* RunningMap_LevelMap.xcdatamodeld in Sources */,
+				0330D8121DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m in Sources */,
 				03B5E1E41DAE2528008DBD8D /* MZTimerLabel.m in Sources */,
 				03D423041DB33DA60068BFA2 /* HistoryDataManager.m in Sources */,
 				038F571E1DAFBC2B00009E27 /* CLLocation+bearing.m in Sources */,
@@ -945,7 +951,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "369eef0e-87c4-4b4f-845c-96a0ef9110cd";
+				PROVISIONING_PROFILE = "1a700e1e-01c5-4444-8fcc-086fa2d674db";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -969,7 +975,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "369eef0e-87c4-4b4f-845c-96a0ef9110cd";
+				PROVISIONING_PROFILE = "1a700e1e-01c5-4444-8fcc-086fa2d674db";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
