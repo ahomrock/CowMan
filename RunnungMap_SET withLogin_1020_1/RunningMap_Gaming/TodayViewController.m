@@ -10,12 +10,14 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "AH_LocationManager.h"
 #import "NSUserDefaults+Extension.h"
-
+#import "LevelMapsManager.h"
 #define DegreesToRadians(degrees)(degrees * M_PI / 180.0)
 
 
 @interface TodayViewController () <NCWidgetProviding> {
     AH_LocationManager *ah_locationPoint; ;
+    LevelMapsManager *lmManager ;
+    int targetIndex ;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -38,15 +40,18 @@
 }
 
 - (void)userDefaultsDidChange:(NSNotification *)notification {
-  [self updateCompassAngle];
+  [self updateTarget];
 
 }
 
-- (void)updateCompassAngle {
+- (void)updateTarget {
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName: GROUP_SUITE_NAME];
-    NSInteger compassImageAngle = [defaults integerForKey:@"compassImageAngle"];
+    targetIndex =(int) [defaults integerForKey:@"targetData"];
+    _targetLabel.text = [lmManager targetPointLabelTextWithMap:0 withIndex:targetIndex] ;
 
-
+    CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+    ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
+    ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
 
 }
 
@@ -59,7 +64,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    targetIndex = 0 ;
 
+    lmManager = [LevelMapsManager sharedInstance] ;
+    _targetLabel.text = [lmManager targetPointLabelTextWithMap:0 withIndex:targetIndex] ;
 
     ah_locationPoint = [AH_LocationManager create];
 
@@ -68,8 +76,11 @@
 
 //    [ah_locationPoint setDistanceLabel:] ;
     // Set the coordinates of the location to be used for calculating the angle
-    ah_locationPoint.latitudeOfTargetedPoint = 24.967937;
-    ah_locationPoint.longitudeOfTargetedPoint = 121.191774 ;
+
+
+    CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+    ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
+    ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
     [ah_locationPoint start] ;
 
     // Do any additional setup after loading the view from its nib.

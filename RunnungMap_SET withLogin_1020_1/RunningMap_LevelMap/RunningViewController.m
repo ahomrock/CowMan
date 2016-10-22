@@ -21,6 +21,7 @@
 #import "CLLocation+CoordinateToImage.h"
 
 #import "LevelMapsManager.h"
+
 #import "NSUserDefaults+Extension.h"
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
@@ -89,14 +90,16 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [ah_locationPoint clear] ;
     // Create the First TargetPoint
     lmManager = [LevelMapsManager sharedInstance] ;
-    [lmManager defaultSetting] ;
-
+   
     CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
     [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
 
     NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[0] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
+
+    [self passDataToWidgetWithTarget] ;
+
 
     // Add the image to be used as the compass on the GUI
     [ah_locationPoint setArrowImageView:mainStateView];
@@ -236,6 +239,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     }
 
     targetIndex++ ;
+    [self passDataToWidgetWithTarget];
+
     NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[0] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
 
@@ -282,7 +287,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 - (void)passDataToWidgetWithTarget {
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
 
-    [sharedDefaults setInteger:0 forKey:@"compassImageAngle"];
+    [sharedDefaults setInteger:(NSInteger)targetIndex forKey:@"targetData"];
     [sharedDefaults synchronize];
 
 }

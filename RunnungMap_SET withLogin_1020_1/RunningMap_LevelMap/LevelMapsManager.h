@@ -26,5 +26,8 @@
 
 
 
-- (void)defaultSetting;
+// - (void)defaultSetting;
+
+
+-(NSString*)targetPointLabelTextWithMap:(int)map withIndex:(int)targetIndex ;
 @end

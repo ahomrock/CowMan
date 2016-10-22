@@ -36,6 +36,12 @@
 		03A39A3F1DA9F67200D579CA /* RunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A39A3E1DA9F67200D579CA /* RunningViewController.m */; };
 		03A39A471DA9FA6500D579CA /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A39A451DA9FA6500D579CA /* Running.storyboard */; };
 		03B5E1E41DAE2528008DBD8D /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */; };
+		03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8231DBB0C3500449BCA /* LevelMapsManager.h */; };
+		03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8241DBB0C3500449BCA /* LevelMapsManager.m */; };
+		03CE87FE1DBBBE2B007A6640 /* LevelMapPoint.h in Sources */ = {isa = PBXBuildFile; fileRef = 03F126EF1D97C8EF00531F90 /* LevelMapPoint.h */; };
+		03CE87FF1DBBBE2B007A6640 /* LevelMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F01D97C8EF00531F90 /* LevelMapPoint.m */; };
+		03CE88001DBBBE2B007A6640 /* RankingPoint.h in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F11D97C8EF00531F90 /* RankingPoint.h */; };
+		03CE88011DBBBE2B007A6640 /* RankingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F21D97C8EF00531F90 /* RankingPoint.m */; };
 		03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */; };
 		03D422FF1DB3356F0068BFA2 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */; };
 		03D423041DB33DA60068BFA2 /* HistoryDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D423031DB33DA60068BFA2 /* HistoryDataManager.m */; };
@@ -625,7 +631,7 @@
 					03FD70CD1DABB593000497D5 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5Q668XB8GW;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -815,6 +821,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */,
+				03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */,
+				03CE87FE1DBBBE2B007A6640 /* LevelMapPoint.h in Sources */,
+				03CE87FF1DBBBE2B007A6640 /* LevelMapPoint.m in Sources */,
+				03CE88001DBBBE2B007A6640 /* RankingPoint.h in Sources */,
+				03CE88011DBBBE2B007A6640 /* RankingPoint.m in Sources */,
 				03FD70D41DABB593000497D5 /* TodayViewController.m in Sources */,
 				03F2F7881DB076B800F509C8 /* NSUserDefaults+Extension.m in Sources */,
 				038F571D1DAFBC2B00009E27 /* AH_LocationManager.m in Sources */,
@@ -1024,7 +1036,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1034,8 +1046,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3c08ad78-51a0-4391-8f71-54584c563157";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1046,7 +1058,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1056,8 +1068,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3c08ad78-51a0-4391-8f71-54584c563157";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
