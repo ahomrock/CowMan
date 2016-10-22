@@ -139,8 +139,8 @@
 //    _mapView.zoomEnabled = false ;
 //    _mapView.scrollEnabled = false ;
 
-    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
-
+//    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, 150, 150) ;
     [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
@@ -166,8 +166,8 @@
 
     // Custom polylineView
     polylineView.strokeColor =  line_strokeColor;
-    polylineView.lineWidth = 3.0;
-    polylineView.alpha = 1;
+    polylineView.lineWidth = 6.0;
+    polylineView.alpha = 0.6;
 
 
     return polylineView;

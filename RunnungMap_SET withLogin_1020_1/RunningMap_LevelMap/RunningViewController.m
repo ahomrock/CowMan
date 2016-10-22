@@ -20,6 +20,8 @@
 #import "AH_PhotoDataManager.h"
 #import "CLLocation+CoordinateToImage.h"
 
+#import "LevelMapsManager.h"
+
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
     MapLocateSIGN_FORLOCATE_B,
@@ -38,6 +40,9 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
     HistoryPoint *historyPoint ;
     NSString *mapTitle ;
+    LevelMapsManager *lmManager ;
+
+    int targetIndex ;
 }
 
 
@@ -55,6 +60,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 
 @implementation RunningViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,29 +83,25 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
     _mapView.hidden = true ;
 
+    targetIndex = 0 ;
+    ah_locationPoint = [AH_LocationManager create];
+    [ah_locationPoint clear] ;
     // Create the First TargetPoint
-    [self createTargetPointWithLat:24.965894 withLon:121.195434] ;
+    lmManager = [LevelMapsManager sharedInstance] ;
+    [lmManager defaultSetting] ;
+
+    CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+    [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
 
 
-    ah_locationPoint = [AH_LocationManager create];
-    [ah_locationPoint clear] ;
     // Add the image to be used as the compass on the GUI
     [ah_locationPoint setArrowImageView:mainStateView];
     [ah_locationPoint setDistanceLabel:labelHeading] ;
     // Set the coordinates of the location to be used for calculating the angle
-    ah_locationPoint.latitudeOfTargetedPoint = 24.967937;
-    ah_locationPoint.longitudeOfTargetedPoint = 121.191774 ;
+    ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
+    ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
     [ah_locationPoint start] ;
-
-//    (CLLocationCoordinate2D coordinate)
-
-    CLLocationCoordinate2D coordinate =CLLocationCoordinate2DMake(ah_locationPoint.latitudeOfTargetedPoint, ah_locationPoint.longitudeOfTargetedPoint) ;
-
-
-    MKPointAnnotation *point  = [[MKPointAnnotation alloc]init] ;
-    point.coordinate = coordinate ;
-    [_mapView addAnnotation:point] ;
 
     historyPoint =[ [HistoryPoint alloc]init ] ;
 }
@@ -230,26 +232,41 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
         [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
     }
 
-    [self createTargetPointWithLat:24.970747 withLon:121.189991] ;
+    targetIndex++ ;
+    if (targetIndex < [lmManager.levelMapPoints[0] targetLocate].count) {
+        CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+        [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
+        ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
+        ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"YOU GET THE TARGET" preferredStyle:UIAlertControllerStyleAlert] ;
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil] ;
+        [alert addAction:ok] ;
+        [self presentViewController:alert animated:true completion:nil] ;
+    } else {
 
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"YOU GET THE TARGET" preferredStyle:UIAlertControllerStyleAlert] ;
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil] ;
-    [alert addAction:ok] ;
-    [self presentViewController:alert animated:true completion:nil] ;
+        historyPoint.totalTime = _stopWatchLabel.text ;
+        historyPoint.mapTitle = mapTitle ;
+
+
+        [[HistoryDataManager sharedInstance].historyPoints addObject:historyPoint] ;
+        [[HistoryDataManager sharedInstance] setMessage:[NSString stringWithFormat:@"%lu",(unsigned long)[HistoryDataManager sharedInstance].historyPoints.count ]] ;
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"FINISH" preferredStyle:UIAlertControllerStyleAlert] ;
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:true completion:nil] ;
+        }] ;
+        [alert addAction:ok] ;
+        [self presentViewController:alert animated:true completion:nil] ;
+
+    }
 }
+
+
 
 - (IBAction)giveUpBtnPressed:(UIBarButtonItem *)sender {
 
-    historyPoint.totalTime = _stopWatchLabel.text ;
-    historyPoint.mapTitle = mapTitle ;
 
 
-    [[HistoryDataManager sharedInstance].historyPoints addObject:historyPoint] ;
-    [[HistoryDataManager sharedInstance] setMessage:[NSString stringWithFormat:@"%lu",(unsigned long)[HistoryDataManager sharedInstance].historyPoints.count ]] ;
-    
-    NSMutableArray *nn = [HistoryDataManager sharedInstance].historyPoints ;
-    NSLog(@"xx xqww:%@",[nn.lastObject totalTime ]) ;
-    NSLog(@"COUNT : %lu",(unsigned long)nn.count) ;
     [self dismissViewControllerAnimated:true completion:nil] ;
 
 }

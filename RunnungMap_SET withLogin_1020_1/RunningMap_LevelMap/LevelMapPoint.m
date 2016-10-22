@@ -10,6 +10,12 @@
 
 @implementation LevelMapPoint
 
+- (instancetype)init {
+    self = [super init] ;
 
+    self.targetLocate = [NSMutableArray new] ;
+
+    return self ;
+}
 
 @end

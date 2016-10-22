@@ -13,6 +13,7 @@
 		03064AF61DB11F3C006F1D6A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03064AF51DB11F3C006F1D6A /* LoginViewController.m */; };
 		0330D8121DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */; };
 		0330D81D1DBB058100449BCA /* SelectMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0330D81B1DBB058100449BCA /* SelectMap.storyboard */; };
+		0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8241DBB0C3500449BCA /* LevelMapsManager.m */; };
 		036443361DAE792F00610CDE /* gameMap_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443321DAE792F00610CDE /* gameMap_01.jpg */; };
 		036443371DAE792F00610CDE /* gameMap_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443331DAE792F00610CDE /* gameMap_02.jpg */; };
 		036443381DAE792F00610CDE /* selectMap01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443341DAE792F00610CDE /* selectMap01.jpg */; };
@@ -109,6 +110,8 @@
 		0330D8101DB9E0FB00449BCA /* CLLocation+CoordinateToImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+CoordinateToImage.h"; sourceTree = "<group>"; };
 		0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+CoordinateToImage.m"; sourceTree = "<group>"; };
 		0330D81C1DBB058100449BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RunningMap_LevelMap/Base.lproj/SelectMap.storyboard; sourceTree = "<group>"; };
+		0330D8231DBB0C3500449BCA /* LevelMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMapsManager.h; sourceTree = "<group>"; };
+		0330D8241DBB0C3500449BCA /* LevelMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMapsManager.m; sourceTree = "<group>"; };
 		036443321DAE792F00610CDE /* gameMap_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameMap_01.jpg; sourceTree = "<group>"; };
 		036443331DAE792F00610CDE /* gameMap_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameMap_02.jpg; sourceTree = "<group>"; };
 		036443341DAE792F00610CDE /* selectMap01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectMap01.jpg; sourceTree = "<group>"; };
@@ -234,6 +237,27 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		0330D8211DBB0AFD00449BCA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0330D8221DBB0B4100449BCA /* LevelMap */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0330D8221DBB0B4100449BCA /* LevelMap */ = {
+			isa = PBXGroup;
+			children = (
+				0330D8231DBB0C3500449BCA /* LevelMapsManager.h */,
+				0330D8241DBB0C3500449BCA /* LevelMapsManager.m */,
+				03F126EF1D97C8EF00531F90 /* LevelMapPoint.h */,
+				03F126F01D97C8EF00531F90 /* LevelMapPoint.m */,
+				03F126F11D97C8EF00531F90 /* RankingPoint.h */,
+				03F126F21D97C8EF00531F90 /* RankingPoint.m */,
+			);
+			name = LevelMap;
+			sourceTree = "<group>";
+		};
 		036443401DAF272100610CDE /* IMG_CountDown */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +309,7 @@
 				03F126D81D97C1A500531F90 /* ViewController.h */,
 				03F126D91D97C1A500531F90 /* ViewController.m */,
 				03F127161D981B9400531F90 /* SelectTableView */,
+				03F1270F1D97D14D00531F90 /* SelectPhotoData */,
 			);
 			name = SelectMap;
 			sourceTree = "<group>";
@@ -414,11 +439,7 @@
 				03A39A401DA9F67F00D579CA /* Running */,
 				03A39A391DA9F5D600D579CA /* PreStart */,
 				03A39A381DA9F54800D579CA /* SelectMap */,
-				03F1270F1D97D14D00531F90 /* SelectPhotoData */,
-				03F126EF1D97C8EF00531F90 /* LevelMapPoint.h */,
-				03F126F01D97C8EF00531F90 /* LevelMapPoint.m */,
-				03F126F11D97C8EF00531F90 /* RankingPoint.h */,
-				03F126F21D97C8EF00531F90 /* RankingPoint.m */,
+				0330D8211DBB0AFD00449BCA /* Model */,
 				03F126E11D97C1A500531F90 /* Assets.xcassets */,
 				03F126E31D97C1A500531F90 /* LaunchScreen.storyboard */,
 				03064AEB1DB1168A006F1D6A /* GoogleService-Info.plist */,
@@ -773,6 +794,7 @@
 				30339A131DB8E45600F6563B /* GetFirebaseCoordinate.m in Sources */,
 				03D423071DB33E210068BFA2 /* HistoryPoint.m in Sources */,
 				03F127121D97D1A300531F90 /* AH_PhotoDataManager.m in Sources */,
+				0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */,
 				03F126F41D97C8EF00531F90 /* RankingPoint.m in Sources */,
 				03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */,
 				30BB4BF71DB1F6D800ECDEA5 /* ImageAnnotationView.m in Sources */,

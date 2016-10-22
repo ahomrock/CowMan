@@ -13,6 +13,8 @@
 @property (nonatomic,strong) NSString *title ;
 @property (nonatomic,strong) NSString *subTitle ;
 @property (nonatomic,strong) NSString *mapDescription ;
+@property (nonatomic,strong) NSMutableArray *targetLocate ;
+
 @property (nonatomic,strong) UIImage * image ;
 @property (nonatomic,strong) NSMutableArray * rankingBySpeeds ;
 
