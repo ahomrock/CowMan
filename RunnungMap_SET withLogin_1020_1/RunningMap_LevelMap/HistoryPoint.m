@@ -16,6 +16,7 @@
     self = [super init] ;
     self.locationPaths = [NSMutableArray new];
     self.locationPathTimeStamp = [NSMutableArray new] ;
+    self.allLocations = [NSMutableArray new] ;
     return self ;
 }
 

@@ -23,7 +23,7 @@
 @property (nonatomic,strong) UILabel *distanceLabel ;
 
 @property NSMutableArray *allLocations ;
-
+@property NSMutableArray *pathsLocations ;
 
 + (instancetype)create ;
 - (BOOL)start ;

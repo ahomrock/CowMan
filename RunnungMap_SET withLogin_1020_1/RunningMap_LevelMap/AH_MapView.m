@@ -51,6 +51,8 @@
             
             if (_historyPoint) {
                 [self showLines:_historyPoint.locationPaths[i] withCenter:self.mapCenter] ;
+
+                [self centerMap] ;
             }
             else
                 NSLog(@"FAIL FAIL!!!") ;
@@ -135,13 +137,13 @@
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointsCoordinate count:[inputCoordinate count]];
 
 
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.01,0.01);
+//    MKCoordinateSpan span = MKCoordinateSpanMake(0.01,0.01);
 //    _mapView.zoomEnabled = false ;
 //    _mapView.scrollEnabled = false ;
 
 //    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, 150, 150) ;
-    [_mapView setRegion:region animated:false];
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, 150, 150) ;
+//    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
 
@@ -150,15 +152,6 @@
 
 }
 
-//
-//- (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
-//{
-//    MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
-//    circleView.strokeColor = [UIColor blackColor];
-//    circleView.fillColor = [[UIColor greenColor] colorWithAlphaComponent:0.2];
-//    return circleView;
-//}
-//
 - (MKPolylineRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay{
 
     // create a polylineView using polyline overlay object
@@ -171,6 +164,39 @@
 
 
     return polylineView;
+}
+
+
+-(void) centerMap
+{
+    if (_historyPoint.locationPaths) {
+        NSArray * routes =  (NSArray*)_historyPoint.allLocations ;
+        MKCoordinateRegion region;
+    CLLocationDegrees maxLat = -90.0;
+    CLLocationDegrees maxLon = -180.0;
+    CLLocationDegrees minLat = 90.0;
+    CLLocationDegrees minLon = 180.0;
+    for(int idx = 0; idx < routes.count; idx++)
+    {
+        CLLocation* currentLocation = [routes objectAtIndex:idx];
+        if(currentLocation.coordinate.latitude > maxLat)
+            maxLat = currentLocation.coordinate.latitude;
+        if(currentLocation.coordinate.latitude < minLat)
+            minLat = currentLocation.coordinate.latitude;
+        if(currentLocation.coordinate.longitude > maxLon)
+            maxLon = currentLocation.coordinate.longitude;
+        if(currentLocation.coordinate.longitude < minLon)
+            minLon = currentLocation.coordinate.longitude;
+    }
+    region.center.latitude     = (maxLat + minLat) / 2.0;
+    region.center.longitude    = (maxLon + minLon) / 2.0;
+    region.span.latitudeDelta = 0.01;
+    region.span.longitudeDelta = 0.01;
+
+    region.span.latitudeDelta  = ((maxLat - minLat)<0.0)?100.0:(maxLat - minLat);
+    region.span.longitudeDelta = ((maxLon - minLon)<0.0)?100.0:(maxLon - minLon);
+    [_mapView setRegion:region animated:YES];
+}
 }
 
 - (void)setMapViewRegionWithCenter:(CLLocationCoordinate2D)center withZoom:(MKCoordinateSpan)zoom{

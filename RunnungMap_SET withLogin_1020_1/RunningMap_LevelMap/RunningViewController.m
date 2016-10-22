@@ -227,8 +227,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 #pragma mark - Navigation Bar Method
 
 - (IBAction)getTheTargetBtnPressed:(UIBarButtonItem *)sender {
-    if(ah_locationPoint.allLocations.count > 0 ) {
-          [historyPoint.locationPaths addObject:ah_locationPoint.allLocations ] ;
+    if(ah_locationPoint.pathsLocations.count > 0 ) {
+          [historyPoint.locationPaths addObject:ah_locationPoint.pathsLocations ] ;
         [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
     }
 
@@ -246,7 +246,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
         historyPoint.totalTime = _stopWatchLabel.text ;
         historyPoint.mapTitle = mapTitle ;
-
+        for(int i = 0 ; i < ah_locationPoint.allLocations.count ; i++ )
+            [historyPoint.allLocations addObject:ah_locationPoint.allLocations[i] ];
 
         [[HistoryDataManager sharedInstance].historyPoints addObject:historyPoint] ;
         [[HistoryDataManager sharedInstance] setMessage:[NSString stringWithFormat:@"%lu",(unsigned long)[HistoryDataManager sharedInstance].historyPoints.count ]] ;

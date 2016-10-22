@@ -45,6 +45,7 @@
 }
 -(BOOL)start {
     _allLocations = [NSMutableArray new];
+    _pathsLocations = [NSMutableArray new] ;
 
     if([CLLocationManager headingAvailable]==YES) {
         [_locationManager startUpdatingHeading];
@@ -64,6 +65,8 @@
         CLLocation *currentLocation = locations.lastObject;
 
         [_allLocations addObject:currentLocation ] ;
+        [_pathsLocations addObject:currentLocation ] ;
+        
         [self performNotificationForLocation] ;
 
         userLocation = currentLocation ;
@@ -134,7 +137,7 @@
 }
 
 -(void)clear {
-    _allLocations = [NSMutableArray new] ;
+    _pathsLocations = [NSMutableArray new] ;
 }
 
 -(void)rotateArrowView:(UIView *)view degrees:(CGFloat)degrees

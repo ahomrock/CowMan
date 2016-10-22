@@ -14,6 +14,7 @@
 @property(nonatomic,strong)NSString *totalTime ;
 @property(nonatomic,strong)NSMutableArray *locationPaths ;
 @property(nonatomic,strong)NSMutableArray *locationPathTimeStamp ;
+@property(nonatomic,strong)NSMutableArray *allLocations ;
 
 
 
