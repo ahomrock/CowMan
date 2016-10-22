@@ -10,8 +10,7 @@
 
 @interface LevelMapsManager : LevelMapPoint
 {
-    double numberFIRLongitude;
-    double numberFIRLatitude;
+    
     int numberFIRpoint;
 }
 @property (nonatomic,strong)NSMutableArray *levelMapPoints ;
