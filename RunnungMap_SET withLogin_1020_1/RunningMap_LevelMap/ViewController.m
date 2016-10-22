@@ -11,6 +11,7 @@
 #import "AH_PhotoDataManager.h"
 #import "AH_SelectTableView.h"
 #import "InternetDetection.h"
+#import "GetFirebaseCoordinate.h"
 
 #define MOVE_MAX_Y 466
 #define MOVE_MIN_Y 60
@@ -50,6 +51,10 @@
 //    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
 //        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
     //Internet Decetion
+    
+//    GetFirebaseCoordinate * getFirebase = [GetFirebaseCoordinate alloc];
+//    [getFirebase getFirebaseCoordinate];
+    
     _net = [InternetDetection new];
     [_net internet];
     

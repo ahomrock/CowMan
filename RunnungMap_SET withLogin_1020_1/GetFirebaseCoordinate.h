@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface GetFirebaseCoordinate : UIViewController
-{
-    NSString * getFirebaseLatitude;
-    NSString * getFirebaseLongitude;
-    NSString * getPointCount;
-}
-
--(void)GetFirebaseCoordinate;
+@property (strong, nonatomic) NSDictionary * firebaseCoordinate;
+@property (strong, nonatomic) NSString * getFirebaseLatitude;
+@property (strong, nonatomic) NSString * getFirebaseLongitude;
+@property (strong, nonatomic) NSString * getPointCount;
+-(void)getFirebaseCoordinate;
 @end

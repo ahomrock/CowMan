@@ -22,7 +22,7 @@
 //取得 firebase裡面的所有資料
 #pragma fetch Firebase Data
 
--(void)GetFirebaseCoordinate {
+-(void)getFirebaseCoordinate {
     
   
         //連結Firebase 資料庫
@@ -30,18 +30,18 @@
         
         [ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             NSDictionary *post = snapshot.value;
-            
-            getPointCount = [post objectForKey:@"pointCount"];
-            getFirebaseLatitude = [post objectForKey:@"latitude"];
-            getFirebaseLongitude = [post objectForKey:@"longitude"];
-            
-            //列印和uid同層的資料
+            //讀出Firbase裡的coordinate類別欄資料庫
+            _getPointCount = [post objectForKey:@"pointCount"];
+            _getFirebaseLatitude = [post objectForKey:@"latitude"];
+            _getFirebaseLongitude = [post objectForKey:@"longitude"];
+        
+            //列印與存入和pointCount同層的資料
             for (NSString * pointCount in post) {
                 
-                NSDictionary * each = post[pointCount];
-                NSLog(@"%@",each[@"pointCount"]);
-                NSLog(@"%@",each[@"latitude"]);
-                NSLog(@"%@",each[@"longitude"]);
+                _firebaseCoordinate = post[pointCount];
+                NSLog(@"%@",_firebaseCoordinate[@"pointCount"]);
+                NSLog(@"%@",_firebaseCoordinate[@"latitude"]);
+                NSLog(@"%@",_firebaseCoordinate[@"longitude"]);
             
                 
             }
@@ -51,6 +51,7 @@
     
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
