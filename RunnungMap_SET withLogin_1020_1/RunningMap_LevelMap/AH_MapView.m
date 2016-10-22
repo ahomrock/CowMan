@@ -146,7 +146,6 @@
 //    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
-
     [self.mapView addOverlay:polyline];
 
 

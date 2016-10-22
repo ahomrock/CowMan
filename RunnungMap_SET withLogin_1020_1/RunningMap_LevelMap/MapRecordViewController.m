@@ -41,6 +41,7 @@
     [super viewDidAppear:animated] ;
     [ah_mapView startLoadMap] ;
 }
+
 - (void)setMap {
     CLLocationCoordinate2D center = MAP01_CENTER ;
     ah_mapView.mapCenter = center ;
@@ -48,7 +49,7 @@
     [ah_mapView startLoadMap] ;
 }
 - (IBAction)refreshBtnPressed:(UIButton *)sender {
-     [ah_mapView startLoadMap] ;
+     [ah_mapView centerMap] ;
 }
 
 - (void)didReceiveMemoryWarning {

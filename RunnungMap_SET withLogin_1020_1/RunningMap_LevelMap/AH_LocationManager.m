@@ -13,7 +13,7 @@
 #define DegreesToRadians(degrees)(degrees * M_PI / 180.0)
 
 
-#define HORIZONTAL_ACCURACY_MAX 70
+#define HORIZONTAL_ACCURACY_MAX 100
 
 
 #define USER_TARGET_DISTANCE 10
