@@ -13,11 +13,14 @@ typedef NS_ENUM(NSInteger,TableStateTYPE_) {
     TableStateTYPE_onTOP,
     TableStateTYPE_onBottom
 };
+
 @interface AH_SelectTableView : NSObject<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *tableView ;
 @property (nonatomic,strong)UIImageView *imageView ;
+@property (nonatomic,strong)UIView *moveTabNavView ;
 
+@property CGRect originalTableFrame ;
 +(instancetype)startWithTableView:(UITableView*)tableView withImageView:(UIImageView*)imageView ;
 
 @end

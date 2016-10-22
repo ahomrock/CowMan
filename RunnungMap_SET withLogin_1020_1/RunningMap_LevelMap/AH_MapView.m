@@ -146,7 +146,6 @@
 //    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
-
     [self.mapView addOverlay:polyline];
 
 
@@ -159,7 +158,7 @@
 
     // Custom polylineView
     polylineView.strokeColor =  line_strokeColor;
-    polylineView.lineWidth = 6.0;
+    polylineView.lineWidth = 10.0;
     polylineView.alpha = 0.6;
 
 

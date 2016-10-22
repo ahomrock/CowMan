@@ -27,9 +27,8 @@
 
 
 // SelectPhotoScroll
-@property (weak, nonatomic) IBOutlet UIImageView *mainPhotoView;
+@property (strong) UIImageView *mainPhotoView;
 @property (weak, nonatomic) IBOutlet AH_SelectPhotoScrollView *mainScrollView;
-@property (weak, nonatomic) IBOutlet UIView *moveTableNavView;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UIButton *mapTitleBtn;
 @property (strong, nonatomic) InternetDetection *net;
@@ -41,12 +40,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _mainPhotoView = [[UIImageView alloc]init] ;
+    [_mainPhotoView setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y , self.view.frame.size.width, self.view.frame.size.height*0.6)] ;
+    [_mainScrollView addSubview:_mainPhotoView];
+    _mainPhotoView.contentMode = UIViewContentModeScaleAspectFit ;
+    [_mapTitleBtn setFrame:CGRectMake(self.view.frame.origin.x, _mainPhotoView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height *0.1)] ;
+    [_mainTableView setFrame:CGRectMake(self.view.frame.origin.x, _mainPhotoView.frame.size.height + _mapTitleBtn.frame.size.height, self.view.frame.size.width, self.view.frame.size.height *0.1)] ;
 
     [self prepareForSelectPhotoScroll] ;
     selectTableView = [AH_SelectTableView startWithTableView:_mainTableView
                                                withImageView:_mainPhotoView] ;
 
-
+    selectTableView.moveTabNavView = _mapTitleBtn ;
 //    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortraitUpsideDown];
 //    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
 //        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
@@ -106,9 +111,9 @@
 }
 
 - (void) setTitleBtnNameWithMapPhotoIndex:(NSInteger)index {
-    if( index == 0)
+    if( index % 2== 0)
         _mapTitleBtn.titleLabel.text = @"N C U" ;
-    else if (index == 1)
+    else if (index %2 == 1)
         _mapTitleBtn.titleLabel.text = @"CYCU" ;
 }
 

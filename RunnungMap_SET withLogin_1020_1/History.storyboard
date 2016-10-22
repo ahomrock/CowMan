@@ -107,10 +107,12 @@
                                             <outlet property="delegate" destination="yPU-Wo-vCd" id="juy-qe-T9x"/>
                                         </connections>
                                     </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bq9-x9-wUW">
-                                        <rect key="frame" x="148" y="362" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bq9-x9-wUW">
+                                        <rect key="frame" x="126" y="338" width="91" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="refresh">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" eventType="touchUpInside" id="Xbj-ae-SyO"/>
                                         </connections>
@@ -150,7 +152,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yKy-rG-Wby" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="9Dw-gQ-cWV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mfG-2L-61w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mfG-2L-61w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

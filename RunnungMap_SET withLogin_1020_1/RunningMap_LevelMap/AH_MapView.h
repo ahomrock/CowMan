@@ -27,4 +27,8 @@
 - (void)setRegionWithLat:(CLLocationDegrees)lat withLon:(CLLocationDegrees)lon ;
 
 - (void)showLines :(NSMutableArray*)inputCoordinate withCenter:(CLLocationCoordinate2D)center ;
+
+
+
+-(void) centerMap;
 @end
