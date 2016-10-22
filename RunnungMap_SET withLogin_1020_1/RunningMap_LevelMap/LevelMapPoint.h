@@ -13,7 +13,7 @@
 @property (nonatomic,strong) NSString *title ;
 @property (nonatomic,strong) NSString *subTitle ;
 @property (nonatomic,strong) NSString *mapDescription ;
-@property (nonatomic,strong) UILabel * image ;
+@property (nonatomic,strong) UIImage * image ;
 @property (nonatomic,strong) NSMutableArray * rankingBySpeeds ;
 
 @end

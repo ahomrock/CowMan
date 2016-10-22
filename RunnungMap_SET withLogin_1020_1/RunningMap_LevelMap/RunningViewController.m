@@ -41,15 +41,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 }
 
 
-@property (weak, nonatomic) IBOutlet UILabel *locatePointLabel;
-
-
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
 @property (weak, nonatomic) IBOutlet UILabel *mapTitleLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *targetPointLabel;
-
 @property (weak, nonatomic) IBOutlet RunningScrollView *mainScrollView;
 
 
@@ -109,7 +104,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     historyPoint =[ [HistoryPoint alloc]init ] ;
 }
 - (void)loadTargetData {
-    
+
 }
 
 - (void) createTargetPointWithLat:(CLLocationDegrees)targetLat withLon:(CLLocationDegrees)targetLon {
@@ -176,10 +171,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 /**
  Change MainImageView and SecondImageVige With compass and map
-
- @param sender <#sender description#>
  */
-
 - (IBAction)secondImageSwipeDown:(UISwipeGestureRecognizer *)sender {
     [ah_locationPoint rotateArrowView:mainStateView degrees:0] ;
     [ah_locationPoint rotateArrowView:secondStateView degrees:0] ;
@@ -238,11 +230,6 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
         [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
     }
 
-  //  NSLog(@"mmkk : %@", historyPoint.locationPathTimeStamp.lastObject);
-//
-//    for (int i = 0 ; i <historyPoint.locationPaths.count; i++)
-//        NSLog(@"cccc ccvv:%f",[historyPoint.locationPaths[i] coordinate].latitude );
-
     [self createTargetPointWithLat:24.970747 withLon:121.189991] ;
 
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"YOU GET THE TARGET" preferredStyle:UIAlertControllerStyleAlert] ;
@@ -260,10 +247,6 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [[HistoryDataManager sharedInstance].historyPoints addObject:historyPoint] ;
     [[HistoryDataManager sharedInstance] setMessage:[NSString stringWithFormat:@"%lu",(unsigned long)[HistoryDataManager sharedInstance].historyPoints.count ]] ;
     
-//    [[HistoryDataManager sharedInstance]coreDataManagerInit ] ;
-//    [[HistoryDataManager sharedInstance]SaveToCoreData ] ;
-//    HistoryViewController *vc =  self.tabBarController.childViewControllers[1] ;
-//    [ vc.tableView reloadData ] ;
     NSMutableArray *nn = [HistoryDataManager sharedInstance].historyPoints ;
     NSLog(@"xx xqww:%@",[nn.lastObject totalTime ]) ;
     NSLog(@"COUNT : %lu",(unsigned long)nn.count) ;

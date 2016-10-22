@@ -12,6 +12,7 @@
 		03064AEE1DB11A67006F1D6A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03064AED1DB11A67006F1D6A /* Login.storyboard */; };
 		03064AF61DB11F3C006F1D6A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03064AF51DB11F3C006F1D6A /* LoginViewController.m */; };
 		0330D8121DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */; };
+		0330D81D1DBB058100449BCA /* SelectMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0330D81B1DBB058100449BCA /* SelectMap.storyboard */; };
 		036443361DAE792F00610CDE /* gameMap_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443321DAE792F00610CDE /* gameMap_01.jpg */; };
 		036443371DAE792F00610CDE /* gameMap_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443331DAE792F00610CDE /* gameMap_02.jpg */; };
 		036443381DAE792F00610CDE /* selectMap01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443341DAE792F00610CDE /* selectMap01.jpg */; };
@@ -107,6 +108,7 @@
 		030A77881DAF993000400AB8 /* RunningMap_Gaming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_Gaming.entitlements; sourceTree = "<group>"; };
 		0330D8101DB9E0FB00449BCA /* CLLocation+CoordinateToImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+CoordinateToImage.h"; sourceTree = "<group>"; };
 		0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+CoordinateToImage.m"; sourceTree = "<group>"; };
+		0330D81C1DBB058100449BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RunningMap_LevelMap/Base.lproj/SelectMap.storyboard; sourceTree = "<group>"; };
 		036443321DAE792F00610CDE /* gameMap_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameMap_01.jpg; sourceTree = "<group>"; };
 		036443331DAE792F00610CDE /* gameMap_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameMap_02.jpg; sourceTree = "<group>"; };
 		036443341DAE792F00610CDE /* selectMap01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectMap01.jpg; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				03F126DB1D97C1A500531F90 /* Main.storyboard */,
+				0330D81B1DBB058100449BCA /* SelectMap.storyboard */,
 				0399B8411DB36DAD0048055E /* History.storyboard */,
 				03064AED1DB11A67006F1D6A /* Login.storyboard */,
 				03A39A451DA9FA6500D579CA /* Running.storyboard */,
@@ -637,6 +640,7 @@
 				03064AEC1DB1168A006F1D6A /* GoogleService-Info.plist in Resources */,
 				0364433E1DAF271700610CDE /* count_2.png in Resources */,
 				03064AEE1DB11A67006F1D6A /* Login.storyboard in Resources */,
+				0330D81D1DBB058100449BCA /* SelectMap.storyboard in Resources */,
 				036443391DAE792F00610CDE /* selectMap02.jpg in Resources */,
 				036443361DAE792F00610CDE /* gameMap_01.jpg in Resources */,
 				30BB4BE41DB12CB900ECDEA5 /* box1.png in Resources */,
@@ -804,6 +808,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0330D81B1DBB058100449BCA /* SelectMap.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0330D81C1DBB058100449BCA /* Base */,
+			);
+			name = SelectMap.storyboard;
+			sourceTree = "<group>";
+		};
 		03A39A451DA9FA6500D579CA /* Running.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
