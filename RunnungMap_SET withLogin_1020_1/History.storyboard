@@ -152,7 +152,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yKy-rG-Wby" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="9Dw-gQ-cWV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mfG-2L-61w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mfG-2L-61w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

@@ -106,9 +106,9 @@
 }
 
 - (void) setTitleBtnNameWithMapPhotoIndex:(NSInteger)index {
-    if( index == 0)
+    if( index % 2== 0)
         _mapTitleBtn.titleLabel.text = @"N C U" ;
-    else if (index == 1)
+    else if (index %2 == 1)
         _mapTitleBtn.titleLabel.text = @"CYCU" ;
 }
 
