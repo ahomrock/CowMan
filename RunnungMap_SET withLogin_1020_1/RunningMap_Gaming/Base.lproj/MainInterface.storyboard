@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,12 +26,36 @@
                                     <constraint firstAttribute="width" secondItem="EGn-Ek-z0Y" secondAttribute="height" multiplier="281:254" id="RJN-Cy-dMY"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-zO-WXS">
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToGame:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="TsI-Dg-CMW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zm-VX-9YU">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dC-cY-Qje">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8dC-cY-Qje" firstAttribute="top" secondItem="7Zm-VX-9YU" secondAttribute="bottom" constant="8" id="JZ1-3L-kwX"/>
+                            <constraint firstItem="8dC-cY-Qje" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="11" id="Ny1-dY-aLR"/>
+                            <constraint firstItem="7Zm-VX-9YU" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="20" id="OzE-fx-NkM"/>
                             <constraint firstItem="EGn-Ek-z0Y" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="ZFx-Fe-wUO"/>
                             <constraint firstItem="EGn-Ek-z0Y" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="dCJ-UP-QKb"/>
                             <constraint firstItem="EGn-Ek-z0Y" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" multiplier="0.9" id="fhX-FO-s4L"/>
+                            <constraint firstItem="7Zm-VX-9YU" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="15" id="sg0-1l-3oh"/>
+                            <constraint firstItem="Pah-zO-WXS" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="20" id="wPc-yr-RpR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pah-zO-WXS" secondAttribute="trailing" constant="6" id="zY2-1C-NMj"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -40,7 +65,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="320"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="8dC-cY-Qje" id="l5P-UO-rHq"/>
                         <outlet property="imageView" destination="EGn-Ek-z0Y" id="VgU-Cp-9cT"/>
+                        <outlet property="targetLabel" destination="7Zm-VX-9YU" id="ur5-tH-dgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

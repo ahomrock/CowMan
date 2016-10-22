@@ -32,6 +32,6 @@
 
 -(void)rotateArrowView:(UIView *)view degrees:(CGFloat)degrees;
 
--(CGPoint)getPointWithCoordinate:(CLLocationCoordinate2D)coordinate withView:(UIView*)view ;
+
 
 @end

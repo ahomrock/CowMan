@@ -174,7 +174,23 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 //////////
 
+// for Widget 
 
+- (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+
+    NSLog(@"Containing App Receive: %@",url.description);
+
+    NSString *path = url.absoluteString;
+
+    NSString *parameter = [path stringByReplacingOccurrencesOfString:@"widget_RunningMapGaming://" withString:@""];
+    NSLog(@"dddd %@",parameter) ;
+
+    self.jumpToParameter = parameter;
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:JUMP_TO_NOTIFICATION object:parameter];
+
+    return true;
+}
 
 
 

@@ -18,6 +18,9 @@
     AH_LocationManager *ah_locationPoint; ;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *targetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @end
 
@@ -81,6 +84,17 @@
         self.extensionContext.widgetLargestAvailableDisplayMode  = NCWidgetDisplayModeExpanded ;
 }
 
+- (IBAction)backToGame:(UIButton *)sender {
+    NSLog(@"HERE") ;
+    NSURL *url = [NSURL URLWithString:@"widget_RunningMapGaming://resumeGame"];
+
+    [self.extensionContext openURL:url
+                 completionHandler:^(BOOL success) {
+                     NSLog(@"openURL Done.");
+                 }];
+
+
+}
 
 
 - (void)didReceiveMemoryWarning {

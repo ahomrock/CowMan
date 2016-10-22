@@ -21,7 +21,7 @@
 #import "CLLocation+CoordinateToImage.h"
 
 #import "LevelMapsManager.h"
-
+#import "NSUserDefaults+Extension.h"
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
     MapLocateSIGN_FORLOCATE_B,
@@ -275,6 +275,15 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 
     [self dismissViewControllerAnimated:true completion:nil] ;
+
+}
+
+
+- (void)passDataToWidgetWithTarget {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
+
+    [sharedDefaults setInteger:0 forKey:@"compassImageAngle"];
+    [sharedDefaults synchronize];
 
 }
 

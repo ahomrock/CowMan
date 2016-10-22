@@ -15,6 +15,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 //#import <Firebase/Firebase.h>
 
+#define JUMP_TO_NOTIFICATION @"JUMP_TO_NOTIFICATION"
+
 
 @import Firebase;
 @import FirebaseDatabase ;
@@ -28,6 +30,8 @@
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+
+@property (strong, nonatomic) NSString *jumpToParameter;
 
 
 @end

@@ -11,6 +11,8 @@
 #import "RunningViewController.h"
 #import "AH_PhotoDataManager.h"
 
+#import "AppDelegate.h"
+
 @interface PreStartViewController () {
     AH_PerformAnimationManager *ah_PAManager ;
 }
@@ -28,7 +30,39 @@
 
     _backgroundMap.image = [AH_PhotoDataManager shareInstance].selectImage ;
     _navItem.title = [AH_PhotoDataManager shareInstance].selectMapTitle ;
+
+    // for Widget
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleJumpToNotification:) name:JUMP_TO_NOTIFICATION object:nil];
 }
+
+
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if(appDelegate.jumpToParameter != nil)
+    {
+        [self doJumpTo:appDelegate.jumpToParameter];
+    }
+    
+}
+
+- (void) handleJumpToNotification:(NSNotification*) notify {
+    [self doJumpTo:notify.object];
+}
+
+- (void) doJumpTo:(NSString*) parameter {
+    
+    NSString *segueID = [NSString stringWithFormat:@"%@",parameter];
+    [self performSegueWithIdentifier:segueID sender:nil];
+
+    // Clear appDelegate.jumpToParameter
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.jumpToParameter = nil;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,6 +82,8 @@
 
 
 }
+
+
 
 /*
 #pragma mark - Navigation

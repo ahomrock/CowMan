@@ -123,19 +123,6 @@
 
      [self rotateArrowView:_arrowImageView degrees:(angle + targetBear )] ;
 
-    NSInteger compassImageAngle = angle + targetBear ;
-
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.aHom.RunningMapExtensionSharingDefaults"];
-
-    [sharedDefaults setInteger:compassImageAngle forKey:@"compassImageAngle"];
-    [sharedDefaults synchronize];
-
-
-
-    // (!!) This is crucial.
-//    _distanceLabel.text = [NSString stringWithFormat:@"%f,%f,d:%f",angle,targetBear,distance] ;
-
-
 }
 
 -(void)clear {
@@ -146,13 +133,6 @@
 {
     CGAffineTransform transform = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
     view.transform = transform;
-}
-
-
-#pragma mark for map Image
--(CGPoint)getPointWithCoordinate:(CLLocationCoordinate2D)coordinate withView:(UIView*)view {
-    CGPoint point = CGPointMake(0, 0);
-    return point ;
 }
 
 
