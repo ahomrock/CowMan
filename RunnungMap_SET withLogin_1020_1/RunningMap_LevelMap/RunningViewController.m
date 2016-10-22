@@ -84,6 +84,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     _mapView.hidden = true ;
 
     targetIndex = 0 ;
+
     ah_locationPoint = [AH_LocationManager create];
     [ah_locationPoint clear] ;
     // Create the First TargetPoint
@@ -94,6 +95,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
 
+    NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[0] targetLocate] count]] ;
+    _targetPointLabel.text = targetLabelTitle ;
 
     // Add the image to be used as the compass on the GUI
     [ah_locationPoint setArrowImageView:mainStateView];
@@ -233,6 +236,9 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     }
 
     targetIndex++ ;
+    NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[0] targetLocate] count]] ;
+    _targetPointLabel.text = targetLabelTitle ;
+
     if (targetIndex < [lmManager.levelMapPoints[0] targetLocate].count) {
         CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
         [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;

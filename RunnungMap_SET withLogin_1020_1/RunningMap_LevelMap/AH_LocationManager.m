@@ -13,7 +13,7 @@
 #define DegreesToRadians(degrees)(degrees * M_PI / 180.0)
 
 
-#define HORIZONTAL_ACCURACY_MAX 150
+#define HORIZONTAL_ACCURACY_MAX 70
 
 
 #define USER_TARGET_DISTANCE 10
@@ -75,15 +75,17 @@
 
 
         distance = [userLocation distanceFromLocation:targetLocation] ;
+
+        NSLog(@"distance %f", distance) ;
+        if ( distance < USER_TARGET_DISTANCE )
+            _distanceLabel.textColor = [UIColor redColor] ;
+        else
+            _distanceLabel.textColor = [UIColor whiteColor] ;
+        _distanceLabel.text = [NSString stringWithFormat:@"Distance: %f m",distance] ;
+    } else {
+        _distanceLabel.textColor = [UIColor yellowColor] ;
+        _distanceLabel.text = @"Searching.....";
     }
-
-    NSLog(@"distance %f", distance) ;
-    if ( distance < USER_TARGET_DISTANCE )
-        _distanceLabel.textColor = [UIColor redColor] ;
-    else
-        _distanceLabel.textColor = [UIColor whiteColor] ;
-    _distanceLabel.text = [NSString stringWithFormat:@"%f,",distance] ;
-
 
 
    // [[NSNotificationCenter defaultCenter] removeObserver:self];
