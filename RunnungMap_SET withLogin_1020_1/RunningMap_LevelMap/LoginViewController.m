@@ -97,6 +97,24 @@
     return true;
 }
 
+//頁面跳轉
+-(void) turnView {
+    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"ncu"];
+    
+    [self presentViewController:tabVC animated:true completion:nil];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
+        [self turnView];
+        
+    }
+    
+}
+
 
 
 //登出按鈕，storyboard Button未做,功能暫留著
