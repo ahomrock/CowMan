@@ -56,7 +56,7 @@
     
     NSString *segueID = [NSString stringWithFormat:@"%@",parameter];
     [self performSegueWithIdentifier:segueID sender:nil];
-
+    NSLog(@"ccc xxx ") ;
     // Clear appDelegate.jumpToParameter
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.jumpToParameter = nil;

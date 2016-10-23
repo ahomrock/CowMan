@@ -53,6 +53,13 @@
                 [self showLines:_historyPoint.locationPaths[i] withCenter:self.mapCenter] ;
 
                 [self centerMap] ;
+
+                MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init];
+                annotation.title = [NSString stringWithFormat:@"Target:%d",i];
+                annotation.subtitle = _historyPoint.locationPathTimeStamp[i];
+                annotation.coordinate = [[_historyPoint.locationPaths[i] lastObject] coordinate];
+                [self.mapView addAnnotation:annotation] ;
+
             }
             else
                 NSLog(@"FAIL FAIL!!!") ;
@@ -119,8 +126,6 @@
 
 - (void) buttonPrssed:(id)sender {
 
-
-
 }
 -(void)clear {
    
@@ -135,8 +140,6 @@
     }
 
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointsCoordinate count:[inputCoordinate count]];
-
-
 //    MKCoordinateSpan span = MKCoordinateSpanMake(0.01,0.01);
 //    _mapView.zoomEnabled = false ;
 //    _mapView.scrollEnabled = false ;
@@ -166,36 +169,35 @@
 }
 
 
--(void) centerMap
-{
+-(void) centerMap {
     if (_historyPoint.locationPaths) {
         NSArray * routes =  (NSArray*)_historyPoint.allLocations ;
         MKCoordinateRegion region;
-    CLLocationDegrees maxLat = -90.0;
-    CLLocationDegrees maxLon = -180.0;
-    CLLocationDegrees minLat = 90.0;
-    CLLocationDegrees minLon = 180.0;
-    for(int idx = 0; idx < routes.count; idx++)
-    {
-        CLLocation* currentLocation = [routes objectAtIndex:idx];
-        if(currentLocation.coordinate.latitude > maxLat)
-            maxLat = currentLocation.coordinate.latitude;
-        if(currentLocation.coordinate.latitude < minLat)
-            minLat = currentLocation.coordinate.latitude;
-        if(currentLocation.coordinate.longitude > maxLon)
-            maxLon = currentLocation.coordinate.longitude;
-        if(currentLocation.coordinate.longitude < minLon)
-            minLon = currentLocation.coordinate.longitude;
-    }
-    region.center.latitude     = (maxLat + minLat) / 2.0;
-    region.center.longitude    = (maxLon + minLon) / 2.0;
-    region.span.latitudeDelta = 0.01;
-    region.span.longitudeDelta = 0.01;
 
-    region.span.latitudeDelta  = ((maxLat - minLat)<0.0)?100.0:(maxLat - minLat);
-    region.span.longitudeDelta = ((maxLon - minLon)<0.0)?100.0:(maxLon - minLon);
-    [_mapView setRegion:region animated:YES];
-}
+        CLLocationDegrees maxLat = -90.0;
+        CLLocationDegrees maxLon = -180.0;
+        CLLocationDegrees minLat = 90.0;
+        CLLocationDegrees minLon = 180.0;
+        for(int idx = 0; idx < routes.count; idx++) {
+            CLLocation* currentLocation = [routes objectAtIndex:idx];
+            if(currentLocation.coordinate.latitude > maxLat)
+                maxLat = currentLocation.coordinate.latitude;
+            if(currentLocation.coordinate.latitude < minLat)
+                minLat = currentLocation.coordinate.latitude;
+            if(currentLocation.coordinate.longitude > maxLon)
+                maxLon = currentLocation.coordinate.longitude;
+            if(currentLocation.coordinate.longitude < minLon)
+                minLon = currentLocation.coordinate.longitude;
+        }
+        region.center.latitude     = (maxLat + minLat) / 2.0;
+        region.center.longitude    = (maxLon + minLon) / 2.0;
+        region.span.latitudeDelta = 0.01;
+        region.span.longitudeDelta = 0.01;
+
+        region.span.latitudeDelta  = ((maxLat - minLat)<0.0)?100.0:(maxLat - minLat);
+        region.span.longitudeDelta = ((maxLon - minLon)<0.0)?100.0:(maxLon - minLon);
+        [_mapView setRegion:region animated:YES];
+    }
 }
 
 - (void)setMapViewRegionWithCenter:(CLLocationCoordinate2D)center withZoom:(MKCoordinateSpan)zoom{
@@ -224,6 +226,13 @@
 
     _mapView.mapType = MKMapTypeStandard;//standard map(not satellite)
 
+}
+
+
+-(void)createAnnotation {
+    MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init];
+
+    [_mapView addAnnotation:annotation] ;
 }
 
 
