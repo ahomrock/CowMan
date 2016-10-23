@@ -82,7 +82,6 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - LTMorphingLabel (0.3.0)
 
 DEPENDENCIES:
   - Firebase
@@ -94,7 +93,6 @@ DEPENDENCIES:
   - Firebase/Storage
   - FMDB
   - Google/SignIn
-  - LTMorphingLabel
 
 SPEC CHECKSUMS:
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
@@ -117,8 +115,7 @@ SPEC CHECKSUMS:
   GoogleSignIn: '09036ed61f8e75f1424100d63f7719480b2428c3'
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
-  LTMorphingLabel: 2777d8d9cb699125f48dfcd95d78bd3d77c87ade
 
-PODFILE CHECKSUM: 69e915ea6b63f97f69108383ff87368c505aa94b
+PODFILE CHECKSUM: f42482d72fbb5fd7e3b3438ed35641fb7bb9f03a
 
 COCOAPODS: 1.1.0.beta.1

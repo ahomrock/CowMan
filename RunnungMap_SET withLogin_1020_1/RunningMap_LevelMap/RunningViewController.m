@@ -23,6 +23,7 @@
 #import "LevelMapsManager.h"
 
 #import "NSUserDefaults+Extension.h"
+#import "RunningMap_LevelMap-Swift.h"
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
     MapLocateSIGN_FORLOCATE_B,
@@ -66,7 +67,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+//    UILabel *countDonwnLabel =
     ah_PAManager = [[AH_PerformAnimationManager alloc]init ] ;
     [self defautSetting_StopWatch];
     [self defaultSetting_view];

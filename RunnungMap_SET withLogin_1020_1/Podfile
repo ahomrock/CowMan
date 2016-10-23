@@ -36,6 +36,4 @@ target 'RunningMap_LevelMap' do
   pod 'Firebase/RemoteConfig'
   pod 'FMDB'
 
-  pod 'LTMorphingLabel'
-
 end
