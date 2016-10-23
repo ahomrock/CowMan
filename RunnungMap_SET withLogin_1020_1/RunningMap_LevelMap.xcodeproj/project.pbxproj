@@ -43,6 +43,7 @@
 		03CE88001DBBBE2B007A6640 /* RankingPoint.h in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F11D97C8EF00531F90 /* RankingPoint.h */; };
 		03CE88011DBBBE2B007A6640 /* RankingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F21D97C8EF00531F90 /* RankingPoint.m */; };
 		03CE88031DBBCF34007A6640 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030059621DAC7592009FFC21 /* MapKit.framework */; };
+		03CE880A1DBC6F2C007A6640 /* SeverConnectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CE88091DBC6F2C007A6640 /* SeverConnectManager.m */; };
 		03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */; };
 		03D422FF1DB3356F0068BFA2 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */; };
 		03D423041DB33DA60068BFA2 /* HistoryDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D423031DB33DA60068BFA2 /* HistoryDataManager.m */; };
@@ -148,6 +149,8 @@
 		03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		03CE88061DBBD746007A6640 /* RunningMap_LevelMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_LevelMap.entitlements; sourceTree = "<group>"; };
 		03CE88071DBBD75A007A6640 /* RunningMap_Gaming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_Gaming.entitlements; sourceTree = "<group>"; };
+		03CE88081DBC6F2C007A6640 /* SeverConnectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeverConnectManager.h; sourceTree = "<group>"; };
+		03CE88091DBC6F2C007A6640 /* SeverConnectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeverConnectManager.m; sourceTree = "<group>"; };
 		03D422F91DB281AC0068BFA2 /* MapRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRecordViewController.h; sourceTree = "<group>"; };
 		03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRecordViewController.m; sourceTree = "<group>"; };
 		03D422FD1DB3356F0068BFA2 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 		039168131DB5E9B700592593 /* SeverConnect */ = {
 			isa = PBXGroup;
 			children = (
+				03CE88081DBC6F2C007A6640 /* SeverConnectManager.h */,
+				03CE88091DBC6F2C007A6640 /* SeverConnectManager.m */,
 				30339A0E1DB8E45600F6563B /* SetFirebaseCoordinate.h */,
 				30339A0F1DB8E45600F6563B /* SetFirebaseCoordinate.m */,
 				30339A101DB8E45600F6563B /* GetFirebaseCoordinate.h */,
@@ -809,6 +814,7 @@
 				03D423071DB33E210068BFA2 /* HistoryPoint.m in Sources */,
 				03F127121D97D1A300531F90 /* AH_PhotoDataManager.m in Sources */,
 				0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */,
+				03CE880A1DBC6F2C007A6640 /* SeverConnectManager.m in Sources */,
 				03F126F41D97C8EF00531F90 /* RankingPoint.m in Sources */,
 				03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */,
 				30BB4BF71DB1F6D800ECDEA5 /* ImageAnnotationView.m in Sources */,

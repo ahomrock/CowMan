@@ -255,10 +255,12 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     _targetPointLabel.text = targetLabelTitle ;
 
     if (targetIndex < [lmManager.levelMapPoints[0] targetLocate].count) {
+        
         CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
         [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
         ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
         ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
+
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"YOU GET THE TARGET" preferredStyle:UIAlertControllerStyleAlert] ;
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil] ;
         [alert addAction:ok] ;

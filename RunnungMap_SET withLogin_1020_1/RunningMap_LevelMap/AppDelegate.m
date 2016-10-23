@@ -123,6 +123,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
+
+
     if([[FBSDKApplicationDelegate sharedInstance] application:application
                                                       openURL:url
                                             sourceApplication:sourceApplication

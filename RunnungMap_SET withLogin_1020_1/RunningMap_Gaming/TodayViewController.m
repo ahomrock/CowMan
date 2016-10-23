@@ -94,7 +94,6 @@
 }
 
 - (IBAction)backToGame:(UIButton *)sender {
-    NSLog(@"HERE") ;
     NSURL *url = [NSURL URLWithString:@"widget_RunningMapGaming://resumeGame"];
 
     [self.extensionContext openURL:url
