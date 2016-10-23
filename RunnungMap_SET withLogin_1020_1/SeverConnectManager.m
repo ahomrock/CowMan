@@ -11,14 +11,7 @@
 #import "LevelMapsManager.h"
 #import <Firebase.h>
 #import <CoreLocation/CoreLocation.h>
-//static dispatch_once_t onceToken;
-//dispatch_once(&onceToken, ^{
-//    hdManager = [[HistoryDataManager alloc]init ] ;
-//    hdManager.historyPoints = [NSMutableArray new] ;
-//    
-//});
-//
-//return hdManager ;
+
 @implementation SeverConnectManager
 {
     NSArray * tmpArray;
@@ -92,14 +85,7 @@
         [point.targetLocate addObject:tempLocate] ;
     }
 
-//    CLLocation *location1 = [[CLLocation alloc]initWithLatitude:24.970027 longitude:121.193490];
-//    CLLocation *location2 = [[CLLocation alloc]initWithLatitude:24.967451 longitude:121.190496];
-//    CLLocation *location3 = [[CLLocation alloc]initWithLatitude:24.967909 longitude:121.193233];
-    
-    
-    
-//    [point.targetLocate addObject:location2] ;
-//    [point.targetLocate addObject:location3] ;
+
     
     [resoultArray addObject:point];
     
