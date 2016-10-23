@@ -66,15 +66,22 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [_mainScrollView setScrollEnabled:false ];
 
     ah_PAManager = [[AH_PerformAnimationManager alloc]init ] ;
+    [self defautSetting_StopWatch];
+    [self defaultSetting_view];
+    [self defaultSetting_Location] ;
+    historyPoint =[ [HistoryPoint alloc]init ] ;
+}
 
+- (void)defautSetting_StopWatch{
     mzStopWatchLabel = [[MZTimerLabel alloc] initWithLabel:_stopWatchLabel andTimerType:MZTimerLabelTypeStopWatch];
     mzStopWatchLabel.timeFormat = @"HH:mm:ss SS";
     [self startOrResumeStopwatch:nil] ;
+}
 
-
+- (void)defaultSetting_view{
+    [_mainScrollView setScrollEnabled:false ];
 
     ah_mapView = [AH_MapView createWithMKView:_mapView withVC:self] ;
 
@@ -83,6 +90,9 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     secondStateView = _mainScrollView.secondImageView  ;
 
     _mapView.hidden = true ;
+}
+
+- (void)defaultSetting_Location {
 
     targetIndex = 0 ;
 
@@ -90,7 +100,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [ah_locationPoint clear] ;
     // Create the First TargetPoint
     lmManager = [LevelMapsManager sharedInstance] ;
-   
+
     CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
     [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
@@ -109,8 +119,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
     [ah_locationPoint start] ;
 
-    historyPoint =[ [HistoryPoint alloc]init ] ;
 }
+
 - (void)loadTargetData {
 
 }
@@ -265,8 +275,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"FINISH" preferredStyle:UIAlertControllerStyleAlert] ;
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self dismissViewControllerAnimated:true completion:nil] ;
+
+            [self giveUpBtnPressed:nil] ;
         }] ;
+
         [alert addAction:ok] ;
         [self presentViewController:alert animated:true completion:nil] ;
 
@@ -278,6 +290,11 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 - (IBAction)giveUpBtnPressed:(UIBarButtonItem *)sender {
 
 
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
+
+    [sharedDefaults setInteger:GAME_STATE_NOT_IN_GAME  forKey:GROUP_GAME_STATE_INTEGER];
+
+    [sharedDefaults synchronize];
 
     [self dismissViewControllerAnimated:true completion:nil] ;
 
@@ -285,9 +302,13 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 
 - (void)passDataToWidgetWithTarget {
+
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
 
-    [sharedDefaults setInteger:(NSInteger)targetIndex forKey:@"targetData"];
+
+    [sharedDefaults setInteger:targetIndex  forKey:GROUP_TARGETINDEX_INTEGER];
+    [sharedDefaults setInteger:GAME_STATE_GAMING  forKey:GROUP_GAME_STATE_INTEGER];
+
     [sharedDefaults synchronize];
 
 }
