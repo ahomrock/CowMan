@@ -106,8 +106,9 @@
     
 }
 
+
+
 -(void)viewDidAppear:(BOOL)animated {
-    
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
         [self turnView];
         
@@ -177,8 +178,7 @@
                  
                  NSDictionary *userUpdates = @{[@"/posts/" stringByAppendingString:key]: post};
                  [ref updateChildValues:userUpdates];
-                 //   [NSString stringWithFormat:@"/user-posts/%@/%@/", userID, key]: post
-                 //======================================================================
+            
                  [defaults setObject:username forKey:@"fullName"];
                  [defaults synchronize];
              }
@@ -191,7 +191,7 @@
     
 }
 
-//取得 firebase裡面的所有資料
+//取得 firebase裡面的使用者的所有資料
 #pragma fetch Firebase Data
 -(void)getFirebaseData {
     
@@ -218,51 +218,11 @@
         
     }];
 }
-//從NSuserDefault 裡面取得在AppDelegate 裡面儲存google user 登入的資料，並做判斷使用者是否登入，隱藏部分按鈕功能
-//但是無法即時更新畫面，如果做登入或登出時，需再重新重開APP才能更新畫面
--(void) googleProfileNsuserDefault {
-    
-    //    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    //
-    
-    //    if (![GIDSignIn sharedInstance].hasAuthInKeychain) {
-    //
-    ////         未登入時
-    //
-    //        self.welcome.text = @"您好，請登入";
-    //
-    //        self.signInButton.hidden = NO;
-    //
-    ////        self.signOutButton.hidden = YES;
-    //
-    //
-    //
-    //    } else {
-    //
-    ////         已登入時
-    //
-    //        self.signInButton.hidden = YES;
-    //
-    ////        self.signOutButton.hidden = NO;
-    //
-    //        self.welcome.text = [defaults objectForKey:@"fullName"];
-    //
-    //        NSString * imageStr = [defaults objectForKey:@"imagestr"];
-    //
-    //
-    //        UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:imageStr]]];
-    //
-    ////        self.fbUserFilePhoto.image = image;
-    //        
-    //    }
-    // [self reloadInputViews];  // 嘗試重讀畫面，但未果
-    
-}
+
 -(void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
 
 
 }
-
 
 
 //- (void)didReceiveMemoryWarning {

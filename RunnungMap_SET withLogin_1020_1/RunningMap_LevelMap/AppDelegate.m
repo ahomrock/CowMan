@@ -20,11 +20,6 @@
 
 
 
-//////////////
-
-
-
-
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -40,6 +35,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FBSDKLoginButton class];
     [FIRApp configure];
 
+    
 
     return YES;
 }
@@ -102,6 +98,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  //       [defaults setObject:imagestr  forKey:@"imagestr"];
         [defaults setObject:fullName forKey:@"fullName"];
         [defaults synchronize];
+        
+        
+        
 
 
     }

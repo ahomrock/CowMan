@@ -9,6 +9,9 @@
 #import "MainViewController.h"
 #import "NSUserDefaults+Extension.h"
 #import "RunningMap_LevelMap-Swift.h"
+#import <GoogleSignIn/GoogleSignIn.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface MainViewController ()
 
@@ -31,11 +34,11 @@
 
 
 - (void)defaultSetting_loadingView {
-    AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:40 ] ;
+    AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:50 ] ;
     loadingSquare.backgroundColor = [UIColor blackColor];
     loadingSquare.color = [UIColor whiteColor] ;
     [ loadingSquare start:0] ;
-    [loadingSquare stop:5.0];
+    [loadingSquare stop:10.0];
 }
 
 - (void)viewDidLoad {
@@ -45,9 +48,40 @@
     [self defaultSetting_loadingView];
     // Do any additional setup after loading the view.
     [self defaultSetting_GROUP] ;
+   
 
 
 
+}
+//設定判斷是登入跳轉
+-(void) checkLoginIn {
+    if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
+        [self turnMainView];
+        
+    } else {
+        [self turnLoginView];
+    }
+}
+-(void)viewDidAppear:(BOOL)animated {
+    
+        [self checkLoginIn];
+    
+}
+
+//頁面跳轉到主畫面
+-(void) turnMainView {
+    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"SelectMap" bundle:nil];
+    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"UINavigationController-SelectMapBegin"];
+    
+    [self presentViewController:tabVC animated:true completion:nil];
+    
+}
+//頁面跳轉到登入畫面
+- (void) turnLoginView {
+    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"login"];
+    
+    [self presentViewController:tabVC animated:true completion:nil];
 }
 
 - (void)defaultSetting_GROUP {
