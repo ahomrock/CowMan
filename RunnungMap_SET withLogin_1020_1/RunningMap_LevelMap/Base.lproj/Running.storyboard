@@ -46,7 +46,7 @@
                             <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="S5l-Uq-egG">
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <navigationItem title="HINT" prompt="" id="WPa-NH-9nM">
+                                    <navigationItem prompt="" id="WPa-NH-9nM">
                                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="90z-2F-53h">
                                             <color key="tintColor" red="0.80134807869706259" green="1" blue="0.94387353478880387" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -76,9 +76,11 @@
                                     <outlet property="delegate" destination="tC6-zQ-j10" id="ES5-rq-iwW"/>
                                 </connections>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HINT:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMk-KR-k5s">
-                                <frame key="frameInset" minX="6" minY="589" width="364" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HINT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMk-KR-k5s">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="41V-Du-Vqq"/>
+                                    <constraint firstAttribute="height" constant="32" id="MMu-wX-NRD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -87,6 +89,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S5l-Uq-egG" firstAttribute="leading" secondItem="HeW-B1-820" secondAttribute="leading" id="3Nf-T3-z0t"/>
+                            <constraint firstItem="IMk-KR-k5s" firstAttribute="centerX" secondItem="HeW-B1-820" secondAttribute="centerX" id="3oz-KK-lug"/>
                             <constraint firstAttribute="trailing" secondItem="T2v-0q-ksr" secondAttribute="trailing" id="7c6-bh-e5m"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="centerX" secondItem="HeW-B1-820" secondAttribute="centerX" id="CfL-Io-xis"/>
                             <constraint firstItem="S5l-Uq-egG" firstAttribute="height" secondItem="HeW-B1-820" secondAttribute="height" multiplier="0.07" id="Elt-sg-juV"/>
@@ -94,6 +97,7 @@
                             <constraint firstAttribute="bottom" secondItem="S5l-Uq-egG" secondAttribute="bottom" id="Psu-Lt-btF"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="centerY" secondItem="HeW-B1-820" secondAttribute="centerY" id="bCB-t6-BN6"/>
                             <constraint firstAttribute="trailing" secondItem="S5l-Uq-egG" secondAttribute="trailing" id="fhV-FG-Etm"/>
+                            <constraint firstItem="mky-IB-Opm" firstAttribute="top" secondItem="IMk-KR-k5s" secondAttribute="bottom" constant="8" id="mWU-Xj-YAi"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="leading" secondItem="HeW-B1-820" secondAttribute="leading" id="yAM-9p-qbk"/>
                         </constraints>
                     </view>
