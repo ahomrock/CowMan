@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "NSUserDefaults+Extension.h"
-
+#import "RunningMap_LevelMap-Swift.h"
 
 @interface MainViewController ()
 
@@ -16,11 +16,38 @@
 
 @implementation MainViewController
 
+
+//
+//let loadingSquare = AASquaresLoading(target: self.view, size: 40)
+//// Customize background
+//loadingSquare.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
+//// Customize color
+//loadingSquare.color = UIColor.whiteColor()
+//// Start loading
+//loadingSquare.start()
+//....
+//// Stop loading
+//loadingSquare.stop()
+
+
+- (void)defaultSetting_loadingView {
+    AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:40 ] ;
+    loadingSquare.backgroundColor = [UIColor blackColor];
+    loadingSquare.color = [UIColor whiteColor] ;
+    [ loadingSquare start:0] ;
+    [loadingSquare stop:5.0];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
+    [self defaultSetting_loadingView];
     // Do any additional setup after loading the view.
     [self defaultSetting_GROUP] ;
+
+
+
 }
 
 - (void)defaultSetting_GROUP {
@@ -28,7 +55,6 @@
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
 
     [sharedDefaults setInteger:GAME_STATE_NOT_IN_GAME  forKey:GROUP_GAME_STATE_INTEGER];
-
     [sharedDefaults synchronize];
 
 }

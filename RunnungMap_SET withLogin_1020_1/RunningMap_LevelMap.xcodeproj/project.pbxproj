@@ -44,6 +44,7 @@
 		03CE88011DBBBE2B007A6640 /* RankingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F21D97C8EF00531F90 /* RankingPoint.m */; };
 		03CE88031DBBCF34007A6640 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030059621DAC7592009FFC21 /* MapKit.framework */; };
 		03CE880A1DBC6F2C007A6640 /* SeverConnectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CE88091DBC6F2C007A6640 /* SeverConnectManager.m */; };
+		03CE88101DBCC428007A6640 /* AASquaresLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE880F1DBCC428007A6640 /* AASquaresLoading.swift */; };
 		03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */; };
 		03D422FF1DB3356F0068BFA2 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */; };
 		03D423041DB33DA60068BFA2 /* HistoryDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D423031DB33DA60068BFA2 /* HistoryDataManager.m */; };
@@ -151,6 +152,8 @@
 		03CE88071DBBD75A007A6640 /* RunningMap_Gaming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_Gaming.entitlements; sourceTree = "<group>"; };
 		03CE88081DBC6F2C007A6640 /* SeverConnectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeverConnectManager.h; sourceTree = "<group>"; };
 		03CE88091DBC6F2C007A6640 /* SeverConnectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeverConnectManager.m; sourceTree = "<group>"; };
+		03CE880E1DBCC428007A6640 /* RunningMap_LevelMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunningMap_LevelMap-Bridging-Header.h"; sourceTree = "<group>"; };
+		03CE880F1DBCC428007A6640 /* AASquaresLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AASquaresLoading.swift; sourceTree = "<group>"; };
 		03D422F91DB281AC0068BFA2 /* MapRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRecordViewController.h; sourceTree = "<group>"; };
 		03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRecordViewController.m; sourceTree = "<group>"; };
 		03D422FD1DB3356F0068BFA2 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -440,6 +443,7 @@
 		03F126D11D97C1A500531F90 /* RunningMap_LevelMap */ = {
 			isa = PBXGroup;
 			children = (
+				03CE880F1DBCC428007A6640 /* AASquaresLoading.swift */,
 				03CE88061DBBD746007A6640 /* RunningMap_LevelMap.entitlements */,
 				036443411DAF3D2C00610CDE /* CountDownViewController.h */,
 				036443421DAF3D2C00610CDE /* CountDownViewController.m */,
@@ -459,6 +463,7 @@
 				03F126E61D97C1A500531F90 /* Info.plist */,
 				03F126DE1D97C1A500531F90 /* RunningMap_LevelMap.xcdatamodeld */,
 				03F126D21D97C1A500531F90 /* Supporting Files */,
+				03CE880E1DBCC428007A6640 /* RunningMap_LevelMap-Bridging-Header.h */,
 			);
 			path = RunningMap_LevelMap;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 					03F126CE1D97C1A500531F90 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5Q668XB8GW;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -805,6 +811,7 @@
 				03D422FF1DB3356F0068BFA2 /* HistoryViewController.m in Sources */,
 				03F127151D97D29E00531F90 /* AH_SelectPhotoScrollView.m in Sources */,
 				039168901DB629EE00592593 /* MainViewController.m in Sources */,
+				03CE88101DBCC428007A6640 /* AASquaresLoading.swift in Sources */,
 				03A39A3C1DA9F60D00D579CA /* PreStartViewController.m in Sources */,
 				038F571C1DAFBC2B00009E27 /* AH_LocationManager.m in Sources */,
 				30BB4BE91DB1D24100ECDEA5 /* Reachability.m in Sources */,
@@ -998,6 +1005,7 @@
 			baseConfigurationReference = 185B88C75182DF95355CE17D /* Pods-RunningMap_LevelMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunningMap_LevelMap/RunningMap_LevelMap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5Q668XB8GW;
@@ -1013,6 +1021,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1a700e1e-01c5-4444-8fcc-086fa2d674db";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
+				SWIFT_OBJC_BRIDGING_HEADER = "RunningMap_LevelMap/RunningMap_LevelMap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1022,6 +1033,7 @@
 			baseConfigurationReference = 581BC9600F1B310DF3B2A81B /* Pods-RunningMap_LevelMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunningMap_LevelMap/RunningMap_LevelMap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5Q668XB8GW;
@@ -1037,6 +1049,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1a700e1e-01c5-4444-8fcc-086fa2d674db";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
+				SWIFT_OBJC_BRIDGING_HEADER = "RunningMap_LevelMap/RunningMap_LevelMap-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
