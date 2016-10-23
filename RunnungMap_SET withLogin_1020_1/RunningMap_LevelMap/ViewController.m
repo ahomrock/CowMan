@@ -11,7 +11,7 @@
 #import "AH_PhotoDataManager.h"
 #import "AH_SelectTableView.h"
 #import "InternetDetection.h"
-#import "GetFirebaseCoordinate.h"
+#import "SeverConnectManager.h"
 
 #define MOVE_MAX_Y 466
 #define MOVE_MIN_Y 60
@@ -22,6 +22,8 @@
     NSInteger mapPhotoIndex ;
 
     AH_SelectTableView *selectTableView ;
+    
+    SeverConnectManager * scManager;
 
 }
 
@@ -64,8 +66,10 @@
 //        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
     //Internet Decetion
     
-//    GetFirebaseCoordinate * getFirebase = [GetFirebaseCoordinate alloc];
-//    [getFirebase getFirebaseCoordinate];
+    scManager = [SeverConnectManager sharedInstance];
+    [scManager setMapsData];
+    
+
     
     _net = [InternetDetection new];
     [_net internet];

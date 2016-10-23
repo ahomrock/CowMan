@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "ViewController.h"
 
-
+#import "SetFirebaseCoordinate.h"
 
 @interface LoginViewController () <UIApplicationDelegate,GIDSignInDelegate,FBSDKLoginButtonDelegate>
 
@@ -262,6 +262,8 @@
 
 
 }
+
+
 
 //- (void)didReceiveMemoryWarning {
 //    [super didReceiveMemoryWarning];

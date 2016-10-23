@@ -9,7 +9,9 @@
 #import "SetFirebaseCoordinate.h"
 #import <Firebase.h>
 @interface SetFirebaseCoordinate ()
-
+@property (nonatomic,strong) NSString * fireBtitle ;
+@property (nonatomic,strong) NSString * fireBsubTitle ;
+@property (nonatomic,strong) NSString * fireBmapDescription ;
 @end
 
 @implementation SetFirebaseCoordinate
@@ -19,18 +21,26 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)SetFirebaseCoordinate {
+
+- (void)setNCUFirebaseCoordinate {
     FIRDatabaseReference *ref = [[FIRDatabase database]reference ];
     pointCount = @"1";
     latitude = @"24.96843";
     longitude = @"121.195927";
-    NSString *key = [[ref child:@"coordinate"] childByAutoId].key;
+    _fireBtitle = @"NCU" ;
+    _fireBsubTitle = @"Zombie in the Montain";
+    _fireBmapDescription = @"long time ago, zombie .......";
+    NSString *key = [[ref child:@"NCUcoordinate"] childByAutoId].key;
+    
     NSDictionary *point = @{@"pointCount": pointCount,
                            @"latitude": latitude,
                            @"longitude": longitude,
+                            @"title": _fireBtitle,
+                            @"subTitle":_fireBsubTitle,
+                            @"mapDescription":_fireBmapDescription
                            };
     
-    NSDictionary *userUpdates = @{[@"/coordinate/" stringByAppendingString:key]: point};
+    NSDictionary *userUpdates = @{[@"/NCUcoordinate/" stringByAppendingString:key]: point};
 
     [ref updateChildValues:userUpdates withCompletionBlock:^(NSError *error, FIRDatabaseReference  *ref){
         if (!error) {
@@ -40,8 +50,17 @@
         }
     }];
     
+}
+
+//暫存備用，設定Firebase欄位用
+- (IBAction)setNCUButton:(UIButton *)sender {
+    SetFirebaseCoordinate * sfbc = [SetFirebaseCoordinate new];  ;
+    
+    [sfbc setNCUFirebaseCoordinate];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

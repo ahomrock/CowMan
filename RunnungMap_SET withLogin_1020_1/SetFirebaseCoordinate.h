@@ -14,7 +14,7 @@
     NSString * latitude;
     NSString * pointCount ;
 }
--(void)SetFirebaseCoordinate;
+- (void)setNCUFirebaseCoordinate;
 
 
 @end
