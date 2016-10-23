@@ -81,7 +81,7 @@
             _distanceLabel.textColor = [UIColor redColor] ;
         else
             _distanceLabel.textColor = [UIColor whiteColor] ;
-        _distanceLabel.text = [NSString stringWithFormat:@"Distance: %f m",distance] ;
+        _distanceLabel.text = [NSString stringWithFormat:@"%.2f m",distance] ;
     } else {
         _distanceLabel.textColor = [UIColor yellowColor] ;
         _distanceLabel.text = @"Searching.....";

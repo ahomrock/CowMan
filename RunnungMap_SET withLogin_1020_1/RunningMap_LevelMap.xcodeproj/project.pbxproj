@@ -36,6 +36,13 @@
 		03A39A3F1DA9F67200D579CA /* RunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A39A3E1DA9F67200D579CA /* RunningViewController.m */; };
 		03A39A471DA9FA6500D579CA /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A39A451DA9FA6500D579CA /* Running.storyboard */; };
 		03B5E1E41DAE2528008DBD8D /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */; };
+		03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8231DBB0C3500449BCA /* LevelMapsManager.h */; };
+		03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8241DBB0C3500449BCA /* LevelMapsManager.m */; };
+		03CE87FE1DBBBE2B007A6640 /* LevelMapPoint.h in Sources */ = {isa = PBXBuildFile; fileRef = 03F126EF1D97C8EF00531F90 /* LevelMapPoint.h */; };
+		03CE87FF1DBBBE2B007A6640 /* LevelMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F01D97C8EF00531F90 /* LevelMapPoint.m */; };
+		03CE88001DBBBE2B007A6640 /* RankingPoint.h in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F11D97C8EF00531F90 /* RankingPoint.h */; };
+		03CE88011DBBBE2B007A6640 /* RankingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F126F21D97C8EF00531F90 /* RankingPoint.m */; };
+		03CE88031DBBCF34007A6640 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030059621DAC7592009FFC21 /* MapKit.framework */; };
 		03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */; };
 		03D422FF1DB3356F0068BFA2 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */; };
 		03D423041DB33DA60068BFA2 /* HistoryDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D423031DB33DA60068BFA2 /* HistoryDataManager.m */; };
@@ -105,8 +112,6 @@
 		03064AED1DB11A67006F1D6A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		03064AF41DB11F3C006F1D6A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		03064AF51DB11F3C006F1D6A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		030A77871DAF991100400AB8 /* RunningMap_LevelMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_LevelMap.entitlements; sourceTree = "<group>"; };
-		030A77881DAF993000400AB8 /* RunningMap_Gaming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_Gaming.entitlements; sourceTree = "<group>"; };
 		0330D8101DB9E0FB00449BCA /* CLLocation+CoordinateToImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+CoordinateToImage.h"; sourceTree = "<group>"; };
 		0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+CoordinateToImage.m"; sourceTree = "<group>"; };
 		0330D81C1DBB058100449BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RunningMap_LevelMap/Base.lproj/SelectMap.storyboard; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 		03A39A461DA9FA6500D579CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Running.storyboard; sourceTree = "<group>"; };
 		03B5E1E21DAE2528008DBD8D /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		03CE88061DBBD746007A6640 /* RunningMap_LevelMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_LevelMap.entitlements; sourceTree = "<group>"; };
+		03CE88071DBBD75A007A6640 /* RunningMap_Gaming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_Gaming.entitlements; sourceTree = "<group>"; };
 		03D422F91DB281AC0068BFA2 /* MapRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRecordViewController.h; sourceTree = "<group>"; };
 		03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRecordViewController.m; sourceTree = "<group>"; };
 		03D422FD1DB3356F0068BFA2 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -221,6 +228,7 @@
 			files = (
 				038F56FD1DAFB0CC00009E27 /* CoreLocation.framework in Frameworks */,
 				03FD70D01DABB593000497D5 /* NotificationCenter.framework in Frameworks */,
+				03CE88031DBBCF34007A6640 /* MapKit.framework in Frameworks */,
 				C33FA32DFFECC72DF52A9F24 /* libPods-RunningMap_Gaming.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +435,7 @@
 		03F126D11D97C1A500531F90 /* RunningMap_LevelMap */ = {
 			isa = PBXGroup;
 			children = (
-				030A77871DAF991100400AB8 /* RunningMap_LevelMap.entitlements */,
+				03CE88061DBBD746007A6640 /* RunningMap_LevelMap.entitlements */,
 				036443411DAF3D2C00610CDE /* CountDownViewController.h */,
 				036443421DAF3D2C00610CDE /* CountDownViewController.m */,
 				037DA8BA1DACCE7500381E7F /* AH_PerformAnimationManager.h */,
@@ -514,8 +522,8 @@
 			children = (
 				03F126D51D97C1A500531F90 /* AppDelegate.h */,
 				03F126D61D97C1A500531F90 /* AppDelegate.m */,
-				03F2F7851DB076B800F509C8 /* NSUserDefaults+Extension.h */,
 				03F2F7861DB076B800F509C8 /* NSUserDefaults+Extension.m */,
+				03F2F7851DB076B800F509C8 /* NSUserDefaults+Extension.h */,
 				039168131DB5E9B700592593 /* SeverConnect */,
 			);
 			name = GROUP_DATA;
@@ -524,7 +532,7 @@
 		03FD70D11DABB593000497D5 /* RunningMap_Gaming */ = {
 			isa = PBXGroup;
 			children = (
-				030A77881DAF993000400AB8 /* RunningMap_Gaming.entitlements */,
+				03CE88071DBBD75A007A6640 /* RunningMap_Gaming.entitlements */,
 				03FD70D21DABB593000497D5 /* TodayViewController.h */,
 				03FD70D31DABB593000497D5 /* TodayViewController.m */,
 				03FD70D51DABB593000497D5 /* MainInterface.storyboard */,
@@ -615,7 +623,7 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -625,13 +633,16 @@
 					03FD70CD1DABB593000497D5 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5Q668XB8GW;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
 							};
 						};
 					};
@@ -815,6 +826,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */,
+				03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */,
+				03CE87FE1DBBBE2B007A6640 /* LevelMapPoint.h in Sources */,
+				03CE87FF1DBBBE2B007A6640 /* LevelMapPoint.m in Sources */,
+				03CE88001DBBBE2B007A6640 /* RankingPoint.h in Sources */,
+				03CE88011DBBBE2B007A6640 /* RankingPoint.m in Sources */,
 				03FD70D41DABB593000497D5 /* TodayViewController.m in Sources */,
 				03F2F7881DB076B800F509C8 /* NSUserDefaults+Extension.m in Sources */,
 				038F571D1DAFBC2B00009E27 /* AH_LocationManager.m in Sources */,
@@ -1024,7 +1041,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1034,8 +1051,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3c08ad78-51a0-4391-8f71-54584c563157";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1046,7 +1063,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1056,8 +1073,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3c08ad78-51a0-4391-8f71-54584c563157";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

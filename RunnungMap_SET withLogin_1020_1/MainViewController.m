@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "NSUserDefaults+Extension.h"
+
 
 @interface MainViewController ()
 
@@ -18,8 +20,18 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    [self defaultSetting_GROUP] ;
 }
 
+- (void)defaultSetting_GROUP {
+
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
+
+    [sharedDefaults setInteger:GAME_STATE_NOT_IN_GAME  forKey:GROUP_GAME_STATE_INTEGER];
+
+    [sharedDefaults synchronize];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
