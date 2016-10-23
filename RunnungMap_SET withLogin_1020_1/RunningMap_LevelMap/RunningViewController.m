@@ -102,6 +102,12 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     lmManager = [LevelMapsManager sharedInstance] ;
 
     CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+
+
+    NSLog(@"zczxcas :%f",theTarget.coordinate.latitude) ;
+
+
+
     [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
 

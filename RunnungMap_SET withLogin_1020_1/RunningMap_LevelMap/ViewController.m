@@ -65,14 +65,14 @@
 //    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
 //        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
     //Internet Decetion
-    
-    scManager = [SeverConnectManager sharedInstance];
-    [scManager setMapsData];
-    
-
-    
     _net = [InternetDetection new];
     [_net internet];
+
+
+    scManager = [SeverConnectManager sharedInstance];
+
+    
+
     
     
 //    

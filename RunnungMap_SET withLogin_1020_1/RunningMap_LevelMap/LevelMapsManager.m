@@ -27,11 +27,10 @@
     dispatch_once(&onceToken, ^{
         lmManager = [[LevelMapsManager alloc]init ] ;
         lmManager.levelMapPoints = [NSMutableArray new] ;
-
     });
     
     // for test
-//    [lmManager testDefaultSetting] ;
+ //   [lmManager testDefaultSetting] ;
     
     // for real
 //    [lmManager defaultSetting] ;

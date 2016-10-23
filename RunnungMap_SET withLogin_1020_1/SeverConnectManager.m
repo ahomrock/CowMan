@@ -31,7 +31,7 @@
     dispatch_once(&onceToken, ^{
         serverConnectManager = [[SeverConnectManager alloc]init];
         serverConnectManager.firbaseCoordinate = [NSArray new];
-        
+        [serverConnectManager setMapsData ];
         
     });
     
@@ -49,12 +49,11 @@
     
     [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *coordinate = snapshot.value;
-//        NSLog(@" query firebase = %@ ",  coordinate );
+        NSLog(@" query firebase = %@ ",  coordinate );
   
         _firbaseCoordinate = [coordinate allValues] ;
-        NSMutableArray *arrr = [self createLMPointWithDatas:_firbaseCoordinate];
-        
-        [[LevelMapsManager sharedInstance].levelMapPoints addObject: arrr];
+
+        [LevelMapsManager sharedInstance].levelMapPoints =  [self createLMPointWithDatas:_firbaseCoordinate];
         
         NSLog(@" query firebase = %@ ",  _firbaseCoordinate );
  
@@ -73,27 +72,25 @@
     NSMutableArray *resoultArray = [NSMutableArray new] ;
     
     LevelMapPoint *point = [LevelMapPoint new] ;
-    _firseTitle = [_firbaseCoordinate[0] objectForKey:@"title"];
-    _firseSubTitle = [_firbaseCoordinate[0] objectForKey:@"subTitle"];
-    _firseMapDescription = [_firbaseCoordinate[0] objectForKey:@"subTitle"];
-    
-    point.title = _firseTitle ;
-    point.subTitle = _firseSubTitle;
-    point.mapDescription = _firseMapDescription;
+    point.title = [_firbaseCoordinate[0] objectForKey:@"title"];
+    point.subTitle = [_firbaseCoordinate[0] objectForKey:@"subTitle"];
+    point.mapDescription = [_firbaseCoordinate[0] objectForKey:@"mapDescription"];
+
     point.image = [UIImage imageNamed:@"gameMap_01.jpg"] ;
+    point.targetLocate = [NSMutableArray new] ;
+    double tempLat = 0;
+    double tempLon = 0 ;
+    for (int i =0; i<_firbaseCoordinate.count; i++) {
+
+        tempLat = [[_firbaseCoordinate[i] objectForKey:@"latitude"] doubleValue] ;
+        tempLon = [[_firbaseCoordinate[i] objectForKey:@"longitude"] doubleValue];
+        _getPointCount = [_firbaseCoordinate[i] objectForKey:@"pointCount"];
     
-            for (int i =0; i<_firbaseCoordinate.count; i++) {
     
-                _getFirebaseLatitude = [_firbaseCoordinate[i] objectForKey:@"latitude"];
-                _getFirebaseLongitude = [_firbaseCoordinate[i] objectForKey:@"longitude"];
-                _getPointCount = [_firbaseCoordinate[i] objectForKey:@"pointCount"];
-    
-    
-                CLLocation *tempLocate = [[CLLocation alloc]initWithLatitude: [_getFirebaseLatitude doubleValue] longitude: [_getFirebaseLongitude doubleValue] ];
-    
-                NSLog(@"latAaaaa: %@",tempLocate);
-                [point.targetLocate addObject:tempLocate] ;
-            }
+        CLLocation *tempLocate = [[CLLocation alloc]initWithLatitude: tempLat longitude: tempLon ];
+
+        [point.targetLocate addObject:tempLocate] ;
+    }
 
 //    CLLocation *location1 = [[CLLocation alloc]initWithLatitude:24.970027 longitude:121.193490];
 //    CLLocation *location2 = [[CLLocation alloc]initWithLatitude:24.967451 longitude:121.190496];
