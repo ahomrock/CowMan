@@ -7,16 +7,17 @@
 //
 
 #import "LevelMapsManager.h"
-#import <CoreLocation/CoreLocation.h>
 #import "GetFirebaseCoordinate.h"
 #import <Firebase.h>
-
+#import <CoreLocation/CoreLocation.h>
 @implementation LevelMapsManager
 {
-    CLLocationDegrees runLatDou ;
-    CLLocationDegrees runLonDou ;
-    
+    double runLatDou ;
+    double runLonDou ;
 }
+
+
+
 
 +(instancetype)sharedInstance {
     static LevelMapsManager *lmManager = nil ;
@@ -58,8 +59,8 @@
             _getFirebaseLongitude = [temp[i] objectForKey:@"longitude"];
       
             
-            runLatDou = [_getFirebaseLatitude doubleValue];
-            runLonDou = [_getFirebaseLongitude doubleValue];
+             runLatDou = [_getFirebaseLatitude doubleValue];
+             runLonDou = [_getFirebaseLongitude doubleValue];
             
             NSLog(@"Start*****************");
             NSLog(@"latAA: %f,lonBB: %f",runLatDou,runLonDou);
@@ -69,8 +70,10 @@
         }
 
     }];
+    CLLocationDegrees aaa = 24.967451;
+    CLLocationDegrees bbb = 121.190496;
 
-          
+        NSLog(@"latAaaaa: %f,lonBBbbbb: %f",runLatDou,runLonDou);
         CLLocation *location1 = [[CLLocation alloc]initWithLatitude:24.970027 longitude:121.193490];
 //      CLLocation *location2 = [[CLLocation alloc]initWithLatitude:24.967451 longitude:121.190496];
 //      CLLocation *location3 = [[CLLocation alloc]initWithLatitude:24.967909 longitude:121.193233];
@@ -84,7 +87,7 @@
             [point.targetLocate addObject:location4] ;
     
 
-
+ 
     NSLog(@"location1: %@",location1);
     NSLog(@"location4: %@",location4);
 
