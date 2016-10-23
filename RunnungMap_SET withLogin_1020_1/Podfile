@@ -3,9 +3,9 @@
 
 target 'RunningMap_Gaming' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+   use_frameworks!
 
-  # Pods for RunningMap_Gaming
+    # Pods for RunningMap_Gaming
 
  pod 'Google/SignIn'
   pod 'Firebase'
@@ -22,18 +22,20 @@ end
 
 target 'RunningMap_LevelMap' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  use_frameworks!
 
   # Pods for RunningMap_LevelMap
 
   pod 'Google/SignIn'
   pod 'Firebase'
   pod 'Firebase/Storage'
-  pod 'Firebase/AdMob'
+  pod 'Firebase/AdMob’
   pod 'Firebase/Auth'
   pod 'Firebase/Crash'
   pod 'Firebase/Database'
   pod 'Firebase/RemoteConfig'
   pod 'FMDB'
+
+  pod 'LTMorphingLabel'
 
 end

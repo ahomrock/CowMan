@@ -72,6 +72,7 @@
 		03FD70D41DABB593000497D5 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FD70D31DABB593000497D5 /* TodayViewController.m */; };
 		03FD70D71DABB593000497D5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FD70D51DABB593000497D5 /* MainInterface.storyboard */; };
 		03FD70DB1DABB593000497D5 /* RunningMap_Gaming.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03FD70CE1DABB593000497D5 /* RunningMap_Gaming.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26DBA15F35C4DE9EB72060D1 /* Pods_RunningMap_LevelMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5C90C22E5376975E21458F /* Pods_RunningMap_LevelMap.framework */; };
 		30339A121DB8E45600F6563B /* SetFirebaseCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30339A0F1DB8E45600F6563B /* SetFirebaseCoordinate.m */; };
 		30339A131DB8E45600F6563B /* GetFirebaseCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30339A111DB8E45600F6563B /* GetFirebaseCoordinate.m */; };
 		30BB4BE41DB12CB900ECDEA5 /* box1.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BB4BE21DB12CB900ECDEA5 /* box1.png */; };
@@ -79,8 +80,7 @@
 		30BB4BE91DB1D24100ECDEA5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BE81DB1D24100ECDEA5 /* Reachability.m */; };
 		30BB4BEF1DB1D47800ECDEA5 /* InternetDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BEE1DB1D47800ECDEA5 /* InternetDetection.m */; };
 		30BB4BF71DB1F6D800ECDEA5 /* ImageAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BF61DB1F6D800ECDEA5 /* ImageAnnotationView.m */; };
-		652BB5C678297F009B8E85CA /* libPods-RunningMap_LevelMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC31524B2CEDB2DEBD3AA9B /* libPods-RunningMap_LevelMap.a */; };
-		C33FA32DFFECC72DF52A9F24 /* libPods-RunningMap_Gaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE7347E812FA89AE26700F /* libPods-RunningMap_Gaming.a */; };
+		A8A53E2103754F841488788A /* Pods_RunningMap_Gaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC01D0A84FA23F7FA03DE54E /* Pods_RunningMap_Gaming.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,10 +209,10 @@
 		30BB4BEE1DB1D47800ECDEA5 /* InternetDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetDetection.m; sourceTree = "<group>"; };
 		30BB4BF51DB1F6D800ECDEA5 /* ImageAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotationView.h; sourceTree = "<group>"; };
 		30BB4BF61DB1F6D800ECDEA5 /* ImageAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnnotationView.m; sourceTree = "<group>"; };
-		4BC31524B2CEDB2DEBD3AA9B /* libPods-RunningMap_LevelMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningMap_LevelMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		581BC9600F1B310DF3B2A81B /* Pods-RunningMap_LevelMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningMap_LevelMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningMap_LevelMap/Pods-RunningMap_LevelMap.release.xcconfig"; sourceTree = "<group>"; };
 		AF85602F259FCBEF1D3B2AED /* Pods-RunningMap_Gaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningMap_Gaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningMap_Gaming/Pods-RunningMap_Gaming.debug.xcconfig"; sourceTree = "<group>"; };
-		B3EE7347E812FA89AE26700F /* libPods-RunningMap_Gaming.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunningMap_Gaming.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC01D0A84FA23F7FA03DE54E /* Pods_RunningMap_Gaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningMap_Gaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5C90C22E5376975E21458F /* Pods_RunningMap_LevelMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningMap_LevelMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +224,7 @@
 				03F2F82C1DB10CF900F509C8 /* FBSDKCoreKit.framework in Frameworks */,
 				03F2F82E1DB10CF900F509C8 /* FBSDKLoginKit.framework in Frameworks */,
 				03E49ABC1DAA185E00A2F55E /* CoreLocation.framework in Frameworks */,
-				652BB5C678297F009B8E85CA /* libPods-RunningMap_LevelMap.a in Frameworks */,
+				26DBA15F35C4DE9EB72060D1 /* Pods_RunningMap_LevelMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +235,7 @@
 				038F56FD1DAFB0CC00009E27 /* CoreLocation.framework in Frameworks */,
 				03FD70D01DABB593000497D5 /* NotificationCenter.framework in Frameworks */,
 				03CE88031DBBCF34007A6640 /* MapKit.framework in Frameworks */,
-				C33FA32DFFECC72DF52A9F24 /* libPods-RunningMap_Gaming.a in Frameworks */,
+				A8A53E2103754F841488788A /* Pods_RunningMap_Gaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,10 +410,10 @@
 				030059621DAC7592009FFC21 /* MapKit.framework */,
 				03E49ABB1DAA185E00A2F55E /* CoreLocation.framework */,
 				03FD70CF1DABB593000497D5 /* NotificationCenter.framework */,
-				B3EE7347E812FA89AE26700F /* libPods-RunningMap_Gaming.a */,
 				03F2F82A1DB10CF900F509C8 /* FBSDKCoreKit.framework */,
 				03F2F82B1DB10CF900F509C8 /* FBSDKLoginKit.framework */,
-				4BC31524B2CEDB2DEBD3AA9B /* libPods-RunningMap_LevelMap.a */,
+				CC01D0A84FA23F7FA03DE54E /* Pods_RunningMap_Gaming.framework */,
+				EB5C90C22E5376975E21458F /* Pods_RunningMap_LevelMap.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

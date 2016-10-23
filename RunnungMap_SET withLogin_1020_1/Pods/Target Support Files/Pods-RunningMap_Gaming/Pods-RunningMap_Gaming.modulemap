@@ -1,0 +1,6 @@
+framework module Pods_RunningMap_Gaming {
+  umbrella header "Pods-RunningMap_Gaming-umbrella.h"
+
+  export *
+  module * { export * }
+}
