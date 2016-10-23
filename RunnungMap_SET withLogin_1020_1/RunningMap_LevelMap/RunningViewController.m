@@ -243,10 +243,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 #pragma mark - Navigation Bar Method
 
 - (IBAction)getTheTargetBtnPressed:(UIBarButtonItem *)sender {
-    if(ah_locationPoint.pathsLocations.count > 0 ) {
-          [historyPoint.locationPaths addObject:ah_locationPoint.pathsLocations ] ;
-        [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
-    }
+
+    [historyPoint.locationPaths addObject:ah_locationPoint.pathsLocations ] ;
+    [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
+
 
     targetIndex++ ;
     [self passDataToWidgetWithTarget];
@@ -266,6 +266,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
         [alert addAction:ok] ;
         [self presentViewController:alert animated:true completion:nil] ;
     } else {
+
+        [self startOrResumeStopwatch:nil] ;
 
         historyPoint.totalTime = _stopWatchLabel.text ;
         historyPoint.mapTitle = mapTitle ;

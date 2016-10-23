@@ -54,15 +54,18 @@
 
                 [self centerMap] ;
 
-                MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init];
-                annotation.title = [NSString stringWithFormat:@"Target:%d",i];
-                annotation.subtitle = _historyPoint.locationPathTimeStamp[i];
-                annotation.coordinate = [[_historyPoint.locationPaths[i] lastObject] coordinate];
-                [self.mapView addAnnotation:annotation] ;
-
             }
             else
                 NSLog(@"FAIL FAIL!!!") ;
+            NSLog(@" -- - %d " ,i) ;
+
+            MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init];
+            annotation.title = [NSString stringWithFormat:@"Target:%d",i];
+            annotation.subtitle = _historyPoint.locationPathTimeStamp[i];
+            CLLocation *tempLocate = [_historyPoint.locationPaths[i] lastObject] ;
+            annotation.coordinate =  tempLocate.coordinate;
+
+            [self.mapView addAnnotation:annotation] ;
         }
     }
 

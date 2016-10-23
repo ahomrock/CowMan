@@ -41,11 +41,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _mainPhotoView = [[UIImageView alloc]init] ;
-    [_mainPhotoView setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y , self.view.frame.size.width, self.view.frame.size.height*0.6)] ;
+    CGPoint originalPoint = self.view.frame.origin ;
+    CGSize originalSize = self.view.frame.size ;
+
+    [_mainPhotoView setFrame:CGRectMake(originalPoint.x, originalPoint.y , originalSize.width, originalSize.height*0.6)] ;
     [_mainScrollView addSubview:_mainPhotoView];
+
     _mainPhotoView.contentMode = UIViewContentModeScaleAspectFit ;
-    [_mapTitleBtn setFrame:CGRectMake(self.view.frame.origin.x, _mainPhotoView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height *0.1)] ;
-    [_mainTableView setFrame:CGRectMake(self.view.frame.origin.x, _mainPhotoView.frame.size.height + _mapTitleBtn.frame.size.height, self.view.frame.size.width, self.view.frame.size.height *0.1)] ;
+
+    [_mapTitleBtn setFrame:CGRectMake(originalPoint.x, _mainPhotoView.frame.size.height, originalSize.width, originalSize.height *0.1)] ;
+
+    [_mainTableView setFrame:CGRectMake(originalPoint.x,
+                                        _mainPhotoView.frame.size.height + _mapTitleBtn.frame.size.height, originalSize.width, originalSize.height *0.1)] ;
 
     [self prepareForSelectPhotoScroll] ;
     selectTableView = [AH_SelectTableView startWithTableView:_mainTableView
