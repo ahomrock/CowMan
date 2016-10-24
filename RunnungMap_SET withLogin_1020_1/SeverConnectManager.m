@@ -93,8 +93,9 @@
     
 }
 -(void)uploadHistoryData {
-    
+
     FIRDatabaseReference *ref = [[FIRDatabase database]reference ];
+
 //    pointCount = @"1";
 //    latitude = @"24.96843";
 //    longitude = @"121.195927";
@@ -125,6 +126,7 @@
 }
 
 -(void)downloadHistoryData {
+
 }
 
 @end

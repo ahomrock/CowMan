@@ -23,6 +23,6 @@
 //@property (nonatomic,strong) NSString *firseMapDescription ;
 //
 -(void)setMapsData;
-
+-(void)uploadHistoryData ;
 + (instancetype)sharedInstance ;
 @end

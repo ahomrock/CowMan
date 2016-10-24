@@ -24,6 +24,9 @@
 
 #import "NSUserDefaults+Extension.h"
 #import "RunningMap_LevelMap-Swift.h"
+
+
+#import "SeverConnectManager.h"
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
     MapLocateSIGN_FORLOCATE_B,
@@ -331,10 +334,12 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 
             [self giveUpBtnPressed:nil] ;
+        
         }] ;
 
         [alert addAction:ok] ;
         [self presentViewController:alert animated:true completion:nil] ;
+
 
     }
 }
