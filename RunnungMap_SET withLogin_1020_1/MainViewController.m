@@ -56,7 +56,6 @@
 -(void) checkLoginIn {
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
         [self turnMainView];
-        
     } else {
         [self turnLoginView];
     }
