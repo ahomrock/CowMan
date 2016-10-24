@@ -12,6 +12,7 @@
 #import "SetFirebaseCoordinate.h"
 
 @interface LoginViewController () <UIApplicationDelegate,GIDSignInDelegate,FBSDKLoginButtonDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *loginSuccessTurnPageLabel;
 
 @end
 
@@ -110,6 +111,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
+
         [self turnView];
         
     }
@@ -129,14 +131,20 @@
 //FB User登入時顯示的結果
 -(void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
     
+     _loginSuccessTurnPageLabel.hidden = false ;
+    
+    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     if (error != nil) {
         NSLog(@"Login error !:%@",error);
+         _loginSuccessTurnPageLabel.hidden = true ;
     } else if (result.isCancelled  ){
+        _loginSuccessTurnPageLabel.hidden = true ;
         NSLog(@"User Canceled");
     } else {
         if ([result.grantedPermissions containsObject:@"email" ] == false) {
             NSLog(@"User don't provide email");
+            _loginSuccessTurnPageLabel.hidden = true ;
             return;
         }
         //取得fb使用者資料,並且放入到Firebase裡面
@@ -144,7 +152,7 @@
                                            parameters:@{@"fields": @"name,picture, email"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error) {
-                 
+                
                  NSLog(@"email is %@", [result objectForKey:@"email"]);
                  NSString * userEmail = [result objectForKey:@"email"];
                  NSLog(@"name is %@", [result objectForKey:@"name"]);
@@ -183,6 +191,7 @@
                  [defaults synchronize];
              }
              else{
+                 _loginSuccessTurnPageLabel.hidden = true ;
                  NSLog(@"%@", [error localizedDescription]);
              }
          }];
