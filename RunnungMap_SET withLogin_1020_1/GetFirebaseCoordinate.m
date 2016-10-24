@@ -31,7 +31,7 @@
         [ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             NSDictionary *post = snapshot.value;
             //讀出Firbase裡的coordinate類別欄資料庫
-            _getPointCount = [post objectForKey:@"pointCount"];
+            _getPointCount = [post objectForKey:@"Email"];
             _getFirebaseLatitude = [post objectForKey:@"latitude"];
             _getFirebaseLongitude = [post objectForKey:@"longitude"];
         

@@ -29,7 +29,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
 
-    [GIDSignIn sharedInstance].delegate = self;
+   // [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].shouldFetchBasicProfile = YES;
 
     [FBSDKLoginButton class];
@@ -96,6 +96,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         //部分資料存到NSUserDefaults 至另一類別使用
         NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
  //       [defaults setObject:imagestr  forKey:@"imagestr"];
+        [defaults setObject:email forKey:@"email"];
         [defaults setObject:fullName forKey:@"fullName"];
         [defaults synchronize];
         

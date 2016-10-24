@@ -24,6 +24,8 @@
 
 #import "NSUserDefaults+Extension.h"
 #import "RunningMap_LevelMap-Swift.h"
+
+#import "SeverConnectManager.h"
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
     MapLocateSIGN_FORLOCATE_B,
@@ -329,8 +331,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"FINISH" preferredStyle:UIAlertControllerStyleAlert] ;
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
+            
             [self giveUpBtnPressed:nil] ;
+            [[SeverConnectManager sharedInstance] uploadHistoryData];
+            
         }] ;
 
         [alert addAction:ok] ;

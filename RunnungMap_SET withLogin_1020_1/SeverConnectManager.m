@@ -94,6 +94,29 @@
 }
 -(void)uploadHistoryData {
     
+    NSUserDefaults * save = [NSUserDefaults standardUserDefaults];
+    NSString *fullName = [save objectForKey:@"fullName"];
+    NSString *email = [save objectForKey:@"email"];
+    NSString * saveTotalTime ;
+    NSString * map = @"NCU";
+    
+    NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+
+    
+    NSArray * show ;
+    show = [HistoryDataManager sharedInstance].historyPoints;
+    
+    
+    for (int i = 0 ; i < show.count ; i++ ) {
+        NSLog(@"TIME : %@",[show[show.count -1]  totalTime] ) ;
+        saveTotalTime = [show[show.count -1]  totalTime] ;
+        
+    }
+        NSLog(@"TIME : %@", saveTotalTime) ;
+    // SLog(@"scdvf: %@",show);
+    
     FIRDatabaseReference *ref = [[FIRDatabase database]reference ];
 //    pointCount = @"1";
 //    latitude = @"24.96843";
@@ -101,30 +124,32 @@
 //    _fireBtitle = @"NCU" ;
 //    _fireBsubTitle = @"Zombie in the Montain";
 //    _fireBmapDescription = @"long time ago, zombie .......";
-//    NSString *key = [[ref child:@"HistoryData"] childByAutoId].key;
-//    
-//    NSDictionary *point = @{@"pointCount": pointCount,
-//                            @"latitude": latitude,
-//                            @"longitude": longitude,
-//                            @"title": _fireBtitle,
-//                            @"subTitle":_fireBsubTitle,
-//                            @"mapDescription":_fireBmapDescription
-//                            };
+    NSString *key = [[ref child:@"HistoryData"] childByAutoId].key;
+////
+    NSDictionary *point = @{@"UserName": fullName,
+                            @"Email": email,
+                            @"TotalTime": saveTotalTime,
+                            @"Map": map,
+                            @"Date": dateString,
+                            };
+
+    NSDictionary *uploadHistory = @{[@"/HistoryData/" stringByAppendingString:key]: point};
+
+    [ref updateChildValues:uploadHistory withCompletionBlock:^(NSError *error, FIRDatabaseReference  *ref){
+        if (!error) {
+            NSLog(@" 更新成功");
+        } else {
+            NSLog(@" 更新失敗");
+        }
+    }];
     
-//    NSDictionary *userUpdates = @{[@"/HistoryData/" stringByAppendingString:key]: point};
-//    
-//    [ref updateChildValues:userUpdates withCompletionBlock:^(NSError *error, FIRDatabaseReference  *ref){
-//        if (!error) {
-//            NSLog(@" 更新成功");
-//        } else {
-//            NSLog(@" 更新失敗");
-//        }
-//    }];
-//    
     
 }
 
 -(void)downloadHistoryData {
+    
+    
+    
 }
 
 @end
