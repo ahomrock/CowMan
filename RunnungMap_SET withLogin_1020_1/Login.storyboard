@@ -25,6 +25,13 @@
                                     <constraint firstAttribute="height" constant="180" id="gxq-vU-a9R"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，請選擇帳號請登入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-Bh-YYj">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.5"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYV-Xi-xUw" customClass="FBSDKLoginButton">
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="0.5"/>
                                 <state key="normal" title="Button">
@@ -44,12 +51,11 @@
                                     <action selector="googleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96G-0e-Kih"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，請選擇帳號請登入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-Bh-YYj">
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="1"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBU-Ae-hyu">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.5"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,11 +65,15 @@
                             <constraint firstItem="Ymm-n6-can" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Axj-xS-NAk"/>
                             <constraint firstItem="SYV-Xi-xUw" firstAttribute="top" secondItem="Ymm-n6-can" secondAttribute="bottom" constant="20" id="Lpu-eW-hY3"/>
                             <constraint firstItem="uy3-Bh-YYj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WCA-Wh-z5S"/>
+                            <constraint firstItem="lBU-Ae-hyu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="efU-CO-v8a"/>
                             <constraint firstItem="iYE-oS-5kN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHj-lY-sxx"/>
                             <constraint firstItem="Ymm-n6-can" firstAttribute="top" secondItem="uy3-Bh-YYj" secondAttribute="bottom" constant="25.5" id="hk2-6v-udC"/>
                             <constraint firstItem="Ymm-n6-can" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l73-gH-Nbb"/>
                             <constraint firstItem="inQ-gz-qkU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="plZ-Qb-ZZ1"/>
+                            <constraint firstAttribute="trailing" secondItem="lBU-Ae-hyu" secondAttribute="trailing" id="q98-No-HCm"/>
                             <constraint firstItem="SYV-Xi-xUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s86-hE-k7N"/>
+                            <constraint firstItem="lBU-Ae-hyu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ucP-I5-X1f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lBU-Ae-hyu" secondAttribute="bottom" id="w6U-MP-cx3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eDH-0U-p1J"/>
@@ -71,11 +81,12 @@
                         <outlet property="fbSDKLoginButton" destination="SYV-Xi-xUw" id="nmU-E7-EhP"/>
                         <outlet property="googleBtn" destination="Ymm-n6-can" id="gVa-qR-2hD"/>
                         <outlet property="loginInLabel" destination="uy3-Bh-YYj" id="cKx-CM-86J"/>
+                        <outlet property="loginSuccessTurnPageLabel" destination="lBU-Ae-hyu" id="rQK-YT-JFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-10"/>
+            <point key="canvasLocation" x="992.79999999999995" y="-10.344827586206897"/>
         </scene>
     </scenes>
     <resources>

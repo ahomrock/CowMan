@@ -93,6 +93,35 @@
     
 }
 -(void)uploadHistoryData {
+    
+    FIRDatabaseReference *ref = [[FIRDatabase database]reference ];
+//    pointCount = @"1";
+//    latitude = @"24.96843";
+//    longitude = @"121.195927";
+//    _fireBtitle = @"NCU" ;
+//    _fireBsubTitle = @"Zombie in the Montain";
+//    _fireBmapDescription = @"long time ago, zombie .......";
+//    NSString *key = [[ref child:@"HistoryData"] childByAutoId].key;
+//    
+//    NSDictionary *point = @{@"pointCount": pointCount,
+//                            @"latitude": latitude,
+//                            @"longitude": longitude,
+//                            @"title": _fireBtitle,
+//                            @"subTitle":_fireBsubTitle,
+//                            @"mapDescription":_fireBmapDescription
+//                            };
+    
+//    NSDictionary *userUpdates = @{[@"/HistoryData/" stringByAppendingString:key]: point};
+//    
+//    [ref updateChildValues:userUpdates withCompletionBlock:^(NSError *error, FIRDatabaseReference  *ref){
+//        if (!error) {
+//            NSLog(@" 更新成功");
+//        } else {
+//            NSLog(@" 更新失敗");
+//        }
+//    }];
+//    
+    
 }
 
 -(void)downloadHistoryData {
