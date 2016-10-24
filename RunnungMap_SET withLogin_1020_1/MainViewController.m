@@ -37,8 +37,10 @@
     AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:50 ] ;
     loadingSquare.backgroundColor = [UIColor blackColor];
     loadingSquare.color = [UIColor whiteColor] ;
-    [ loadingSquare start:0] ;
-    [loadingSquare stop:10.0];
+    [loadingSquare start:0] ;
+    [loadingSquare stop:3.0];
+
+    [self performSelector:@selector(checkLoginIn) withObject:nil afterDelay:3.0] ;
 }
 
 - (void)viewDidLoad {
@@ -48,9 +50,6 @@
     [self defaultSetting_loadingView];
     // Do any additional setup after loading the view.
     [self defaultSetting_GROUP] ;
-   
-
-
 
 }
 //設定判斷是登入跳轉
@@ -61,11 +60,6 @@
     } else {
         [self turnLoginView];
     }
-}
--(void)viewDidAppear:(BOOL)animated {
-    
-        [self checkLoginIn];
-    
 }
 
 //頁面跳轉到主畫面
