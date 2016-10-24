@@ -25,13 +25,6 @@
                                     <constraint firstAttribute="height" constant="180" id="gxq-vU-a9R"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，請選擇帳號請登入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-Bh-YYj">
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="1"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.5"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYV-Xi-xUw" customClass="FBSDKLoginButton">
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="0.5"/>
                                 <state key="normal" title="Button">
@@ -41,24 +34,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="jhw-X1-vPU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-n6-can">
-                                <state key="normal" title="Google Sign In"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-n6-can">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Ccl-sh-7vH"/>
+                                    <constraint firstAttribute="height" constant="33" id="II4-J7-L14"/>
+                                </constraints>
+                                <state key="normal" image="googlebutton"/>
                                 <connections>
                                     <action selector="googleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96G-0e-Kih"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，請選擇帳號請登入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-Bh-YYj">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="1"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.5"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ymm-n6-can" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2zq-tD-PSp"/>
                             <constraint firstItem="inQ-gz-qkU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Mw-Nh-Bcs"/>
                             <constraint firstItem="iYE-oS-5kN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="90f-5u-aoo"/>
-                            <constraint firstItem="Ymm-n6-can" firstAttribute="top" secondItem="uy3-Bh-YYj" secondAttribute="bottom" constant="24.5" id="Drj-Xy-1Wq"/>
+                            <constraint firstItem="Ymm-n6-can" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Axj-xS-NAk"/>
+                            <constraint firstItem="SYV-Xi-xUw" firstAttribute="top" secondItem="Ymm-n6-can" secondAttribute="bottom" constant="20" id="Lpu-eW-hY3"/>
                             <constraint firstItem="uy3-Bh-YYj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WCA-Wh-z5S"/>
                             <constraint firstItem="iYE-oS-5kN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHj-lY-sxx"/>
+                            <constraint firstItem="Ymm-n6-can" firstAttribute="top" secondItem="uy3-Bh-YYj" secondAttribute="bottom" constant="25.5" id="hk2-6v-udC"/>
+                            <constraint firstItem="Ymm-n6-can" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l73-gH-Nbb"/>
                             <constraint firstItem="inQ-gz-qkU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="plZ-Qb-ZZ1"/>
                             <constraint firstItem="SYV-Xi-xUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s86-hE-k7N"/>
-                            <constraint firstItem="SYV-Xi-xUw" firstAttribute="top" secondItem="Ymm-n6-can" secondAttribute="bottom" constant="16.5" id="vwC-nH-wAx"/>
-                            <constraint firstItem="Ymm-n6-can" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zXP-TT-1Gn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eDH-0U-p1J"/>
@@ -75,6 +79,7 @@
     </scenes>
     <resources>
         <image name="box1.png" width="729" height="389"/>
+        <image name="googlebutton" width="300" height="79"/>
         <image name="sun1.png" width="1920" height="1200"/>
     </resources>
 </document>

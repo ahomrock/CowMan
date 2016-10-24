@@ -55,8 +55,8 @@
         
         [[GIDSignIn sharedInstance] signIn];
         
-        self.loginInLabel.text = [defaults objectForKey:@"fullName"];
-        [_googleBtn setTitle:@"Google登出"forState:UIControlStateNormal];
+//        self.loginInLabel.text = [defaults objectForKey:@"fullName"];
+//        [_googleBtn setTitle:@"Google登出"forState:UIControlStateNormal];
         
 //        ViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ncu"];
 //        [self showViewController:vc sender:nil];
@@ -70,8 +70,8 @@
         NSLog(@"Google user Log out!");
         
         
-        self.loginInLabel.text = @"您好，請選擇帳號請登入";
-        [_googleBtn setTitle:@"Google登入"forState:UIControlStateNormal];
+//        self.loginInLabel.text = @"您好，請選擇帳號請登入";
+//        [_googleBtn setTitle:@"Google登入"forState:UIControlStateNormal];
         
         NSString * imageStr = [defaults objectForKey:@"imagestr"];
         
