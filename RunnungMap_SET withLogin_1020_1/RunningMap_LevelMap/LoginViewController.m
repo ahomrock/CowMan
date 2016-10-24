@@ -31,12 +31,8 @@
         _fbSDKLoginButton.readPermissions = @[@"email",@"public_profile",@"user_friends"];
         
     }
-//    _fbSDKLoginButton = self;
-    //增加FB客制按鈕
-    //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    //    loginButton.center = self.view.center;
-    //    [self.view addSubview:loginButton];
-    
+
+    [self reloadInputViews];
     [self getFirebaseData]; //取得Firebase 裡面的資料
 }
 
@@ -50,40 +46,23 @@
 
 - (IBAction)googleSignIn:(UIButton *)sender {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    if (![GIDSignIn sharedInstance].hasAuthInKeychain) {
-        
-        //         未登入時
-        
-        [[GIDSignIn sharedInstance] signIn];
-        
-//        self.loginInLabel.text = [defaults objectForKey:@"fullName"];
-//        [_googleBtn setTitle:@"Google登出"forState:UIControlStateNormal];
-        
-//        ViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ncu"];
-//        [self showViewController:vc sender:nil];
-//        
-    } else {
-        
+    if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
         //         已登入時
         
-        [[GIDSignIn sharedInstance] signOut];
+        [self turnView];
+        //[[GIDSignIn sharedInstance] signOut];
         
+    } else {
+        [[GIDSignIn sharedInstance] signIn];
+        
+       //         未登入時
         NSLog(@"Google user Log out!");
-        
-        
-//        self.loginInLabel.text = @"您好，請選擇帳號請登入";
-//        [_googleBtn setTitle:@"Google登入"forState:UIControlStateNormal];
-        
-        NSString * imageStr = [defaults objectForKey:@"imagestr"];
-        
         
 //        UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:imageStr]]];
         
         //        self.fbUserFilePhoto.image = image;
-        
     }
-    
-    
+
 }
 
 
@@ -111,7 +90,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
-
+        _loginSuccessTurnPageLabel.hidden = true ;
         [self turnView];
         
     }
@@ -177,7 +156,7 @@
                  
                  //把FB登入者接到的資料存到save data,firebase ===============================
                  FIRDatabaseReference *ref = [[FIRDatabase database]reference ];
-                 //                 NSString *key = [[ref child:@"posts"] childByAutoId].key;
+   
                  NSString *key = [[ref child:@"posts"] childByAutoId].key;
                  NSDictionary *post = @{@"uid": userID,
                                         @"username": username,
@@ -230,7 +209,14 @@
 
 -(void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
 
-
+    if ( [GIDSignIn sharedInstance].hasAuthInKeychain) {
+        _loginSuccessTurnPageLabel.hidden = true ;
+        [self turnView];
+       
+        
+    } else {
+        _loginSuccessTurnPageLabel.hidden = false ;
+    }
 }
 
 
