@@ -32,6 +32,9 @@
         
     }
 
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.delegate = self;
+    
     [self reloadInputViews];
     [self getFirebaseData]; //取得Firebase 裡面的資料
 }
@@ -165,6 +168,16 @@
                  
                  NSDictionary *userUpdates = @{[@"/posts/" stringByAppendingString:key]: post};
                  [ref updateChildValues:userUpdates];
+                 
+                 FIRAuthCredential *credential = [FIRFacebookAuthProvider
+                                                  credentialWithAccessToken:[FBSDKAccessToken currentAccessToken]
+                                                  .tokenString];
+                 
+                 [[FIRAuth auth] signInWithCredential:credential
+                                           completion:^(FIRUser *user, NSError *error) {
+                                               // ...
+                                           }];
+                 
             
                  [defaults setObject:username forKey:@"fullName"];
                  [defaults synchronize];
