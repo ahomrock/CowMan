@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [GIDSignIn sharedInstance].uiDelegate = self;
+   // [GIDSignIn sharedInstance].uiDelegate = self;
     [[GIDSignIn sharedInstance] signInSilently];
     [GIDSignIn sharedInstance].shouldFetchBasicProfile = YES;
     
@@ -180,6 +180,7 @@
                  
             
                  [defaults setObject:username forKey:@"fullName"];
+                 [defaults setObject:userEmail forKey:@"email"];
                  [defaults synchronize];
              }
              else{

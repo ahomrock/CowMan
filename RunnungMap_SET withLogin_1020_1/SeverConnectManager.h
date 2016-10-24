@@ -17,12 +17,8 @@
 @property (strong, nonatomic) NSString * getFirebaseLatitude;
 @property (strong, nonatomic) NSString * getFirebaseLongitude;
 @property (strong, nonatomic) NSString * getPointCount;
-//
-//@property (nonatomic,strong) NSString *firseTitle ;
-//@property (nonatomic,strong) NSString *firseSubTitle ;
-//@property (nonatomic,strong) NSString *firseMapDescription ;
-//
+
 -(void)setMapsData;
--(void)uploadHistoryData ;
+-(void)uploadHistoryData;
 + (instancetype)sharedInstance ;
 @end
