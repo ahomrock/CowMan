@@ -55,6 +55,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 @property (weak, nonatomic) IBOutlet RunningScrollView *mainScrollView;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
+
 // StopWatchLabel
 @property (weak, nonatomic) IBOutlet UILabel *stopWatchLabel;
 @property (weak, nonatomic) IBOutlet UIButton *btnStartPauseStopWatch;
@@ -67,18 +69,59 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    UILabel *countDonwnLabel =
+
+
     ah_PAManager = [[AH_PerformAnimationManager alloc]init ] ;
     [self defautSetting_StopWatch];
     [self defaultSetting_view];
     [self defaultSetting_Location] ;
     historyPoint =[ [HistoryPoint alloc]init ] ;
+
+    [self defaultSetting_CountingDown];
 }
+
+- (void)defaultSetting_CountingDown {
+
+    mzCountingDownLabel = [[MZTimerLabel alloc] initWithLabel:_countDownLabel andTimerType:MZTimerLabelTypeTimer];
+    [mzCountingDownLabel setCountDownTime:3];
+    mzCountingDownLabel.resetTimerAfterFinish = YES;
+    mzCountingDownLabel.delegate = self;
+    mzCountingDownLabel.timeFormat = @"ss" ;
+
+    [self startCountDownWithDelegate:nil] ;
+}
+
+- (IBAction)startCountDownWithDelegate:(id)sender {
+
+    if(![mzCountingDownLabel counting]){
+        [mzCountingDownLabel start];
+    }
+}
+
+- (void)timerLabel:(MZTimerLabel*)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime{
+//
+//
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Gaming" message:@"GO" preferredStyle:UIAlertControllerStyleAlert] ;
+//    UIAlertAction *go = [UIAlertAction actionWithTitle:@"ok" style: UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//    }] ;
+//
+//    [alert addAction: go] ;
+//    [self presentViewController:alert animated:true completion:nil] ;
+//
+//
+
+    _countDownLabel.hidden = true ;
+    [self startOrResumeStopwatch:nil] ;
+}
+
+
+
+
 
 - (void)defautSetting_StopWatch{
     mzStopWatchLabel = [[MZTimerLabel alloc] initWithLabel:_stopWatchLabel andTimerType:MZTimerLabelTypeStopWatch];
     mzStopWatchLabel.timeFormat = @"HH:mm:ss SS";
-    [self startOrResumeStopwatch:nil] ;
 }
 
 - (void)defaultSetting_view{

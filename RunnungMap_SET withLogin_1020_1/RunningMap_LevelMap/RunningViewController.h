@@ -11,6 +11,7 @@
 
 @interface RunningViewController : ViewController <MZTimerLabelDelegate>{
     MZTimerLabel *mzStopWatchLabel ;
+    MZTimerLabel *mzCountingDownLabel;
 }
 
 @end

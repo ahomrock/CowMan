@@ -85,6 +85,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-gn-6DO">
+                                <frame key="frameInset" width="375" height="674"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="103"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -92,16 +99,21 @@
                             <constraint firstItem="IMk-KR-k5s" firstAttribute="centerX" secondItem="HeW-B1-820" secondAttribute="centerX" id="3oz-KK-lug"/>
                             <constraint firstAttribute="trailing" secondItem="T2v-0q-ksr" secondAttribute="trailing" id="7c6-bh-e5m"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="centerX" secondItem="HeW-B1-820" secondAttribute="centerX" id="CfL-Io-xis"/>
+                            <constraint firstItem="2Jk-gn-6DO" firstAttribute="top" secondItem="HeW-B1-820" secondAttribute="top" id="EbN-qA-m3y"/>
                             <constraint firstItem="S5l-Uq-egG" firstAttribute="height" secondItem="HeW-B1-820" secondAttribute="height" multiplier="0.07" id="Elt-sg-juV"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="top" secondItem="Qii-nr-OP9" secondAttribute="bottom" constant="8" id="Ib7-eZ-sc8"/>
                             <constraint firstAttribute="bottom" secondItem="S5l-Uq-egG" secondAttribute="bottom" id="Psu-Lt-btF"/>
+                            <constraint firstItem="2Jk-gn-6DO" firstAttribute="leading" secondItem="HeW-B1-820" secondAttribute="leading" id="Szn-CQ-Wsp"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="centerY" secondItem="HeW-B1-820" secondAttribute="centerY" id="bCB-t6-BN6"/>
                             <constraint firstAttribute="trailing" secondItem="S5l-Uq-egG" secondAttribute="trailing" id="fhV-FG-Etm"/>
+                            <constraint firstAttribute="trailing" secondItem="2Jk-gn-6DO" secondAttribute="trailing" id="hLQ-eI-S7s"/>
                             <constraint firstItem="mky-IB-Opm" firstAttribute="top" secondItem="IMk-KR-k5s" secondAttribute="bottom" constant="8" id="mWU-Xj-YAi"/>
                             <constraint firstItem="T2v-0q-ksr" firstAttribute="leading" secondItem="HeW-B1-820" secondAttribute="leading" id="yAM-9p-qbk"/>
+                            <constraint firstAttribute="bottom" secondItem="2Jk-gn-6DO" secondAttribute="bottom" id="yzZ-Y5-Mlb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countDownLabel" destination="2Jk-gn-6DO" id="NgC-pE-uW5"/>
                         <outlet property="labelHeading" destination="IMk-KR-k5s" id="rsH-Sb-nwW"/>
                         <outlet property="mainScrollView" destination="T2v-0q-ksr" id="Yp8-Ec-aDp"/>
                         <outlet property="mapTitleLabel" destination="dMW-rq-kdk" id="UTF-7l-h3D"/>
