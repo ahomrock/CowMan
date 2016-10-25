@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-   // [GIDSignIn sharedInstance].uiDelegate = self;
+    [GIDSignIn sharedInstance].uiDelegate = self;
     [[GIDSignIn sharedInstance] signInSilently];
     [GIDSignIn sharedInstance].shouldFetchBasicProfile = YES;
     
@@ -44,30 +44,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-///=======================================
-
 
 - (IBAction)googleSignIn:(UIButton *)sender {
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-
-    _loginSuccessTurnPageLabel.hidden = false ;
-
-    if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
-        //         已登入時
-        
-        [self turnView];
-        //[[GIDSignIn sharedInstance] signOut];
-        
-    } else {
-        [[GIDSignIn sharedInstance] signIn];
-        
-       //         未登入時
-        NSLog(@"Google user Log out!");
-        
-//        UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:imageStr]]];
-        
-        //        self.fbUserFilePhoto.image = image;
-    }
+    [[GIDSignIn sharedInstance] signIn];
+    _loginSuccessTurnPageLabel.hidden = true ;
 
 }
 
@@ -94,9 +74,9 @@
 }
 
 
-
 -(void)viewDidAppear:(BOOL)animated {
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
+        
         _loginSuccessTurnPageLabel.hidden = false ;
         [self turnView];
         
@@ -207,9 +187,7 @@
     
     [ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *post = snapshot.value;
-//        if (post != nil) {
-//            NSLog(@"%lu",post.count);
-//        }
+
         
         //列印和uid同層的資料
         for (NSString * uid in post) {
@@ -236,13 +214,6 @@
         _loginSuccessTurnPageLabel.hidden = true ;
     }
 }
-
-
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//}
-
-//========================================
 
 /*
 #pragma mark - Navigation

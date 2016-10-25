@@ -29,7 +29,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
 
-   // [GIDSignIn sharedInstance].uiDelegate = self;
+    [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].shouldFetchBasicProfile = YES;
 
     [FBSDKLoginButton class];
