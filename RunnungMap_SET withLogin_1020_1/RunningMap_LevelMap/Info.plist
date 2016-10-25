@@ -32,14 +32,6 @@
 				<string>com.googleusercontent.apps.740827721449-ts4np2c2rtabk2jc5k2fs4erdr1k1l9m</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>widget_RunningMapGaming</string>
-			</array>
-		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -55,7 +47,6 @@
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
-		<string>widget_RunningMapGaming</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

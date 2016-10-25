@@ -20,19 +20,6 @@
 @implementation MainViewController
 
 
-//
-//let loadingSquare = AASquaresLoading(target: self.view, size: 40)
-//// Customize background
-//loadingSquare.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
-//// Customize color
-//loadingSquare.color = UIColor.whiteColor()
-//// Start loading
-//loadingSquare.start()
-//....
-//// Stop loading
-//loadingSquare.stop()
-
-
 - (void)defaultSetting_loadingView {
     AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:50 ] ;
     loadingSquare.backgroundColor = [UIColor blackColor];
