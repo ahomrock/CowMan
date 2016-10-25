@@ -93,7 +93,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
-        _loginSuccessTurnPageLabel.hidden = true ;
+        _loginSuccessTurnPageLabel.hidden = false ;
         [self turnView];
         
     }

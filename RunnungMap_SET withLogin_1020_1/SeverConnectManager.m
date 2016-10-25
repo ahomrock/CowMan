@@ -118,14 +118,9 @@
     // SLog(@"scdvf: %@",show);
     
     FIRDatabaseReference *ref = [[FIRDatabase database]reference ];
-//    pointCount = @"1";
-//    latitude = @"24.96843";
-//    longitude = @"121.195927";
-//    _fireBtitle = @"NCU" ;
-//    _fireBsubTitle = @"Zombie in the Montain";
-//    _fireBmapDescription = @"long time ago, zombie .......";
+
     NSString *key = [[ref child:@"HistoryData"] childByAutoId].key;
-////
+
     NSDictionary *point = @{@"UserName": fullName,
                             @"Email": email,
                             @"TotalTime": saveTotalTime,
