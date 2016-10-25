@@ -54,10 +54,7 @@ typedef enum : NSUInteger {
           
         } else {
              //未登入時
-<<<<<<< HEAD
-                _otherLogout.hidden = true ;
-                _fbLogOutButton.hidden = false ;
-=======
+
             _app_login_state = LOGIN_STATE_FACEBOOK ;
             _otherLogout.hidden = true ;
             _fbLogOutButton.hidden = false ;
@@ -65,7 +62,7 @@ typedef enum : NSUInteger {
             [_fbLogOutButton setImage:nil forState:UIControlStateNormal] ;
             _fbLogOutButton.subviews[0].backgroundColor = [UIColor blackColor] ;
         
->>>>>>> 7f420c085ab6fc790aaf8eed8878dcdc4a16fc32
+
        }
 }
 - (IBAction)fbLogoutBtnPressed:(FBSDKLoginButton *)sender {
