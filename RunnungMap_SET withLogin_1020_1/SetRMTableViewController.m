@@ -12,7 +12,14 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "LoginViewController.h"
 
-@interface SetRMTableViewController ()
+typedef enum : NSUInteger {
+    LOGIN_STATE_GOOGLE,
+    LOGIN_STATE_FACEBOOK
+} LOGIN_STATE;
+
+@interface SetRMTableViewController () {
+    int _app_login_state ;
+}
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLogOutButton;
 @property (weak, nonatomic) IBOutlet UIButton *otherLogout;
 
@@ -41,13 +48,24 @@
 
        if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
              //已登入時
+                _app_login_state = LOGIN_STATE_GOOGLE ;
                 _fbLogOutButton.hidden = true ;
                 _otherLogout.hidden = false ;
           
         } else {
              //未登入時
+<<<<<<< HEAD
                 _otherLogout.hidden = true ;
                 _fbLogOutButton.hidden = false ;
+=======
+            _app_login_state = LOGIN_STATE_FACEBOOK ;
+            _otherLogout.hidden = true ;
+            _fbLogOutButton.hidden = false ;
+
+            [_fbLogOutButton setImage:nil forState:UIControlStateNormal] ;
+            _fbLogOutButton.subviews[0].backgroundColor = [UIColor blackColor] ;
+        
+>>>>>>> 7f420c085ab6fc790aaf8eed8878dcdc4a16fc32
        }
 }
 - (IBAction)fbLogoutBtnPressed:(FBSDKLoginButton *)sender {
@@ -115,6 +133,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // 取消選擇的灰底顏色
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//
+//    if (indexPath.row == 8 ) {
+//        if ( _app_login_state == LOGIN_STATE_FACEBOOK ) {
+//            [self fbLogoutBtnPressed:nil] ;
+//        }
+//    }
 
 }
 /*
