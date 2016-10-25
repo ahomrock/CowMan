@@ -7,11 +7,12 @@
 //
 
 #import "AH_MapView.h"
-
+#import "AH_PerformAnimationManager.h"
 
 @interface AH_MapView() {
     UIColor *line_strokeColor;
     HistoryPoint *hPoint ;
+    AH_PerformAnimationManager *ahpaManager ;
     
 }
 @end
@@ -35,6 +36,7 @@
 
 -(void) defautSetting {
     _historyPoint =[ [HistoryPoint alloc]init ] ;
+    ahpaManager = [AH_PerformAnimationManager new] ;
      //_mapView.userTrackingMode = MKUserTrackingModeFollowWithHeading ;
 
 
@@ -43,6 +45,7 @@
 
 - (void)prepareLoad {
     hPoint = _historyPoint ;
+
     NSMutableArray *annotations = [NSMutableArray new] ;
     if(hPoint.getTargetLocate.count > 0) {
 
@@ -60,9 +63,9 @@
             [annotations addObject:annotation] ;
 
         }
-        
+         [self.mapView addAnnotations:annotations] ;
     }
-    [self.mapView addAnnotations:annotations] ;
+
 }
 - (void)startLoadMap {
     [self prepareLoad] ;
@@ -171,10 +174,13 @@
 //    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
+
+    [ahpaManager performAnimationWithType:kCATransitionFade WithSubType:kCATransitionFade withView:self.mapView] ;
     [self.mapView addOverlay:polyline];
 
-
 }
+
+
 
 - (MKPolylineRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay{
 

@@ -21,7 +21,7 @@
 
 +(instancetype)sharedInstance ;
 
-
+- (void)testDefaultSetting ;
 
 // - (void)defaultSetting;
 

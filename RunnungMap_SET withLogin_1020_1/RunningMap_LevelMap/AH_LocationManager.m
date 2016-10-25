@@ -46,6 +46,7 @@
 -(BOOL)start {
     _allLocations = [NSMutableArray new];
     _pathsLocations = [NSMutableArray new] ;
+    userLocation = [[CLLocation alloc]initWithLatitude:0 longitude:0] ;
 
     if([CLLocationManager headingAvailable]==YES) {
         [_locationManager startUpdatingHeading];
@@ -55,13 +56,12 @@
     else
         return false ;
 
-
 }
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
 
-    if(locations.lastObject.horizontalAccuracy > 0 && locations.lastObject.horizontalAccuracy < HORIZONTAL_ACCURACY_MAX ) {
+    if( locations.lastObject.horizontalAccuracy > 0  && locations.lastObject.horizontalAccuracy < HORIZONTAL_ACCURACY_MAX ) {
         CLLocation *currentLocation = locations.lastObject;
 
         [_allLocations addObject:currentLocation ] ;
