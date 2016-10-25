@@ -26,6 +26,8 @@
 #import "RunningMap_LevelMap-Swift.h"
 
 #import "SeverConnectManager.h"
+
+#define MAP_INDEX 0
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
     MapLocateSIGN_FORLOCATE_B,
@@ -147,7 +149,11 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     // Create the First TargetPoint
     lmManager = [LevelMapsManager sharedInstance] ;
 
-    CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+    //if(lmManager.levelMapPoints[MAP_INDEX] == nil )
+     //   [lmManager testDefaultSetting] ;
+
+
+    CLLocation *theTarget = [lmManager.levelMapPoints[MAP_INDEX] targetLocate][targetIndex] ;
   //  [historyPoint.getTargetLocate addObject:theTarget] ;
 
     //NSLog(@"zczxcas :%f",theTarget.coordinate.latitude) ;
@@ -157,7 +163,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
 
-    NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[0] targetLocate] count]] ;
+    NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[MAP_INDEX] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
 
     [self passDataToWidgetWithTarget] ;
@@ -313,12 +319,12 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     targetIndex++ ;
     [self passDataToWidgetWithTarget];
 
-    NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[0] targetLocate] count]] ;
+    NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[MAP_INDEX] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
 
-    if (targetIndex < [lmManager.levelMapPoints[0] targetLocate].count) {
+    if (targetIndex < [lmManager.levelMapPoints[MAP_INDEX] targetLocate].count) {
         
-        CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+        CLLocation *theTarget = [lmManager.levelMapPoints[MAP_INDEX] targetLocate][targetIndex] ;
     
 
         [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;

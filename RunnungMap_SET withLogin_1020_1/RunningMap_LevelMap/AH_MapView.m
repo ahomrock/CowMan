@@ -173,10 +173,13 @@
 //    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
-   // [ahpaManager performAnimationWithType:kCATransitionFade WithSubType:kCATransitionFade withView:self.mapView] ;
+    [self performSelector:nil withObject:nil afterDelay:0.4] ;
+    [ahpaManager performAnimationWithType:kCATransitionFade WithSubType:kCATransitionFade withView:self.mapView] ;
     [self.mapView addOverlay:polyline];
 
 }
+
+
 
 - (MKPolylineRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay{
 
