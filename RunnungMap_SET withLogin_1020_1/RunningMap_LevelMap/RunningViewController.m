@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     AH_PerformAnimationManager *ah_PAManager ;
 
     HistoryPoint *historyPoint ;
-    NSString *mapTitle ;
+    
     LevelMapsManager *lmManager ;
 
     int targetIndex ;
@@ -340,7 +340,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
         [self startOrResumeStopwatch:nil] ;
 
         historyPoint.totalTime = _stopWatchLabel.text ;
-        historyPoint.mapTitle = mapTitle ;
+        historyPoint.mapTitle = _mapTitleLabel.text ;
         for(int i = 0 ; i < ah_locationPoint.allLocations.count ; i++ )
             [historyPoint.allLocations addObject:ah_locationPoint.allLocations[i] ];
 

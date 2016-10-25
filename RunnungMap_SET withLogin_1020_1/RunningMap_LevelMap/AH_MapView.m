@@ -45,6 +45,7 @@
 
 - (void)prepareLoad {
     hPoint = _historyPoint ;
+
     NSMutableArray *annotations = [NSMutableArray new] ;
     if(hPoint.getTargetLocate.count > 0) {
 
@@ -62,9 +63,9 @@
             [annotations addObject:annotation] ;
 
         }
-        
+         [self.mapView addAnnotations:annotations] ;
     }
-    [self.mapView addAnnotations:annotations] ;
+
 }
 - (void)startLoadMap {
     [self prepareLoad] ;
@@ -173,7 +174,7 @@
 //    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
-    [self performSelector:nil withObject:nil afterDelay:0.4] ;
+
     [ahpaManager performAnimationWithType:kCATransitionFade WithSubType:kCATransitionFade withView:self.mapView] ;
     [self.mapView addOverlay:polyline];
 
