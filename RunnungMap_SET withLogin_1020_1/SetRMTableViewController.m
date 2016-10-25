@@ -29,6 +29,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)logoutBtnPressed:(UIButton *)sender {
+    // present alert check logout or not
+    // call login out function
+    // if YES -> back to login page
+    // else  cancel
+
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -41,6 +48,12 @@
     return 9;
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 取消選擇的灰底顏色
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
