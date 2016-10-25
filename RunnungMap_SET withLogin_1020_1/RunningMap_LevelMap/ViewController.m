@@ -11,6 +11,7 @@
 #import "AH_PhotoDataManager.h"
 #import "AH_SelectTableView.h"
 #import "InternetDetection.h"
+#import "SeverConnectManager.h"
 
 #define MOVE_MAX_Y 466
 #define MOVE_MIN_Y 60
@@ -22,7 +23,7 @@
 
     AH_SelectTableView *selectTableView ;
     
-
+    SeverConnectManager * scManager;
 
 }
 
@@ -32,7 +33,6 @@
 @property (weak, nonatomic) IBOutlet AH_SelectPhotoScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UIButton *mapTitleBtn;
-
 @property (strong, nonatomic) InternetDetection *net;
 
 @end
@@ -61,12 +61,17 @@
                                                withImageView:_mainPhotoView] ;
 
     selectTableView.moveTabNavView = _mapTitleBtn ;
-
-
-
-
+//    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortraitUpsideDown];
+//    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+//        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    //Internet Decetion
     _net = [InternetDetection new];
     [_net internet];
+
+
+    scManager = [SeverConnectManager sharedInstance];
+
+    
 
     
     

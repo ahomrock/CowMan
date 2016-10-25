@@ -51,9 +51,7 @@
 
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName: GROUP_SUITE_NAME];
     game_state =  (int)[defaults integerForKey:GROUP_GAME_STATE_INTEGER] ;
-    //[self settingViewByGameState] ;
-
-    
+    [self settingViewByGameState] ;
     targetIndex = (int)[defaults integerForKey:GROUP_TARGETINDEX_INTEGER];
     _targetLabel.text = [lmManager targetPointLabelTextWithMap:0 withIndex:targetIndex] ;
 
@@ -90,9 +88,7 @@
     [ah_locationPoint start];
     // Do any additional setup after loading the view from its nib.
 
-
-  //
-    //self.view.hidden = true ;
+    self.view.hidden = true ;
 
 
 }
