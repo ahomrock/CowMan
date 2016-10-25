@@ -300,6 +300,9 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 - (IBAction)getTheTargetBtnPressed:(UIBarButtonItem *)sender {
 
+    if ( ah_locationPoint == nil || ah_locationPoint.pathsLocations == nil )
+        return ;
+
     [historyPoint.locationPaths addObject:ah_locationPoint.pathsLocations ] ;
     [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
 

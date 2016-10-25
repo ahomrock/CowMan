@@ -46,7 +46,8 @@
 -(BOOL)start {
     _allLocations = [NSMutableArray new];
     _pathsLocations = [NSMutableArray new] ;
-
+    userLocation = [[CLLocation alloc]init] ;
+    
     if([CLLocationManager headingAvailable]==YES) {
         [_locationManager startUpdatingHeading];
         [_locationManager startUpdatingLocation] ;

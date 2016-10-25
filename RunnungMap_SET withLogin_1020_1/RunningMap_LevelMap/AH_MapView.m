@@ -7,11 +7,12 @@
 //
 
 #import "AH_MapView.h"
-
+#import "AH_PerformAnimationManager.h"
 
 @interface AH_MapView() {
     UIColor *line_strokeColor;
     HistoryPoint *hPoint ;
+    AH_PerformAnimationManager *ahpaManager ;
     
 }
 @end
@@ -35,6 +36,7 @@
 
 -(void) defautSetting {
     _historyPoint =[ [HistoryPoint alloc]init ] ;
+    ahpaManager = [AH_PerformAnimationManager new] ;
      //_mapView.userTrackingMode = MKUserTrackingModeFollowWithHeading ;
 
 
@@ -171,8 +173,8 @@
 //    [_mapView setRegion:region animated:false];
 
     free(pointsCoordinate);
+   // [ahpaManager performAnimationWithType:kCATransitionFade WithSubType:kCATransitionFade withView:self.mapView] ;
     [self.mapView addOverlay:polyline];
-
 
 }
 

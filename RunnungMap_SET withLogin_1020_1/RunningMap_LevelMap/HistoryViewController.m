@@ -66,7 +66,9 @@
         [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"historyTableCell" ] ;
     //    cell.frame.size = CGSizeMake(self.tableView.frame.size.width, self.tableView.frame.size.height / 4) ;
 
-        cell.textLabel.text = @"=    HISTORY    =";
+
+//
+//        cell.textLabel.text = [ historyDataManager.historyPoints [indexPath.row-1] mapTitle];
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor blackColor];
     }
