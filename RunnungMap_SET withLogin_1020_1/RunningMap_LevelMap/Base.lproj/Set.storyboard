@@ -104,7 +104,7 @@
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS0-cA-5Db" customClass="FBSDKLoginButton">
                                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Facebook Logout"/>
                                                     <connections>
                                                         <action selector="fbLogoutBtnPressed:" destination="fH7-4s-glG" eventType="touchUpInside" id="7IY-gx-pAq"/>
                                                     </connections>
