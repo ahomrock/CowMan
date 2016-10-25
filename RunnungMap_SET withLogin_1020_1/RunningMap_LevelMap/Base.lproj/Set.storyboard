@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fH7-4s-glG">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fH7-4s-glG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -22,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNU-fA-tpG" id="2GK-up-eda">
-                                            <frame key="frameInset" width="375" height="216"/>
+                                            <frame key="frameInset" width="375" height="216.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="217" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Og-Px-gPY" id="HFc-qj-L3T">
-                                            <frame key="frameInset" width="375" height="50"/>
+                                            <frame key="frameInset" width="375" height="50.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="268" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fu-kB-ZcJ" id="puu-Md-H7x">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +48,7 @@
                                         <rect key="frame" x="0.0" y="312" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NMk-Mg-H8w" id="b32-bP-Z38">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -56,7 +56,7 @@
                                         <rect key="frame" x="0.0" y="356" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K93-V1-P9Y" id="WML-hc-7kY">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +65,7 @@
                                         <rect key="frame" x="0.0" y="400" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l4S-p9-Eqf" id="Fih-Y8-Ygu">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -73,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="444" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0D-QS-ZQF" id="Tp1-2z-XdC">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +82,7 @@
                                         <rect key="frame" x="0.0" y="488" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-W0-2E3" id="9TO-DO-z76">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="532" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="icO-1E-z3l" id="aeQ-xl-hbB">
-                                            <frame key="frameInset" width="375" height="83"/>
+                                            <frame key="frameInset" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8J-fX-PJW">
@@ -104,6 +104,10 @@
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS0-cA-5Db" customClass="FBSDKLoginButton">
                                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="83" id="6kE-35-AXc"/>
+                                                        <constraint firstAttribute="width" constant="485" id="eNP-jJ-Lz7"/>
+                                                    </constraints>
                                                     <state key="normal" title="Facebook Logout"/>
                                                     <connections>
                                                         <action selector="fbLogoutBtnPressed:" destination="fH7-4s-glG" eventType="touchUpInside" id="7IY-gx-pAq"/>
@@ -111,12 +115,13 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="centerX" secondItem="aeQ-xl-hbB" secondAttribute="centerX" id="Cow-Hf-Oqm"/>
                                                 <constraint firstItem="h8J-fX-PJW" firstAttribute="top" secondItem="aeQ-xl-hbB" secondAttribute="top" id="P8r-2a-YyW"/>
                                                 <constraint firstAttribute="trailing" secondItem="h8J-fX-PJW" secondAttribute="trailing" id="ZFe-cI-bVT"/>
-                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="centerY" secondItem="aeQ-xl-hbB" secondAttribute="centerY" id="aNG-vP-LyD"/>
                                                 <constraint firstItem="h8J-fX-PJW" firstAttribute="leading" secondItem="aeQ-xl-hbB" secondAttribute="leading" id="aPP-sZ-83C"/>
-                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="centerX" secondItem="aeQ-xl-hbB" secondAttribute="centerX" id="bMk-dH-eJP"/>
                                                 <constraint firstItem="h8J-fX-PJW" firstAttribute="leading" secondItem="aeQ-xl-hbB" secondAttribute="leading" id="dno-sS-3yg"/>
+                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="centerY" secondItem="aeQ-xl-hbB" secondAttribute="centerY" id="g11-ur-u09"/>
+                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="top" secondItem="aeQ-xl-hbB" secondAttribute="top" id="gnr-b5-RRc"/>
                                                 <constraint firstAttribute="bottom" secondItem="h8J-fX-PJW" secondAttribute="bottom" constant="8" id="i2y-Qm-5d1"/>
                                                 <constraint firstAttribute="trailing" secondItem="h8J-fX-PJW" secondAttribute="trailing" id="kEW-Qm-him"/>
                                                 <constraint firstItem="h8J-fX-PJW" firstAttribute="top" secondItem="aeQ-xl-hbB" secondAttribute="top" id="oYf-Ad-2dP"/>
