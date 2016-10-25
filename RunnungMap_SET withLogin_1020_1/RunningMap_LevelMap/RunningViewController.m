@@ -166,7 +166,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[MAP_INDEX] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
 
-    [self passDataToWidgetWithTarget] ;
+    [self passDataToWidgetWithTarget:theTarget] ;
 
 
     // Add the image to be used as the compass on the GUI
@@ -317,7 +317,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [historyPoint.getTargetLocate addObject:ah_locationPoint.getUserLocation] ;
 
     targetIndex++ ;
-    [self passDataToWidgetWithTarget];
+
 
     NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[MAP_INDEX] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
@@ -325,7 +325,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     if (targetIndex < [lmManager.levelMapPoints[MAP_INDEX] targetLocate].count) {
         
         CLLocation *theTarget = [lmManager.levelMapPoints[MAP_INDEX] targetLocate][targetIndex] ;
-    
+        [self passDataToWidgetWithTarget:theTarget];
 
         [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
         ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
@@ -378,14 +378,16 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 }
 
 
-- (void)passDataToWidgetWithTarget {
+- (void)passDataToWidgetWithTarget:(CLLocation*)targetLocate {
 
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
 
 
     [sharedDefaults setInteger:targetIndex  forKey:GROUP_TARGETINDEX_INTEGER];
     [sharedDefaults setInteger:GAME_STATE_GAMING  forKey:GROUP_GAME_STATE_INTEGER];
-
+    [sharedDefaults setInteger: [lmManager.levelMapPoints[MAP_INDEX] targetLocate].count forKey:GROUP_TOTALTARGET_INTEGER ] ;
+    [sharedDefaults setDouble:targetLocate.coordinate.latitude forKey:GROUP_TARGET_LAT_DOUBLE];
+    [sharedDefaults setDouble:targetLocate.coordinate.longitude forKey:GROUP_TARGET_LON_DOUBLE];
     [sharedDefaults synchronize];
 
 }

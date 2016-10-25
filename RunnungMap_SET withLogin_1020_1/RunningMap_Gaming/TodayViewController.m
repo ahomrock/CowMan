@@ -10,15 +10,14 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "AH_LocationManager.h"
 #import "NSUserDefaults+Extension.h"
-#import "LevelMapsManager.h"
+
 #define DegreesToRadians(degrees)(degrees * M_PI / 180.0)
 
 
 @interface TodayViewController () <NCWidgetProviding> {
     AH_LocationManager *ah_locationPoint; ;
-    LevelMapsManager *lmManager ;
-    int game_state ;
-    int targetIndex ;
+    NSInteger game_state ;
+    NSUserDefaults *defaults ;
     
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -49,25 +48,26 @@
 
 - (void)updateTarget {
 
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName: GROUP_SUITE_NAME];
+
     game_state =  (int)[defaults integerForKey:GROUP_GAME_STATE_INTEGER] ;
     [self settingViewByGameState] ;
-    targetIndex = (int)[defaults integerForKey:GROUP_TARGETINDEX_INTEGER];
-    _targetLabel.text = [lmManager targetPointLabelTextWithMap:0 withIndex:targetIndex] ;
+    int targetIndex = (int)[defaults integerForKey:GROUP_TARGETINDEX_INTEGER];
+    int totalTarget = (int)[defaults integerForKey:GROUP_TOTALTARGET_INTEGER] ;
 
-    CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
-    ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
-    ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
+    _targetLabel.text = [NSString stringWithFormat:@"%d / %d",targetIndex,totalTarget] ;
 
+    ah_locationPoint.latitudeOfTargetedPoint = [defaults doubleForKey:GROUP_TARGET_LAT_DOUBLE];
+    ah_locationPoint.longitudeOfTargetedPoint = [defaults doubleForKey:GROUP_TARGET_LON_DOUBLE];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    targetIndex = 0 ;
-    lmManager = [LevelMapsManager sharedInstance] ;
+    game_state = GAME_STATE_NOT_IN_GAME ;
+
+    defaults = [[NSUserDefaults alloc] initWithSuiteName: GROUP_SUITE_NAME];
+
     [self defaultSetting_Loacte] ;
     [self updateTarget];
-    
     self.preferredContentSize = CGSizeMake(320.0, 320.0) ;//for ios9 before
 
     // for ios10
@@ -77,7 +77,7 @@
 }
 - (void)defaultSetting_Loacte {
 
-    _targetLabel.text = [lmManager targetPointLabelTextWithMap:0 withIndex:targetIndex] ;
+  //  _targetLabel.text = [lmManager targetPointLabelTextWithMap:0 withIndex:targetIndex] ;
     ah_locationPoint = [AH_LocationManager create];
 
     // Add the image to be used as the compass on the GUI
@@ -87,19 +87,15 @@
 
     [ah_locationPoint start];
     // Do any additional setup after loading the view from its nib.
+    [self settingViewByGameState] ;
 
-    self.view.hidden = true ;
+
 
 
 }
 
 - (IBAction)backToGame:(UIButton *)sender {
-    NSURL *url = [NSURL URLWithString:@"widget_RunningMapGaming://resumeGame"];
 
-    [self.extensionContext openURL:url
-                 completionHandler:^(BOOL success) {
-                     NSLog(@"openURL Done.");
-                 }];
 
 
 }

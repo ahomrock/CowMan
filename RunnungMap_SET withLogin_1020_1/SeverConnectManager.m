@@ -24,8 +24,9 @@
     dispatch_once(&onceToken, ^{
         serverConnectManager = [[SeverConnectManager alloc]init];
         serverConnectManager.firbaseCoordinate = [NSArray new];
-        [serverConnectManager setMapsData ];
-        
+
+       // [serverConnectManager setMapsData ];
+        [[LevelMapsManager sharedInstance] testDefaultSetting];
     });
     
     return serverConnectManager;
