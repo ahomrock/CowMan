@@ -12,7 +12,7 @@
 #import "SetFirebaseCoordinate.h"
 
 @interface LoginViewController () <UIApplicationDelegate,GIDSignInDelegate,FBSDKLoginButtonDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *loginSuccessTurnPageLabel;
+@property (strong, nonatomic) IBOutlet UILabel *loginSuccessTurnPageLabel;
 
 @end
 
@@ -49,6 +49,9 @@
 
 - (IBAction)googleSignIn:(UIButton *)sender {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+
+    _loginSuccessTurnPageLabel.hidden = false ;
+
     if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
         //         已登入時
         
@@ -82,8 +85,9 @@
 
 //頁面跳轉
 -(void) turnView {
+
     UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"ncu"];
+    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"tab_bar_controller_begin"];
     
     [self presentViewController:tabVC animated:true completion:nil];
     
@@ -224,12 +228,12 @@
 -(void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
 
     if ( [GIDSignIn sharedInstance].hasAuthInKeychain) {
-        _loginSuccessTurnPageLabel.hidden = true ;
+        _loginSuccessTurnPageLabel.hidden = false ;
         [self turnView];
        
         
     } else {
-        _loginSuccessTurnPageLabel.hidden = false ;
+        _loginSuccessTurnPageLabel.hidden = true ;
     }
 }
 

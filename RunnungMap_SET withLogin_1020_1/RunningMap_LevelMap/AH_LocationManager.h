@@ -29,7 +29,7 @@
 - (BOOL)start ;
 - (void)clear ;
 
-
+-(CLLocation*)getUserLocation ;
 -(void)rotateArrowView:(UIView *)view degrees:(CGFloat)degrees;
 
 

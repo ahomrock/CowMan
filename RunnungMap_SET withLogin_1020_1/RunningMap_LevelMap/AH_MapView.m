@@ -11,6 +11,8 @@
 
 @interface AH_MapView() {
     UIColor *line_strokeColor;
+    HistoryPoint *hPoint ;
+    
 }
 @end
 
@@ -39,18 +41,43 @@
 
 }
 
+- (void)prepareLoad {
+    hPoint = _historyPoint ;
+    NSMutableArray *annotations = [NSMutableArray new] ;
+    if(hPoint.getTargetLocate.count > 0) {
+
+        for(int i = 0 ; i < hPoint.getTargetLocate.count ; i++ ) {
+            NSLog(@"cc : %d", i);
+            CLLocation *tempLocate = hPoint.getTargetLocate[i] ;
+            MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init ];
+
+            annotation.title = [NSString stringWithFormat:@"Target:%d",i];
+            annotation.subtitle = hPoint.locationPathTimeStamp[i];
+
+            annotation.coordinate = CLLocationCoordinate2DMake(tempLocate.coordinate.latitude, tempLocate.coordinate.longitude);
+            NSLog(@".. c %f,%f",annotation.coordinate.latitude,annotation.coordinate.longitude);
+
+            [annotations addObject:annotation] ;
+
+        }
+        
+    }
+    [self.mapView addAnnotations:annotations] ;
+}
 - (void)startLoadMap {
+    [self prepareLoad] ;
+    if(hPoint.locationPaths.count > 0) {
 
-    if(_historyPoint.locationPaths.count > 0) {
+        for(int i = 0 ; i < hPoint.locationPaths.count ; i++ ) {
 
-        for(int i = 0 ; i < _historyPoint.locationPaths.count ; i++ ) {
+
             if ( i % 2 == 0)
                 line_strokeColor = [UIColor redColor] ;
             else
                 line_strokeColor = [UIColor blueColor] ;
             
             if (_historyPoint) {
-                [self showLines:_historyPoint.locationPaths[i] withCenter:self.mapCenter] ;
+                [self showLines:hPoint.locationPaths[i] withCenter:self.mapCenter] ;
 
                 [self centerMap] ;
 
@@ -58,14 +85,6 @@
             else
                 NSLog(@"FAIL FAIL!!!") ;
             NSLog(@" -- - %d " ,i) ;
-
-            MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init];
-            annotation.title = [NSString stringWithFormat:@"Target:%d",i];
-            annotation.subtitle = _historyPoint.locationPathTimeStamp[i];
-            CLLocation *tempLocate = [_historyPoint.locationPaths[i] lastObject] ;
-            annotation.coordinate =  tempLocate.coordinate;
-
-            [self.mapView addAnnotation:annotation] ;
         }
     }
 
@@ -173,8 +192,8 @@
 
 
 -(void) centerMap {
-    if (_historyPoint.locationPaths) {
-        NSArray * routes =  (NSArray*)_historyPoint.allLocations ;
+    if (hPoint.locationPaths) {
+        NSArray * routes =  (NSArray*)hPoint.allLocations ;
         MKCoordinateRegion region;
 
         CLLocationDegrees maxLat = -90.0;
@@ -199,7 +218,7 @@
 
         region.span.latitudeDelta  = ((maxLat - minLat)<0.0)?100.0:(maxLat - minLat);
         region.span.longitudeDelta = ((maxLon - minLon)<0.0)?100.0:(maxLon - minLon);
-        [_mapView setRegion:region animated:YES];
+        [_mapView setRegion:region animated:false];
     }
 }
 

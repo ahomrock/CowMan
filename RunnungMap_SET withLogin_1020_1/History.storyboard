@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -98,47 +96,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YD0-r7-BLY">
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGV-AM-Bs8">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="340" id="KyK-TK-etZ"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="delegate" destination="yPU-Wo-vCd" id="juy-qe-T9x"/>
-                                        </connections>
-                                    </mapView>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bq9-x9-wUW">
-                                        <rect key="frame" x="126" y="338" width="91" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="refresh">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" eventType="touchUpInside" id="Xbj-ae-SyO"/>
-                                        </connections>
-                                    </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mNd-A2-CiD"/>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="mNd-A2-CiD" firstAttribute="width" secondItem="YD0-r7-BLY" secondAttribute="width" multiplier="0.8" id="1md-u5-MoY"/>
-                                    <constraint firstAttribute="bottom" secondItem="oGV-AM-Bs8" secondAttribute="bottom" constant="317" id="6Gu-aS-PuN"/>
-                                    <constraint firstItem="mNd-A2-CiD" firstAttribute="centerX" secondItem="YD0-r7-BLY" secondAttribute="centerX" id="AT5-ko-S8c"/>
-                                    <constraint firstItem="mNd-A2-CiD" firstAttribute="top" secondItem="oGV-AM-Bs8" secondAttribute="bottom" constant="64" id="OOm-Wp-6FY"/>
-                                    <constraint firstItem="oGV-AM-Bs8" firstAttribute="centerX" secondItem="YD0-r7-BLY" secondAttribute="centerX" id="UrM-EU-Awh"/>
-                                    <constraint firstItem="oGV-AM-Bs8" firstAttribute="top" secondItem="YD0-r7-BLY" secondAttribute="top" constant="-10" id="Vjb-bH-Pun"/>
-                                    <constraint firstItem="oGV-AM-Bs8" firstAttribute="leading" secondItem="YD0-r7-BLY" secondAttribute="leading" id="fdq-JI-VPJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="oGV-AM-Bs8" secondAttribute="trailing" id="rDf-kl-xIa"/>
-                                </constraints>
-                            </scrollView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGV-AM-Bs8">
+                                <connections>
+                                    <outlet property="delegate" destination="yPU-Wo-vCd" id="juy-qe-T9x"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IBM-ca-EAO" firstAttribute="top" secondItem="YD0-r7-BLY" secondAttribute="bottom" id="8eK-Sd-co7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YD0-r7-BLY" secondAttribute="trailing" id="PTz-UH-PA0"/>
-                            <constraint firstItem="YD0-r7-BLY" firstAttribute="leading" secondItem="Q9F-wx-UNi" secondAttribute="leadingMargin" id="clL-2f-dxX"/>
-                            <constraint firstItem="YD0-r7-BLY" firstAttribute="top" secondItem="MyK-aC-6fq" secondAttribute="bottom" id="hkS-FV-g10"/>
+                            <constraint firstItem="oGV-AM-Bs8" firstAttribute="top" secondItem="Q9F-wx-UNi" secondAttribute="top" constant="60" id="0pq-fG-p8E"/>
+                            <constraint firstAttribute="trailing" secondItem="oGV-AM-Bs8" secondAttribute="trailing" id="QVR-2Y-a1j"/>
+                            <constraint firstItem="oGV-AM-Bs8" firstAttribute="leading" secondItem="Q9F-wx-UNi" secondAttribute="leading" id="V8c-Q4-xXm"/>
+                            <constraint firstItem="IBM-ca-EAO" firstAttribute="top" secondItem="oGV-AM-Bs8" secondAttribute="bottom" id="aHL-oA-Aiv"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -149,6 +118,27 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6r1-0E-626" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="mNd-A2-CiD">
+                    <rect key="frame" x="0.0" y="0.0" width="278" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </slider>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="YD0-r7-BLY">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="559"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bq9-x9-wUW">
+                            <rect key="frame" x="126" y="457" width="91" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="refresh">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" eventType="touchUpInside" id="Xbj-ae-SyO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </scrollView>
             </objects>
             <point key="canvasLocation" x="3831.1999999999998" y="892.80359820089961"/>
         </scene>

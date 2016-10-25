@@ -17,6 +17,7 @@
     self.locationPaths = [NSMutableArray new];
     self.locationPathTimeStamp = [NSMutableArray new] ;
     self.allLocations = [NSMutableArray new] ;
+    self.getTargetLocate = [NSMutableArray new] ;
     return self ;
 }
 
