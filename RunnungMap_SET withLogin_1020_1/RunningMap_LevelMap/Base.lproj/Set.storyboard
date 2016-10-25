@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fH7-4s-glG">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fH7-4s-glG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -102,12 +102,24 @@
                                                         <action selector="logoutBtnPressed:" destination="fH7-4s-glG" eventType="touchUpInside" id="H3s-Hu-8Vx"/>
                                                     </connections>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS0-cA-5Db" customClass="FBSDKLoginButton">
+                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="Facebook Logout"/>
+                                                    <connections>
+                                                        <action selector="fbLogoutBtnPressed:" destination="fH7-4s-glG" eventType="touchUpInside" id="7IY-gx-pAq"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="h8J-fX-PJW" firstAttribute="top" secondItem="aeQ-xl-hbB" secondAttribute="top" id="P8r-2a-YyW"/>
+                                                <constraint firstAttribute="trailing" secondItem="h8J-fX-PJW" secondAttribute="trailing" id="ZFe-cI-bVT"/>
+                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="centerY" secondItem="aeQ-xl-hbB" secondAttribute="centerY" id="aNG-vP-LyD"/>
+                                                <constraint firstItem="h8J-fX-PJW" firstAttribute="leading" secondItem="aeQ-xl-hbB" secondAttribute="leading" id="aPP-sZ-83C"/>
+                                                <constraint firstItem="rS0-cA-5Db" firstAttribute="centerX" secondItem="aeQ-xl-hbB" secondAttribute="centerX" id="bMk-dH-eJP"/>
                                                 <constraint firstItem="h8J-fX-PJW" firstAttribute="leading" secondItem="aeQ-xl-hbB" secondAttribute="leading" id="dno-sS-3yg"/>
                                                 <constraint firstAttribute="bottom" secondItem="h8J-fX-PJW" secondAttribute="bottom" constant="8" id="i2y-Qm-5d1"/>
                                                 <constraint firstAttribute="trailing" secondItem="h8J-fX-PJW" secondAttribute="trailing" id="kEW-Qm-him"/>
+                                                <constraint firstItem="h8J-fX-PJW" firstAttribute="top" secondItem="aeQ-xl-hbB" secondAttribute="top" id="oYf-Ad-2dP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,6 +136,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="barTintColor" red="0.14940634720000001" green="0.1833347213" blue="0.23862892669999999" alpha="1" colorSpace="calibratedRGB"/>
                     </simulatedTabBarMetrics>
+                    <connections>
+                        <outlet property="fbLogOutButton" destination="rS0-cA-5Db" id="7TK-YL-Ehd"/>
+                        <outlet property="otherLogout" destination="h8J-fX-PJW" id="hMs-uK-hBT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfY-UV-p0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
