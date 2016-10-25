@@ -102,7 +102,8 @@
                                                         <action selector="logoutBtnPressed:" destination="fH7-4s-glG" eventType="touchUpInside" id="H3s-Hu-8Vx"/>
                                                     </connections>
                                                 </button>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS0-cA-5Db" customClass="FBSDKLoginButton">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS0-cA-5Db" customClass="FBSDKLoginButton">
+                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="fbLogoutBtnPressed:" destination="fH7-4s-glG" eventType="touchUpInside" id="7IY-gx-pAq"/>

@@ -39,17 +39,14 @@
 
 - (void) checkAccountNumber {
 
-//    LoginViewController *loginView = [LoginViewController new];
     
        if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
              //已登入時
-//           loginView.loginInLabel.hidden =true ;
                 _fbLogOutButton.hidden = true ;
                 _otherLogout.hidden = false ;
           
         } else {
              //未登入時
-//            loginView.loginInLabel.hidden =true ;
                 _otherLogout.hidden = true ;
             _fbLogOutButton.hidden = false ;
        }
@@ -76,7 +73,6 @@
                                                      handler:^(UIAlertAction *action) {
                                //執行登出方法
                                                          [[GIDSignIn sharedInstance] signOut];
-                                                         
                                                          [self turnView];
                                                          
                                                      }];
