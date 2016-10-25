@@ -13,25 +13,12 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
-
-
-//
-//let loadingSquare = AASquaresLoading(target: self.view, size: 40)
-//// Customize background
-//loadingSquare.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
-//// Customize color
-//loadingSquare.color = UIColor.whiteColor()
-//// Start loading
-//loadingSquare.start()
-//....
-//// Stop loading
-//loadingSquare.stop()
-
 
 - (void)defaultSetting_loadingView {
     AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:50 ] ;
@@ -45,8 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
+    //Internet Decetion
+    
     [self defaultSetting_loadingView];
     // Do any additional setup after loading the view.
     [self defaultSetting_GROUP] ;

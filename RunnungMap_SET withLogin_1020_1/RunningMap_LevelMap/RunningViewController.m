@@ -166,7 +166,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     NSString *targetLabelTitle = [NSString stringWithFormat:@"%d / %d",targetIndex,(int)[[lmManager.levelMapPoints[MAP_INDEX] targetLocate] count]] ;
     _targetPointLabel.text = targetLabelTitle ;
 
-    [self passDataToWidgetWithTarget] ;
+
 
 
     // Add the image to be used as the compass on the GUI
@@ -177,7 +177,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
     [ah_locationPoint start] ;
 
-
+ [self passDataToWidgetWithTarget] ;
 
 }
 

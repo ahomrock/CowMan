@@ -99,7 +99,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		03FD70DF1DABB593000497D5 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -1048,7 +1048,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a700e1e-01c5-4444-8fcc-086fa2d674db";
+				PROVISIONING_PROFILE = "730c0bde-c961-47be-9888-31f64d768f06";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = "RunningMap_LevelMap/RunningMap_LevelMap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1076,7 +1076,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a700e1e-01c5-4444-8fcc-086fa2d674db";
+				PROVISIONING_PROFILE = "730c0bde-c961-47be-9888-31f64d768f06";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = "RunningMap_LevelMap/RunningMap_LevelMap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1100,7 +1100,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3c08ad78-51a0-4391-8f71-54584c563157";
+				PROVISIONING_PROFILE = "8d627169-670a-4936-8eeb-eef58b9b8bde";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
@@ -1122,7 +1122,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3c08ad78-51a0-4391-8f71-54584c563157";
+				PROVISIONING_PROFILE = "8d627169-670a-4936-8eeb-eef58b9b8bde";
 				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
