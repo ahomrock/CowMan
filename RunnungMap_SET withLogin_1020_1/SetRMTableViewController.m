@@ -39,7 +39,6 @@
 
 - (void) checkAccountNumber {
 
-    
        if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
              //已登入時
                 _fbLogOutButton.hidden = true ;
@@ -48,7 +47,7 @@
         } else {
              //未登入時
                 _otherLogout.hidden = true ;
-            _fbLogOutButton.hidden = false ;
+                _fbLogOutButton.hidden = false ;
        }
 }
 - (IBAction)fbLogoutBtnPressed:(FBSDKLoginButton *)sender {
