@@ -34,22 +34,29 @@
 //    NSLog(@"aasasc: %@",[ historyPoint.locationPaths[0] coordinate].latitude ) ;
     ah_mapView = [AH_MapView createWithMKView:_mapView withVC:self] ;
 //    [HistoryDataManager sharedInstance].historyPoints ;
-    [self setMap] ;
+
 
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated] ;
-    [ah_mapView startLoadMap] ;
+    [self refreshBtnPressed:nil] ;
+
 }
 
 - (void)setMap {
     CLLocationCoordinate2D center = MAP01_CENTER ;
     ah_mapView.mapCenter = center ;
     ah_mapView.historyPoint = [HistoryDataManager sharedInstance].selectPoint;
+   // [ah_mapView prepareLoad] ;
     [ah_mapView startLoadMap] ;
+    //[self.mapView reloadInputViews];
 }
 - (IBAction)refreshBtnPressed:(UIButton *)sender {
+    [self setMap] ;
+//    [ah_mapView prepareLoad] ;
+    //[ah_mapView startLoadMap] ;
+
      [ah_mapView centerMap] ;
 }
 

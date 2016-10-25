@@ -92,12 +92,17 @@
 
 }
 
+-(CLLocation*)getUserLocation {
+    return userLocation ;
+}
 
 - (void) performNotificationForLocation{
     if (_allLocations.count > 0) {
         NSDictionary *locDic = @{@"locdic":_allLocations.lastObject} ;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NotiLocations" object:self userInfo:locDic] ;
-    }
+}
+
+
 
 // get the Notification Location
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLocations:) name:@"NotiLocations" object:nil] ;

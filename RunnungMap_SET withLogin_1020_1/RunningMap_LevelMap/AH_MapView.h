@@ -28,6 +28,7 @@
 
 - (void)showLines :(NSMutableArray*)inputCoordinate withCenter:(CLLocationCoordinate2D)center ;
 
+- (void)prepareLoad;
 
 
 -(void) centerMap;

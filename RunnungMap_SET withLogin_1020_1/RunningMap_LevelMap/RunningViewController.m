@@ -148,9 +148,9 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     lmManager = [LevelMapsManager sharedInstance] ;
 
     CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+  //  [historyPoint.getTargetLocate addObject:theTarget] ;
 
-
-    NSLog(@"zczxcas :%f",theTarget.coordinate.latitude) ;
+    //NSLog(@"zczxcas :%f",theTarget.coordinate.latitude) ;
 
 
 
@@ -170,6 +170,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
     ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
     [ah_locationPoint start] ;
+
+
 
 }
 
@@ -223,6 +225,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     }
 
     [mainStateView addSubview:targetView];
+
+
 }
 
 -(NSString*)selectedMap{
@@ -300,6 +304,9 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     [historyPoint.locationPathTimeStamp addObject:_stopWatchLabel.text] ;
 
 
+  //  CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+    [historyPoint.getTargetLocate addObject:ah_locationPoint.getUserLocation] ;
+
     targetIndex++ ;
     [self passDataToWidgetWithTarget];
 
@@ -309,6 +316,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     if (targetIndex < [lmManager.levelMapPoints[0] targetLocate].count) {
         
         CLLocation *theTarget = [lmManager.levelMapPoints[0] targetLocate][targetIndex] ;
+    
+
         [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
         ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
         ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
@@ -336,6 +345,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
             [[SeverConnectManager sharedInstance] uploadHistoryData];
             
         }] ;
+
 
         [alert addAction:ok] ;
         [self presentViewController:alert animated:true completion:nil] ;
