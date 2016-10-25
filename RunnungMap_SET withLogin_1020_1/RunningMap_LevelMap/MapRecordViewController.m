@@ -54,10 +54,7 @@
 }
 - (IBAction)refreshBtnPressed:(UIButton *)sender {
     [self setMap] ;
-//    [ah_mapView prepareLoad] ;
-    //[ah_mapView startLoadMap] ;
-
-     [ah_mapView centerMap] ;
+    [ah_mapView centerMap] ;
 }
 
 - (void)didReceiveMemoryWarning {
