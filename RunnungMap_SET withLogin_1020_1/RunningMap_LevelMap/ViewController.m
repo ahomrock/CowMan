@@ -13,6 +13,7 @@
 #import "InternetDetection.h"
 #import "SeverConnectManager.h"
 
+
 #define MOVE_MAX_Y 466
 #define MOVE_MIN_Y 60
 
@@ -24,7 +25,6 @@
     AH_SelectTableView *selectTableView ;
     
     SeverConnectManager * scManager;
-
 }
 
 
@@ -41,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+  
     // Do any additional setup after loading the view, typically from a nib.
     _mainPhotoView = [[UIImageView alloc]init] ;
     CGPoint originalPoint = self.view.frame.origin ;
@@ -78,6 +80,9 @@
 //    
 
 }
+
+
+
 
 - (IBAction)mapSelectBtnPressed:(UIButton *)sender {
     mapDataManager.selectImage =[mapDataManager getImageIndex:mapPhotoIndex] ;

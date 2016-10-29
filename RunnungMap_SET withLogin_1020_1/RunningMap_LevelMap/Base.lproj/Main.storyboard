@@ -61,7 +61,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.14940634720000001" green="0.1833347213" blue="0.23862892669999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="cfd-Bo-BgY" kind="relationship" relationship="viewControllers" id="spd-qP-90q"/>
@@ -97,11 +97,14 @@
         <scene sceneID="qcG-2X-796">
             <objects>
                 <viewControllerPlaceholder storyboardName="Set" id="egW-Jv-QjT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="38n-rg-eeR"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="options" id="38n-rg-eeR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8t-Nr-6iV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1070" y="1043"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="options" width="25" height="25"/>
+    </resources>
 </document>

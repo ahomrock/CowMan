@@ -46,7 +46,6 @@ typedef enum : NSUInteger {
 
 - (void) checkAccountNumber {
 
-    
        if ([GIDSignIn sharedInstance].hasAuthInKeychain) {
              //已登入時
                 _app_login_state = LOGIN_STATE_GOOGLE ;
@@ -55,6 +54,7 @@ typedef enum : NSUInteger {
           
         } else {
              //未登入時
+
             _app_login_state = LOGIN_STATE_FACEBOOK ;
             _otherLogout.hidden = true ;
             _fbLogOutButton.hidden = false ;
@@ -62,6 +62,7 @@ typedef enum : NSUInteger {
             [_fbLogOutButton setImage:nil forState:UIControlStateNormal] ;
             _fbLogOutButton.subviews[0].backgroundColor = [UIColor blackColor] ;
         
+
        }
 }
 - (IBAction)fbLogoutBtnPressed:(FBSDKLoginButton *)sender {

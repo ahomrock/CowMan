@@ -29,7 +29,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
-
+@property BOOL restrictRotation;
 
 @property (strong, nonatomic) NSString *jumpToParameter;
 

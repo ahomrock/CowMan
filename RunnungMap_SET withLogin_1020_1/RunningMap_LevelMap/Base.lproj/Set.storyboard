@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--設定-->
         <scene sceneID="rEE-jM-Ave">
             <objects>
                 <tableViewController id="fH7-4s-glG" customClass="SetRMTableViewController" sceneMemberID="viewController">
@@ -22,8 +22,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNU-fA-tpG" id="2GK-up-eda">
-                                            <frame key="frameInset" width="375" height="216.5"/>
+                                            <frame key="frameInset" width="375" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mountain-running1" highlightedImage="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="G5C-4U-EZ1"/>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="G5C-4U-EZ1" secondAttribute="bottom" id="9zX-Yf-F97"/>
+                                                <constraint firstItem="G5C-4U-EZ1" firstAttribute="leading" secondItem="2GK-up-eda" secondAttribute="leading" id="HGj-Fl-k4B"/>
+                                                <constraint firstItem="G5C-4U-EZ1" firstAttribute="top" secondItem="2GK-up-eda" secondAttribute="top" id="Kmh-3Q-omh"/>
+                                                <constraint firstAttribute="trailing" secondItem="G5C-4U-EZ1" secondAttribute="trailing" id="ruR-9b-SCP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
@@ -31,7 +40,7 @@
                                         <rect key="frame" x="0.0" y="217" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Og-Px-gPY" id="HFc-qj-L3T">
-                                            <frame key="frameInset" width="375" height="50.5"/>
+                                            <frame key="frameInset" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -39,7 +48,7 @@
                                         <rect key="frame" x="0.0" y="268" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fu-kB-ZcJ" id="puu-Md-H7x">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +57,7 @@
                                         <rect key="frame" x="0.0" y="312" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NMk-Mg-H8w" id="b32-bP-Z38">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -56,7 +65,7 @@
                                         <rect key="frame" x="0.0" y="356" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K93-V1-P9Y" id="WML-hc-7kY">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +74,7 @@
                                         <rect key="frame" x="0.0" y="400" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l4S-p9-Eqf" id="Fih-Y8-Ygu">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -73,7 +82,7 @@
                                         <rect key="frame" x="0.0" y="444" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0D-QS-ZQF" id="Tp1-2z-XdC">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +91,7 @@
                                         <rect key="frame" x="0.0" y="488" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-W0-2E3" id="9TO-DO-z76">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -90,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="532" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="icO-1E-z3l" id="aeQ-xl-hbB">
-                                            <frame key="frameInset" width="375" height="84"/>
+                                            <frame key="frameInset" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8J-fX-PJW">
@@ -137,7 +146,7 @@
                             <outlet property="delegate" destination="fH7-4s-glG" id="ZzG-3e-o7Q"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="noA-WU-9Va"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="options" selectedImage="options" id="noA-WU-9Va"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="barTintColor" red="0.14940634720000001" green="0.1833347213" blue="0.23862892669999999" alpha="1" colorSpace="calibratedRGB"/>
                     </simulatedTabBarMetrics>
@@ -151,4 +160,9 @@
             <point key="canvasLocation" x="1069.5999999999999" y="1042.128935532234"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass.png" width="395" height="395"/>
+        <image name="mountain-running1" width="256" height="256"/>
+        <image name="options" width="25" height="25"/>
+    </resources>
 </document>

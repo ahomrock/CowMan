@@ -208,17 +208,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     UIImage *locateImg = [UIImage imageNamed:@"compass.png"] ;
 
 
-//    UIImageView *mapLocateAView = [[UIImageView alloc]initWithFrame: CGRectMake(mapLocateA.x,mapLocateA.y, 50, 50)] ;
-//    mapLocateAView.image = locateImg ;
-//    mapLocateAView.hidden = true ;
-//    [mainStateView addSubview:mapLocateAView] ;
-//
-//    UIImageView *mapLocateBView = [[UIImageView alloc]initWithFrame: CGRectMake(mapLocateB.x    , mapLocateB.y, 50, 50)] ;
-//    mapLocateBView.image = locateImg ;
-//    mapLocateBView.hidden = true ;
-//    [mainStateView addSubview:mapLocateBView];
-//
-
+    // add targetView in the map
     UIImageView *targetView = [[UIImageView alloc]initWithFrame: CGRectMake(targetPoint.x,targetPoint.y, 50, 50)] ;
     targetView.image = locateImg ;
     targetView.tag = MapLocateSIGN_TARGET ;

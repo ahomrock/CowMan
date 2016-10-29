@@ -10,18 +10,21 @@
 #import <MapKit/MapKit.h>
 #import "AH_MapView.h"
 #import "HistoryDataManager.h"
+#import "RunInMapView.h"
+
+#import "UIViewController+OrientationState.h"
+
 
 
 #define MAP01_CENTER  CLLocationCoordinate2DMake(24.967879, 121.192148)
 
 @interface MapRecordViewController (){
     AH_MapView *ah_mapView ;
-   
-    
+
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (weak, nonatomic) IBOutlet RunInMapView *pathView;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @end
 
@@ -30,20 +33,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-//    NSLog(@"aasasc: %@",[ historyPoint.locationPaths[0] coordinate].latitude ) ;
     ah_mapView = [AH_MapView createWithMKView:_mapView withVC:self] ;
-//    [HistoryDataManager sharedInstance].historyPoints ;
+//    [self restrictRotation:false];
+
+}
+- (IBAction)stopBtnPressed:(UIBarButtonItem *)sender {
 
 
+    [self dismissViewControllerAnimated:true completion:nil] ;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated] ;
     [self refreshBtnPressed:nil] ;
 
-}
+    if([_mapView respondsToSelector:@selector(camera)]) {
+        MKMapCamera *newCamara = [[_mapView camera]copy] ;
+        [newCamara setHeading:90.0] ;
+        [_mapView setCamera:newCamara animated:NO] ;
+    }
 
+    [_mapView  setRotateEnabled:false ] ;
+    [_mapView setZoomEnabled:false] ;
+    [_mapView setScrollEnabled:false] ;
+    [_pathView defaultSetting] ;
+
+
+}
+- (IBAction)pinchGesture:(UIPinchGestureRecognizer *)sender {
+
+
+//    if (sender.scale > 0 )
+//        [_mapView setZoomEnabled:true] ;
+}
 - (void)setMap {
     CLLocationCoordinate2D center = MAP01_CENTER ;
     ah_mapView.mapCenter = center ;
@@ -52,9 +74,10 @@
     [ah_mapView startLoadMap] ;
     //[self.mapView reloadInputViews];
 }
+
 - (IBAction)refreshBtnPressed:(UIButton *)sender {
     [self setMap] ;
-    [ah_mapView centerMap] ;
+   // [ah_mapView centerMap] ;
 }
 
 - (void)didReceiveMemoryWarning {

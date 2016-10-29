@@ -34,10 +34,18 @@
 		038F571F1DAFBC2B00009E27 /* CLLocation+bearing.m in Sources */ = {isa = PBXBuildFile; fileRef = 038F571B1DAFBC2B00009E27 /* CLLocation+bearing.m */; };
 		039168901DB629EE00592593 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0391688F1DB629EE00592593 /* MainViewController.m */; };
 		0399B8421DB36DAD0048055E /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0399B8411DB36DAD0048055E /* History.storyboard */; };
+		039C2E241DC2CADC00D32FA1 /* mapCoordinate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 039C2E221DC2CADC00D32FA1 /* mapCoordinate.plist */; };
+		039C2E251DC2CADC00D32FA1 /* overlay_ncu.png in Resources */ = {isa = PBXBuildFile; fileRef = 039C2E231DC2CADC00D32FA1 /* overlay_ncu.png */; };
+		039C2E291DC2CC1700D32FA1 /* AH_HistoryMapSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C2E281DC2CC1700D32FA1 /* AH_HistoryMapSet.m */; };
+		039C2E2C1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C2E2B1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.m */; };
+		039C2E2F1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C2E2E1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.m */; };
+		039C2E381DC33C3400D32FA1 /* UIViewController+OrientationState.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C2E371DC33C3400D32FA1 /* UIViewController+OrientationState.m */; };
+		039C2E3B1DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C2E3A1DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.m */; };
 		03A24EBA1DAD066100610413 /* RunningScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A24EB91DAD066100610413 /* RunningScrollView.m */; };
 		03A39A3C1DA9F60D00D579CA /* PreStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A39A3B1DA9F60D00D579CA /* PreStartViewController.m */; };
 		03A39A3F1DA9F67200D579CA /* RunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A39A3E1DA9F67200D579CA /* RunningViewController.m */; };
 		03A39A471DA9FA6500D579CA /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A39A451DA9FA6500D579CA /* Running.storyboard */; };
+		03A8AE291DC1C669005BCE2E /* RunInMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A8AE281DC1C669005BCE2E /* RunInMapView.m */; };
 		03B5E1E41DAE2528008DBD8D /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */; };
 		03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8231DBB0C3500449BCA /* LevelMapsManager.h */; };
 		03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8241DBB0C3500449BCA /* LevelMapsManager.m */; };
@@ -145,6 +153,18 @@
 		0391688E1DB629EE00592593 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		0391688F1DB629EE00592593 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		0399B8411DB36DAD0048055E /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		039C2E221DC2CADC00D32FA1 /* mapCoordinate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mapCoordinate.plist; sourceTree = "<group>"; };
+		039C2E231DC2CADC00D32FA1 /* overlay_ncu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_ncu.png; sourceTree = "<group>"; };
+		039C2E271DC2CC1700D32FA1 /* AH_HistoryMapSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_HistoryMapSet.h; sourceTree = "<group>"; };
+		039C2E281DC2CC1700D32FA1 /* AH_HistoryMapSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_HistoryMapSet.m; sourceTree = "<group>"; };
+		039C2E2A1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_HistoryMapOverlay.h; sourceTree = "<group>"; };
+		039C2E2B1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_HistoryMapOverlay.m; sourceTree = "<group>"; };
+		039C2E2D1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_HitoryMapOverlayView.h; sourceTree = "<group>"; };
+		039C2E2E1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_HitoryMapOverlayView.m; sourceTree = "<group>"; };
+		039C2E361DC33C3400D32FA1 /* UIViewController+OrientationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OrientationState.h"; sourceTree = "<group>"; };
+		039C2E371DC33C3400D32FA1 /* UIViewController+OrientationState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OrientationState.m"; sourceTree = "<group>"; };
+		039C2E391DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		039C2E3A1DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		03A24EB81DAD066100610413 /* RunningScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RunningScrollView.h; path = ../RunningScrollView.h; sourceTree = "<group>"; };
 		03A24EB91DAD066100610413 /* RunningScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RunningScrollView.m; path = ../RunningScrollView.m; sourceTree = "<group>"; };
 		03A39A3A1DA9F60D00D579CA /* PreStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreStartViewController.h; sourceTree = "<group>"; };
@@ -152,6 +172,8 @@
 		03A39A3D1DA9F67200D579CA /* RunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningViewController.h; sourceTree = "<group>"; };
 		03A39A3E1DA9F67200D579CA /* RunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningViewController.m; sourceTree = "<group>"; };
 		03A39A461DA9FA6500D579CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Running.storyboard; sourceTree = "<group>"; };
+		03A8AE271DC1C669005BCE2E /* RunInMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunInMapView.h; sourceTree = "<group>"; };
+		03A8AE281DC1C669005BCE2E /* RunInMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunInMapView.m; sourceTree = "<group>"; };
 		03B5E1E21DAE2528008DBD8D /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		03CE88061DBBD746007A6640 /* RunningMap_LevelMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_LevelMap.entitlements; sourceTree = "<group>"; };
@@ -335,6 +357,19 @@
 			name = SeverConnect;
 			sourceTree = "<group>";
 		};
+		039C2E261DC2CB0D00D32FA1 /* HistoryMapModel */ = {
+			isa = PBXGroup;
+			children = (
+				039C2E271DC2CC1700D32FA1 /* AH_HistoryMapSet.h */,
+				039C2E281DC2CC1700D32FA1 /* AH_HistoryMapSet.m */,
+				039C2E2A1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.h */,
+				039C2E2B1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.m */,
+				039C2E2D1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.h */,
+				039C2E2E1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.m */,
+			);
+			name = HistoryMapModel;
+			sourceTree = "<group>";
+		};
 		03A39A381DA9F54800D579CA /* SelectMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,15 +415,24 @@
 		03D422FC1DB281B70068BFA2 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				039C2E361DC33C3400D32FA1 /* UIViewController+OrientationState.h */,
+				039C2E371DC33C3400D32FA1 /* UIViewController+OrientationState.m */,
 				039168121DB5E93F00592593 /* HistoryData */,
 				03D422FD1DB3356F0068BFA2 /* HistoryViewController.h */,
 				03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */,
 				03D422F91DB281AC0068BFA2 /* MapRecordViewController.h */,
 				03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */,
+				03A8AE271DC1C669005BCE2E /* RunInMapView.h */,
+				03A8AE281DC1C669005BCE2E /* RunInMapView.m */,
 				037DA8B41DAC78D700381E7F /* AH_MapView.h */,
 				037DA8B51DAC78D700381E7F /* AH_MapView.m */,
+				039C2E391DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.h */,
+				039C2E3A1DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.m */,
 				30BB4BF51DB1F6D800ECDEA5 /* ImageAnnotationView.h */,
 				30BB4BF61DB1F6D800ECDEA5 /* ImageAnnotationView.m */,
+				039C2E261DC2CB0D00D32FA1 /* HistoryMapModel */,
+				039C2E221DC2CADC00D32FA1 /* mapCoordinate.plist */,
+				039C2E231DC2CADC00D32FA1 /* overlay_ncu.png */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -708,6 +752,8 @@
 				0330D81D1DBB058100449BCA /* SelectMap.storyboard in Resources */,
 				036443391DAE792F00610CDE /* selectMap02.jpg in Resources */,
 				036443361DAE792F00610CDE /* gameMap_01.jpg in Resources */,
+				039C2E251DC2CADC00D32FA1 /* overlay_ncu.png in Resources */,
+				039C2E241DC2CADC00D32FA1 /* mapCoordinate.plist in Resources */,
 				30BB4BE41DB12CB900ECDEA5 /* box1.png in Resources */,
 				03F126E51D97C1A500531F90 /* LaunchScreen.storyboard in Resources */,
 				03E49ABE1DAA227500A2F55E /* compass.png in Resources */,
@@ -836,18 +882,24 @@
 				30BB4BE91DB1D24100ECDEA5 /* Reachability.m in Sources */,
 				03A39A3F1DA9F67200D579CA /* RunningViewController.m in Sources */,
 				03F126F31D97C8EF00531F90 /* LevelMapPoint.m in Sources */,
+				039C2E381DC33C3400D32FA1 /* UIViewController+OrientationState.m in Sources */,
 				30339A131DB8E45600F6563B /* GetFirebaseCoordinate.m in Sources */,
 				03D423071DB33E210068BFA2 /* HistoryPoint.m in Sources */,
+				039C2E2F1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.m in Sources */,
 				03F127121D97D1A300531F90 /* AH_PhotoDataManager.m in Sources */,
+				03A8AE291DC1C669005BCE2E /* RunInMapView.m in Sources */,
 				0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */,
 				03496AAF1DBEEA1000096E6F /* SetRMTableViewController.m in Sources */,
 				03CE880A1DBC6F2C007A6640 /* SeverConnectManager.m in Sources */,
 				03F126F41D97C8EF00531F90 /* RankingPoint.m in Sources */,
 				03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */,
 				30BB4BF71DB1F6D800ECDEA5 /* ImageAnnotationView.m in Sources */,
+				039C2E291DC2CC1700D32FA1 /* AH_HistoryMapSet.m in Sources */,
 				30339A121DB8E45600F6563B /* SetFirebaseCoordinate.m in Sources */,
 				03F127191D981BC500531F90 /* AH_SelectTableView.m in Sources */,
 				03F126D71D97C1A500531F90 /* AppDelegate.m in Sources */,
+				039C2E2C1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.m in Sources */,
+				039C2E3B1DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.m in Sources */,
 				03F126D41D97C1A500531F90 /* main.m in Sources */,
 				037DA8B61DAC78D700381E7F /* AH_MapView.m in Sources */,
 				03A24EBA1DAD066100610413 /* RunningScrollView.m in Sources */,

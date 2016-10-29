@@ -12,6 +12,7 @@
 #import <GoogleSignIn/GoogleSignIn.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "UIViewController+OrientationState.h"
 
 @interface MainViewController ()
 
@@ -32,7 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self restrictRotation:YES] ;
 
     [self defaultSetting_loadingView];
     // Do any additional setup after loading the view.

@@ -31,7 +31,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpQ-MU-J5z" id="LKn-sw-XBw">
-                                                    <frame key="frameInset" width="375" height="43"/>
+                                                    <frame key="frameInset" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,11 +165,11 @@
             </objects>
             <point key="canvasLocation" x="3760.8000000000002" y="123.68815592203899"/>
         </scene>
-        <!--Item-->
+        <!--關卡-->
         <scene sceneID="kNO-qb-oN0">
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-SelectMapBegin" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uqB-qC-ROE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yCM-rn-9gR"/>
+                    <tabBarItem key="tabBarItem" title="關卡" image="mountain-running1-1" selectedImage="mountain-running1-1" id="yCM-rn-9gR"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="barTintColor" red="0.14940634720000001" green="0.1833347213" blue="0.23862892669999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -197,4 +197,7 @@
             <point key="canvasLocation" x="4782.3999999999996" y="123.23838080959521"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mountain-running1-1" width="25" height="19"/>
+    </resources>
 </document>

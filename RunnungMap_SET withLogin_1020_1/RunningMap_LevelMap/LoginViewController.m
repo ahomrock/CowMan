@@ -75,6 +75,8 @@
 
 
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
         
         _loginSuccessTurnPageLabel.hidden = false ;

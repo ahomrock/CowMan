@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import <MapKit/MapKit.h>
 #import "HistoryPoint.h"
 
 
-@interface AH_MapView : NSObject<MKMapViewDelegate>
+@interface AH_MapView : MKMapView<MKMapViewDelegate,UIScrollViewDelegate>
 @property (strong) MKMapView *mapView;
 @property (strong) UIViewController *vc ;
 @property (nonatomic,strong) HistoryPoint *historyPoint ;

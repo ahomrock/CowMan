@@ -58,7 +58,7 @@
     if(indexPath.row == 0 ) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TopCell" ];
 
-        cell.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.5);
+        cell.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.1);
         cell.backgroundColor = [UIColor blackColor];
     }
     else {

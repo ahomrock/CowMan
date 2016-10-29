@@ -122,11 +122,11 @@
     CLLocationDirection direction = newHeading.magneticHeading;
     CGFloat radians = -direction / 180.0 * M_PI;
 
-   CGFloat angle = RadiansToDegrees(radians);
+    CGFloat angle = RadiansToDegrees(radians);
 
     double targetBear = [userLocation bearingToLocation:targetLocation] ;
 
-     [self rotateArrowView:_arrowImageView degrees:(angle + targetBear )] ;
+    [self rotateArrowView:_arrowImageView degrees:(angle + targetBear )] ;
 
 }
 
@@ -134,8 +134,7 @@
     _pathsLocations = [NSMutableArray new] ;
 }
 
--(void)rotateArrowView:(UIView *)view degrees:(CGFloat)degrees
-{
+-(void)rotateArrowView:(UIView *)view degrees:(CGFloat)degrees {
     CGAffineTransform transform = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
     view.transform = transform;
 }
