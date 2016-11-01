@@ -21,6 +21,9 @@
     AH_PerformAnimationManager *ahpaManager ;
     AH_HistoryMapOverlay *ah_overlay ;
 
+    int coorinate_index ;
+
+    NSMutableArray *inputCoordinate ;
 
 }
 
@@ -53,46 +56,7 @@
     line_Width = 0;
     _historyPoint =[ [HistoryPoint alloc]init ] ;
     ahpaManager = [AH_PerformAnimationManager new] ;
-     //_mapView.userTrackingMode = MKUserTrackingModeFollowWithHeading ;
 
-
-    CAShapeLayer  *ba =[CAShapeLayer layer];
-    ba.frame =  self.mapView.frame;
-
-
-    MKZoomScale zoom = 20 ;
-    [_mapView setContentScaleFactor:zoom] ;
-
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(60, 60, 300, 400) cornerRadius:5.0];
-//
-//
-//    // [path closePath];//第五条线通过调用closePath方法得到的
-//    UIImage *image = [UIImage imageNamed:@"gameMap_01.jpg"] ;
-//    UIScrollView *scrollView =[ [UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 1000, 1000)] ;
-//
-//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.mapView.frame ];
-//
-//    imageView.image = image ;
-//    imageView.contentMode = UIViewContentModeScaleAspectFill ;
-//    imageView.alpha = 0.5 ;
-//    imageView.backgroundColor = [UIColor blackColor] ;
-//
-//   // [scrollView addSubview:imageView] ;
-//    [self.mapView addSubview:imageView ] ;
-
-//    //根据坐标点连线
-//    [path stroke];
-    //[aPath fill];
-    //        [path appendPath:line] ;
-    ba.borderColor = [UIColor blackColor].CGColor;
-    ba.lineWidth = 5.f;
-    ba.path = path.CGPath;
-    ba.fillColor = [UIColor clearColor].CGColor;
-    ba.strokeColor = [UIColor whiteColor].CGColor;
-//_mapView.im
-
-
-   // [ _mapView.layer addSublayer:ba ] ;
 }
 
 - (void)prepareLoad {
@@ -132,11 +96,23 @@
                 line_strokeColor = [UIColor redColor] ;
             else
                 line_strokeColor = [UIColor blueColor] ;
-            
-            if (_historyPoint) {
-                [self showLines:hPoint.locationPaths[i] withCenter:self.mapCenter] ;
 
-             //   [self centerMap] ;
+            if (_historyPoint) {
+                inputCoordinate = hPoint.locationPaths[i] ;
+                [self createLine] ;
+
+
+                CLLocation *tempLocate = hPoint.getTargetLocate[i] ;
+                MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init ];
+
+                annotation.title = [NSString stringWithFormat:@"Target:%d",i];
+                annotation.subtitle = hPoint.locationPathTimeStamp[i];
+
+                annotation.coordinate = CLLocationCoordinate2DMake(tempLocate.coordinate.latitude, tempLocate.coordinate.longitude);
+                NSLog(@".. c %f,%f",annotation.coordinate.latitude,annotation.coordinate.longitude);
+                
+                [self.mapView addAnnotation:annotation] ;
+
 
             }
             else
@@ -145,9 +121,19 @@
         }
     }
 
+    coorinate_index = 0 ;
+
+//    inputCoordinate = hPoint.allLocations ;
+    [self createLine ] ;
+
+
+    [self getTotalMapVision] ;
+
+}
+
+-(void) getTotalMapVision {
+
     [self setRegionWithLat:ah_overlay.coordinate.latitude-0.002 withLon:(ah_overlay.coordinate.longitude)] ;
-
-
 
 }
 
@@ -183,19 +169,19 @@
         resultView.annotation = annotation;
     }
 
-
+//
     resultView.canShowCallout = YES;
+//
+//    UIButton *rightButton=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//
+//    [rightButton addTarget:self action:@selector(buttonPrssed:) forControlEvents:UIControlEventTouchUpInside];
 
-    UIButton *rightButton=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-
-    [rightButton addTarget:self action:@selector(buttonPrssed:) forControlEvents:UIControlEventTouchUpInside];
-
-    resultView.rightCalloutAccessoryView = rightButton;
+//    resultView.rightCalloutAccessoryView = rightButton;
 
 
-        resultView.animatesDrop = YES;
+    resultView.animatesDrop = YES;
 
-        resultView.pinTintColor= [UIColor redColor];
+    resultView.pinTintColor= [UIColor blueColor];
 
 
     return resultView;
@@ -208,38 +194,46 @@
    
 }
 
-
 #pragma mark - show Line Method
 - (void)showLines :(NSMutableArray*)inputCoordinate withCenter:(CLLocationCoordinate2D)center{
-    CLLocationCoordinate2D *pointsCoordinate = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * [inputCoordinate count]);
-    for (int i = 0; i < [inputCoordinate count]; i++ ) {
-        pointsCoordinate[i] = CLLocationCoordinate2DMake([[inputCoordinate objectAtIndex:i] coordinate].latitude, [[inputCoordinate objectAtIndex:i] coordinate].longitude);
-    }
-
-    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointsCoordinate count:[inputCoordinate count]];
-
-
-    free(pointsCoordinate);
-
-    [self.mapView addOverlay:polyline];
+//    CLLocationCoordinate2D *pointsCoordinate = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * [inputCoordinate count]);
+//    for (int i = 0; i < [inputCoordinate count]; i++ ) {
+//        pointsCoordinate[i] = CLLocationCoordinate2DMake([[inputCoordinate objectAtIndex:i] coordinate].latitude, [[inputCoordinate objectAtIndex:i] coordinate].longitude);
+//    }
+//
+//    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointsCoordinate count:[inputCoordinate count]];
+//
+//
+//    free(pointsCoordinate);
+//
+//    [self.mapView addOverlay:polyline];
 
 }
 
-//
-//
-//- (MKPolylineRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay{
-//
-//    // create a polylineView using polyline overlay object
-//    MKPolylineRenderer *polylineView = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
-//
-//    // Custom polylineView
-//    polylineView.strokeColor =  line_strokeColor;
-//    polylineView.lineWidth = 10.0;
-//    polylineView.alpha = 0.6;
-//
-//
-//    return polylineView;
-//}
+
+-(void)createLine{
+    NSLog(@"ASCACZXCV ,%lu" ,(unsigned long)inputCoordinate.count) ;
+    if(coorinate_index >= inputCoordinate.count -1)
+        return ;
+
+    CLLocationCoordinate2D *pointCoordinate = (CLLocationCoordinate2D *) malloc(sizeof(CLLocationCoordinate2D) *2) ;
+
+    pointCoordinate[0] = CLLocationCoordinate2DMake([[inputCoordinate objectAtIndex:coorinate_index] coordinate].latitude, [[inputCoordinate objectAtIndex:coorinate_index] coordinate].longitude);
+    pointCoordinate[1] = CLLocationCoordinate2DMake([[inputCoordinate objectAtIndex:coorinate_index+1] coordinate].latitude, [[inputCoordinate objectAtIndex:coorinate_index+1] coordinate].longitude);
+
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointCoordinate count:2];
+
+    
+    free(pointCoordinate);
+
+    [self.mapView addOverlay:polyline];
+
+
+    coorinate_index++ ;
+
+    [self performSelector:@selector(createLine) withObject:nil afterDelay:0.8] ;
+
+}
 
 
 -(void) centerMap {

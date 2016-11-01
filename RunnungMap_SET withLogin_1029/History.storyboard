@@ -112,6 +112,11 @@
                                 <action selector="stopBtnPressed:" destination="yPU-Wo-vCd" id="xb0-Jb-Gcx"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="n5V-7i-xpJ">
+                            <connections>
+                                <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" id="8h1-h8-WIh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -125,16 +130,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bq9-x9-wUW">
-                    <rect key="frame" x="0.0" y="0.0" width="91" height="38"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="refresh">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" eventType="touchUpInside" id="Xbj-ae-SyO"/>
-                    </connections>
-                </button>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="mNd-A2-CiD">
                     <rect key="frame" x="0.0" y="0.0" width="278" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -34,4 +34,6 @@
 
 
 -(void) centerMap;
+
+-(void) getTotalMapVision;
 @end

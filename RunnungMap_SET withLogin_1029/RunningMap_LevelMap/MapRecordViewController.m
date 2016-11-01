@@ -45,19 +45,23 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated] ;
-    [self refreshBtnPressed:nil] ;
-
+    //[self refreshBtnPressed:nil] ;
+    [self setMap] ;
     if([_mapView respondsToSelector:@selector(camera)]) {
         MKMapCamera *newCamara = [[_mapView camera]copy] ;
         [newCamara setHeading:90.0] ;
         [_mapView setCamera:newCamara animated:NO] ;
     }
 
+
     [_mapView  setRotateEnabled:false ] ;
     [_mapView setZoomEnabled:false] ;
     [_mapView setScrollEnabled:false] ;
     [_pathView defaultSetting] ;
 
+
+
+//    [self setMap] ;
 
 }
 - (IBAction)pinchGesture:(UIPinchGestureRecognizer *)sender {
@@ -75,10 +79,10 @@
     //[self.mapView reloadInputViews];
 }
 
-- (IBAction)refreshBtnPressed:(UIButton *)sender {
+- (IBAction)refreshBtnPressed:(UIBarButtonItem *)sender {
     [self setMap] ;
-   // [ah_mapView centerMap] ;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
