@@ -121,15 +121,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="oGV-AM-Bs8" id="CrB-3K-gbC"/>
-                        <outlet property="pathView" destination="xD2-eo-tCV" id="5ib-H4-6Ie"/>
                         <outlet property="slider" destination="mNd-A2-CiD" id="DvT-ZL-2FH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6r1-0E-626" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameMap_01.jpg" id="xD2-eo-tCV" customClass="RunInMapView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="mNd-A2-CiD">
                     <rect key="frame" x="0.0" y="0.0" width="278" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -166,7 +161,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gameMap_01.jpg" width="2136" height="1837"/>
         <image name="history" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.14940634720000001" green="0.1833347213" blue="0.23862892669999999" alpha="1" colorSpace="calibratedRGB"/>

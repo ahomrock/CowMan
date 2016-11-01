@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "AH_MapView.h"
 #import "HistoryDataManager.h"
-#import "RunInMapView.h"
+
 
 #import "UIViewController+OrientationState.h"
 
@@ -24,7 +24,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet RunInMapView *pathView;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @end
 
@@ -57,7 +56,6 @@
     [_mapView  setRotateEnabled:false ] ;
     [_mapView setZoomEnabled:false] ;
     [_mapView setScrollEnabled:false] ;
-    [_pathView defaultSetting] ;
 
 
 

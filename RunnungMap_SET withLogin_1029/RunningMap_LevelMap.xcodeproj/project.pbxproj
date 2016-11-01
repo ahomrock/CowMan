@@ -45,7 +45,6 @@
 		03A39A3C1DA9F60D00D579CA /* PreStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A39A3B1DA9F60D00D579CA /* PreStartViewController.m */; };
 		03A39A3F1DA9F67200D579CA /* RunningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A39A3E1DA9F67200D579CA /* RunningViewController.m */; };
 		03A39A471DA9FA6500D579CA /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A39A451DA9FA6500D579CA /* Running.storyboard */; };
-		03A8AE291DC1C669005BCE2E /* RunInMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A8AE281DC1C669005BCE2E /* RunInMapView.m */; };
 		03B5E1E41DAE2528008DBD8D /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */; };
 		03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8231DBB0C3500449BCA /* LevelMapsManager.h */; };
 		03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8241DBB0C3500449BCA /* LevelMapsManager.m */; };
@@ -172,8 +171,6 @@
 		03A39A3D1DA9F67200D579CA /* RunningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningViewController.h; sourceTree = "<group>"; };
 		03A39A3E1DA9F67200D579CA /* RunningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningViewController.m; sourceTree = "<group>"; };
 		03A39A461DA9FA6500D579CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Running.storyboard; sourceTree = "<group>"; };
-		03A8AE271DC1C669005BCE2E /* RunInMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunInMapView.h; sourceTree = "<group>"; };
-		03A8AE281DC1C669005BCE2E /* RunInMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunInMapView.m; sourceTree = "<group>"; };
 		03B5E1E21DAE2528008DBD8D /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		03B5E1E31DAE2528008DBD8D /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		03CE88061DBBD746007A6640 /* RunningMap_LevelMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningMap_LevelMap.entitlements; sourceTree = "<group>"; };
@@ -422,8 +419,6 @@
 				03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */,
 				03D422F91DB281AC0068BFA2 /* MapRecordViewController.h */,
 				03D422FA1DB281AC0068BFA2 /* MapRecordViewController.m */,
-				03A8AE271DC1C669005BCE2E /* RunInMapView.h */,
-				03A8AE281DC1C669005BCE2E /* RunInMapView.m */,
 				037DA8B41DAC78D700381E7F /* AH_MapView.h */,
 				037DA8B51DAC78D700381E7F /* AH_MapView.m */,
 				039C2E391DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.h */,
@@ -887,7 +882,6 @@
 				03D423071DB33E210068BFA2 /* HistoryPoint.m in Sources */,
 				039C2E2F1DC2CE7000D32FA1 /* AH_HitoryMapOverlayView.m in Sources */,
 				03F127121D97D1A300531F90 /* AH_PhotoDataManager.m in Sources */,
-				03A8AE291DC1C669005BCE2E /* RunInMapView.m in Sources */,
 				0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */,
 				03496AAF1DBEEA1000096E6F /* SetRMTableViewController.m in Sources */,
 				03CE880A1DBC6F2C007A6640 /* SeverConnectManager.m in Sources */,

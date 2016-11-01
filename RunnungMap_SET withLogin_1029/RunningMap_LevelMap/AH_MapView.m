@@ -169,7 +169,7 @@
         resultView.annotation = annotation;
     }
 
-//
+
     resultView.canShowCallout = YES;
 //
 //    UIButton *rightButton=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -183,7 +183,6 @@
 
     resultView.pinTintColor= [UIColor blueColor];
 
-
     return resultView;
 }
 
@@ -195,21 +194,6 @@
 }
 
 #pragma mark - show Line Method
-- (void)showLines :(NSMutableArray*)inputCoordinate withCenter:(CLLocationCoordinate2D)center{
-//    CLLocationCoordinate2D *pointsCoordinate = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * [inputCoordinate count]);
-//    for (int i = 0; i < [inputCoordinate count]; i++ ) {
-//        pointsCoordinate[i] = CLLocationCoordinate2DMake([[inputCoordinate objectAtIndex:i] coordinate].latitude, [[inputCoordinate objectAtIndex:i] coordinate].longitude);
-//    }
-//
-//    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointsCoordinate count:[inputCoordinate count]];
-//
-//
-//    free(pointsCoordinate);
-//
-//    [self.mapView addOverlay:polyline];
-
-}
-
 
 -(void)createLine{
     NSLog(@"ASCACZXCV ,%lu" ,(unsigned long)inputCoordinate.count) ;
@@ -266,45 +250,6 @@
         [_mapView setRegion:region animated:false];
     }
 }
-
-- (void)setMapViewRegionWithCenter:(CLLocationCoordinate2D)center withZoom:(MKCoordinateSpan)zoom{
-
-    //the center of the region we'll move the map to
-//    center.latitude ;
-//    center.longitude = CENTRAL_PARK_LON;
-
-    //set up zoom level
-
-    zoom.latitudeDelta = .1f; //the zoom level in degrees
-    zoom.longitudeDelta = .1f;//the zoom level in degrees
-
-    //stores the region the map will be showing
-    MKCoordinateRegion myRegion;
-    myRegion.center = center;//the location
-    myRegion.span = zoom;//set zoom level
-
-
-    //programmatically create a map that fits the screen
-//    CGRect screen = [[UIScreen mainScreen] bounds];
-//    MKMapView *mapView = [[MKMapView alloc] initWithFrame:screen ];
-//
-//    //set the map location/region
-    [_mapView setRegion:myRegion animated:NO];
-
-    _mapView.mapType = MKMapTypeStandard;//standard map(not satellite)
-
-}
-
-
--(void)createAnnotation {
-    MKPointAnnotation *annotation =[ [MKPointAnnotation alloc]init];
-
-    [_mapView addAnnotation:annotation] ;
-}
-
-
-///////
-
 
 
 - (void)mapSetting {
@@ -364,18 +309,7 @@
 
         return (MKOverlayView*)lineView;
     }
-//    } else if ([overlay isKindOfClass:MKPolygon.class]) {
-//        MKPolygonView *polygonView = [[MKPolygonView alloc] initWithOverlay:overlay];
-//        [polygonView setStrokeColor:[UIColor magentaColor]];
-//
-//        return polygonView;
-//    } else if ([overlay isKindOfClass:PVCharacter.class]) {
-//        MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
-//        [circleView setStrokeColor:[(PVCharacter *)overlay color]];
-//
-//        return circleView;
-//    }
-//    
+
     return nil;
 }
 
