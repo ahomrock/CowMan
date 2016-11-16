@@ -683,12 +683,12 @@
 				TargetAttributes = {
 					03F126CE1D97C1A500531F90 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5Q668XB8GW;
+						DevelopmentTeam = 984QK6CYX6;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
 								enabled = 1;
@@ -700,11 +700,11 @@
 					};
 					03FD70CD1DABB593000497D5 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5Q668XB8GW;
+						DevelopmentTeam = 984QK6CYX6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
 								enabled = 1;
@@ -1083,7 +1083,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunningMap_LevelMap/RunningMap_LevelMap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 984QK6CYX6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1111,7 +1111,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunningMap_LevelMap/RunningMap_LevelMap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 984QK6CYX6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1136,7 +1136,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 984QK6CYX6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1158,7 +1158,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 984QK6CYX6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",

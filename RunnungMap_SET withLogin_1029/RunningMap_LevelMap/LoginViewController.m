@@ -197,6 +197,7 @@
             NSDictionary * each = post[uid];
             NSLog(@"%@",uid);
             NSLog(@"%@",each[@"date"]);
+            NSString * aa = each[@"date"];
             NSLog(@"%@",each[@"email"]);
             NSLog(@"%@",each[@"username"]);
             
