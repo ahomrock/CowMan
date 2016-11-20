@@ -112,11 +112,6 @@
                                 <action selector="stopBtnPressed:" destination="yPU-Wo-vCd" id="xb0-Jb-Gcx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="n5V-7i-xpJ">
-                            <connections>
-                                <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" id="8h1-h8-WIh"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -125,6 +120,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6r1-0E-626" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem style="plain" systemItem="refresh" id="n5V-7i-xpJ">
+                    <connections>
+                        <action selector="refreshBtnPressed:" destination="yPU-Wo-vCd" id="8h1-h8-WIh"/>
+                    </connections>
+                </barButtonItem>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="mNd-A2-CiD">
                     <rect key="frame" x="0.0" y="0.0" width="278" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -144,7 +144,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yKy-rG-Wby" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="歷史紀錄" image="history" selectedImage="history" id="9Dw-gQ-cWV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mfG-2L-61w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mfG-2L-61w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

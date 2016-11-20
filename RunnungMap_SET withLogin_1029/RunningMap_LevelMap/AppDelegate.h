@@ -24,7 +24,7 @@
 
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate,GIDSignInUIDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

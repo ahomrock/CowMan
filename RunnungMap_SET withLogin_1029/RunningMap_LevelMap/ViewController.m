@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "AH_SelectPhotoScrollView.h"
 #import "AH_PhotoDataManager.h"
-#import "AH_SelectTableView.h"
+
 #import "InternetDetection.h"
 #import "SeverConnectManager.h"
 
@@ -22,18 +22,19 @@
     AH_PhotoDataManager *mapDataManager ;
     NSInteger mapPhotoIndex ;
 
-    AH_SelectTableView *selectTableView ;
-    
     SeverConnectManager * scManager;
+
+    int scrollingLength ;
 }
 
 
 // SelectPhotoScroll
 @property (strong) UIImageView *mainPhotoView;
 @property (weak, nonatomic) IBOutlet AH_SelectPhotoScrollView *mainScrollView;
-@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+
 @property (weak, nonatomic) IBOutlet UIButton *mapTitleBtn;
 @property (strong, nonatomic) InternetDetection *net;
+@property (weak, nonatomic) IBOutlet UITextView *mapDescriptionTextView;
 
 @end
 
@@ -48,41 +49,45 @@
     CGPoint originalPoint = self.view.frame.origin ;
     CGSize originalSize = self.view.frame.size ;
 
-    [_mainPhotoView setFrame:CGRectMake(originalPoint.x, originalPoint.y , originalSize.width, originalSize.height*0.6)] ;
+    [_mainPhotoView setFrame:CGRectMake(originalPoint.x, originalPoint.y , originalSize.width, originalSize.height*0.5)] ;
     [_mainScrollView addSubview:_mainPhotoView];
 
     _mainPhotoView.contentMode = UIViewContentModeScaleAspectFit ;
 
     [_mapTitleBtn setFrame:CGRectMake(originalPoint.x, _mainPhotoView.frame.size.height, originalSize.width, originalSize.height *0.1)] ;
 
-    [_mainTableView setFrame:CGRectMake(originalPoint.x,
-                                        _mainPhotoView.frame.size.height + _mapTitleBtn.frame.size.height, originalSize.width, originalSize.height *0.1)] ;
+    [_mapDescriptionTextView setFrame:CGRectMake(originalPoint.x+originalSize.width*0.2, _mapTitleBtn.frame.origin.y+_mapTitleBtn.frame.size.height+5, originalSize.width*0.6, originalSize.height *0.2)] ;
+    _mapDescriptionTextView.layoutManager.allowsNonContiguousLayout = NO;
+    NSRange bottom = NSMakeRange(0 , 1);
+    [_mapDescriptionTextView scrollRangeToVisible:bottom];
 
     [self prepareForSelectPhotoScroll] ;
-    selectTableView = [AH_SelectTableView startWithTableView:_mainTableView
-                                               withImageView:_mainPhotoView] ;
 
-    selectTableView.moveTabNavView = _mapTitleBtn ;
-//    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortraitUpsideDown];
-//    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-//        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    //Internet Decetion
+
     _net = [InternetDetection new];
     [_net internet];
 
 
     scManager = [SeverConnectManager sharedInstance];
 
-    
-
-    
-    
-//    
 
 }
 
 
+-(void)viewDidAppear:(BOOL)animated {
+//    _mapDescriptionTextView.text = text;
 
+
+//    scrollingLength = 0 ;
+//    [UITextView beginAnimations:@"textView" context:nil];
+//    [UITextView setAnimationDuration:10.f];
+//
+//    _mapDescriptionTextView.layoutManager.allowsNonContiguousLayout = NO;
+//    NSRange bottom = NSMakeRange(_mapDescriptionTextView.text.length-1 , 1);
+//    [_mapDescriptionTextView scrollRangeToVisible:bottom];
+//    [UITextView commitAnimations];
+//    [self performSelector:@selector(scrollTextViewToBottom) withObject:nil afterDelay:10.0] ;
+}
 
 - (IBAction)mapSelectBtnPressed:(UIButton *)sender {
     mapDataManager.selectImage =[mapDataManager getImageIndex:mapPhotoIndex] ;
@@ -120,10 +125,7 @@
     _mainScrollView.photoImageView.image = [mapDataManager getImageIndex:mapPhotoIndex] ;
 
     [self setTitleBtnNameWithMapPhotoIndex:mapPhotoIndex] ;
-    
-//    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
-//    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation))
-//        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+
 }
 
 - (void) setTitleBtnNameWithMapPhotoIndex:(NSInteger)index {
@@ -132,41 +134,6 @@
     else if (index %2 == 1)
         _mapTitleBtn.titleLabel.text = @"CYCU" ;
 }
-
-//tablevie
-//
-//CGPoint originalLocation;
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    UITouch *touch = [touches anyObject];
-//    originalLocation = [touch locationInView:_moveTableNavView];
-//}
-//
-////對畫面進行拖曳動做時所觸發的函式
-//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//
-//    UITouch *touch = [touches anyObject];
-//    CGPoint currentLocation = [touch locationInView:_moveTableNavView];
-//    CGRect frame = _moveTableNavView.frame;
-//    CGRect tableFrame = _mainTableView.frame ;
-//
-//
-//        frame.origin.y += currentLocation.y-originalLocation.y ;
-//        tableFrame.origin.y += currentLocation.y-originalLocation.y ;
-//        tableFrame.size.height += currentLocation.y-originalLocation.y;
-//  if(  (frame.origin.y > MOVE_MIN_Y )  && (frame.origin.y < MOVE_MAX_Y)) {
-//       _moveTableNavView.frame = frame ;
-//        _mainTableView.frame = CGRectMake(frame.origin.x, frame.origin.y+frame.size.height, frame.size.width, self.view.frame.size.height-frame.origin.y);
-//    }
-//
-//    NSLog(@"aa : %0.0f" ,frame.origin.y) ;
-//    //將XY軸的座標資訊正規化後輸出
-//    NSString *moveX = [NSString stringWithFormat:@"%0.0f", [touch locationInView:touch.view].x];
-//    NSString *moveY = [NSString stringWithFormat:@"%0.0f", [touch locationInView:touch.view].y];
-//
-//
-//    NSLog(@"%@, %@ " , moveX,moveY);
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
