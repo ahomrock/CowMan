@@ -42,7 +42,11 @@
 }
 //設定判斷是登入跳轉
 -(void) checkLoginIn {
-    if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain) {
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString * facebookUserId = [defaults objectForKey:FACEBOOK_LOGIN_IN_UID];
+    
+    
+    if ([FBSDKAccessToken currentAccessToken].tokenString ||  [GIDSignIn sharedInstance].hasAuthInKeychain || facebookUserId != nil) {
         [self turnMainView];
         
     } else {
@@ -52,8 +56,8 @@
 
 //頁面跳轉到主畫面
 -(void) turnMainView {
-    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"SelectMap" bundle:nil];
-    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"UINavigationController-SelectMapBegin"];
+    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController * tabVC = [storyBoard instantiateViewControllerWithIdentifier:@"tab_bar_controller_begin"];
     
     [self presentViewController:tabVC animated:true completion:nil];
     

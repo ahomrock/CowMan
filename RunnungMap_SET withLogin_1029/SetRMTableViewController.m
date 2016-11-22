@@ -11,6 +11,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "LoginViewController.h"
+#import "NSUserDefaults+Extension.h"
 
 typedef enum : NSUInteger {
     LOGIN_STATE_GOOGLE,
@@ -66,7 +67,9 @@ typedef enum : NSUInteger {
        }
 }
 - (IBAction)fbLogoutBtnPressed:(FBSDKLoginButton *)sender {
-    
+    NSUserDefaults * userdefaults = [NSUserDefaults standardUserDefaults];
+    NSString * cleanstring = nil;
+    [userdefaults setObject:cleanstring forKey:FACEBOOK_LOGIN_IN_UID];
      [self performSelector:@selector(turnView) withObject:nil afterDelay:3.0] ;
 }
 

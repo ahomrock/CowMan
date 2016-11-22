@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "ViewController.h"
-
+#import "NSUserDefaults+Extension.h"
 #import "SetFirebaseCoordinate.h"
 
 @interface LoginViewController () <UIApplicationDelegate,GIDSignInDelegate,FBSDKLoginButtonDelegate>
@@ -103,6 +103,7 @@
     
     
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
     if (error != nil) {
         NSLog(@"Login error !:%@",error);
          _loginSuccessTurnPageLabel.hidden = true ;
@@ -167,6 +168,7 @@
             
                  [defaults setObject:username forKey:@"fullName"];
                  [defaults setObject:userEmail forKey:@"email"];
+                 [defaults setObject:userID forKey:FACEBOOK_LOGIN_IN_UID];
                  [defaults synchronize];
              }
              else{

@@ -16,6 +16,10 @@
 #define GROUP_TARGET_LAT_DOUBLE @"group_target_lat"
 #define GROUP_TARGET_LON_DOUBLE @"group_target_lon"
 
+#define FACEBOOK_LOGIN_IN_UID @"facebook_uid"
+
+
+
 
 typedef NS_ENUM(NSInteger,GAME_STATE) {
     GAME_STATE_GAMING = 0,
