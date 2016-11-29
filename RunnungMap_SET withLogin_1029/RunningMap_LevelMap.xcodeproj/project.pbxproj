@@ -85,6 +85,8 @@
 		26DBA15F35C4DE9EB72060D1 /* Pods_RunningMap_LevelMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5C90C22E5376975E21458F /* Pods_RunningMap_LevelMap.framework */; };
 		30339A121DB8E45600F6563B /* SetFirebaseCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30339A0F1DB8E45600F6563B /* SetFirebaseCoordinate.m */; };
 		30339A131DB8E45600F6563B /* GetFirebaseCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30339A111DB8E45600F6563B /* GetFirebaseCoordinate.m */; };
+		308249661DED114A00774E69 /* web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308249641DED114A00774E69 /* web.storyboard */; };
+		308249681DED11D700774E69 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308249671DED11D700774E69 /* WebViewController.swift */; };
 		30BB4BE41DB12CB900ECDEA5 /* box1.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BB4BE21DB12CB900ECDEA5 /* box1.png */; };
 		30BB4BE51DB12CB900ECDEA5 /* sun1.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BB4BE31DB12CB900ECDEA5 /* sun1.png */; };
 		30BB4BE91DB1D24100ECDEA5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BE81DB1D24100ECDEA5 /* Reachability.m */; };
@@ -226,6 +228,8 @@
 		30339A0F1DB8E45600F6563B /* SetFirebaseCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetFirebaseCoordinate.m; sourceTree = "<group>"; };
 		30339A101DB8E45600F6563B /* GetFirebaseCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFirebaseCoordinate.h; sourceTree = "<group>"; };
 		30339A111DB8E45600F6563B /* GetFirebaseCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFirebaseCoordinate.m; sourceTree = "<group>"; };
+		308249651DED114A00774E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RunningMap_LevelMap/Base.lproj/web.storyboard; sourceTree = "<group>"; };
+		308249671DED11D700774E69 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ../WebViewController.swift; sourceTree = "<group>"; };
 		30BB4BE21DB12CB900ECDEA5 /* box1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box1.png; sourceTree = "<group>"; };
 		30BB4BE31DB12CB900ECDEA5 /* sun1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun1.png; sourceTree = "<group>"; };
 		30BB4BE71DB1D24100ECDEA5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -436,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				03F126DB1D97C1A500531F90 /* Main.storyboard */,
+				308249641DED114A00774E69 /* web.storyboard */,
 				03496AB21DBEEAB600096E6F /* Set.storyboard */,
 				0330D81B1DBB058100449BCA /* SelectMap.storyboard */,
 				0399B8411DB36DAD0048055E /* History.storyboard */,
@@ -507,6 +512,7 @@
 				037DA8BB1DACCE7500381E7F /* AH_PerformAnimationManager.m */,
 				03D423001DB335AA0068BFA2 /* Storyboard */,
 				036E6E6F1DB8FCA80069E2CE /* Main */,
+				308249691DED11F200774E69 /* Web */,
 				03064AF31DB11EE8006F1D6A /* Login */,
 				03A39A381DA9F54800D579CA /* SelectMap */,
 				03A39A391DA9F5D600D579CA /* PreStart */,
@@ -606,6 +612,14 @@
 				03FD70D81DABB593000497D5 /* Info.plist */,
 			);
 			path = RunningMap_Gaming;
+			sourceTree = "<group>";
+		};
+		308249691DED11F200774E69 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				308249671DED11D700774E69 /* WebViewController.swift */,
+			);
+			name = Web;
 			sourceTree = "<group>";
 		};
 		30BB4BE61DB12CC100ECDEA5 /* loginImage */ = {
@@ -753,6 +767,7 @@
 				03F126E51D97C1A500531F90 /* LaunchScreen.storyboard in Resources */,
 				03E49ABE1DAA227500A2F55E /* compass.png in Resources */,
 				036443371DAE792F00610CDE /* gameMap_02.jpg in Resources */,
+				308249661DED114A00774E69 /* web.storyboard in Resources */,
 				036443381DAE792F00610CDE /* selectMap01.jpg in Resources */,
 				03A39A471DA9FA6500D579CA /* Running.storyboard in Resources */,
 				0364433D1DAF271700610CDE /* count_1.png in Resources */,
@@ -894,6 +909,7 @@
 				03F126D71D97C1A500531F90 /* AppDelegate.m in Sources */,
 				039C2E2C1DC2CCC900D32FA1 /* AH_HistoryMapOverlay.m in Sources */,
 				039C2E3B1DC3A5CB00D32FA1 /* MKMapView+ZoomLevel.m in Sources */,
+				308249681DED11D700774E69 /* WebViewController.swift in Sources */,
 				03F126D41D97C1A500531F90 /* main.m in Sources */,
 				037DA8B61DAC78D700381E7F /* AH_MapView.m in Sources */,
 				03A24EBA1DAD066100610413 /* RunningScrollView.m in Sources */,
@@ -978,6 +994,14 @@
 				03FD70D61DABB593000497D5 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		308249641DED114A00774E69 /* web.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				308249651DED114A00774E69 /* Base */,
+			);
+			name = web.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
