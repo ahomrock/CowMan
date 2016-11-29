@@ -34,28 +34,32 @@
                                 <color key="color" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-lW-azu">
-                                <rect key="frame" x="20" y="23" width="30" height="30"/>
+                                <rect key="frame" x="20" y="23" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="⬅︎"/>
                                 <connections>
                                     <action selector="goBack" destination="YJO-bB-xMe" eventType="touchUpInside" id="wDc-rT-R9K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-6E-p6U">
-                                <rect key="frame" x="70" y="23" width="30" height="30"/>
+                                <rect key="frame" x="70" y="23" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="➡︎"/>
                                 <connections>
                                     <action selector="goForward" destination="YJO-bB-xMe" eventType="touchUpInside" id="PqD-KM-VD1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-e4-nAQ">
-                                <rect key="frame" x="120" y="23" width="30" height="30"/>
+                                <rect key="frame" x="120" y="23" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="↺"/>
                                 <connections>
                                     <action selector="reload" destination="YJO-bB-xMe" eventType="touchUpInside" id="3x9-jg-jea"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6n-Xz-DDV">
-                                <rect key="frame" x="170" y="23" width="30" height="30"/>
+                                <rect key="frame" x="170" y="23" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="✘"/>
                                 <connections>
                                     <action selector="stopLoading" destination="YJO-bB-xMe" eventType="touchUpInside" id="rQm-OH-ZIh"/>
