@@ -19,6 +19,7 @@
 
 @property(nonatomic,strong)NSMutableArray *historyPoints ;
 
+
 @property (nonatomic,strong)NSString *message ;
 @property(nonatomic,strong)HistoryPoint *selectPoint ;
 

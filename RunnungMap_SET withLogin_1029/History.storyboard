@@ -68,7 +68,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="DDh-ev-P5U" id="RNQ-Wh-Shx"/>
-                        <segue destination="yPU-Wo-vCd" kind="push" splitViewControllerTargetIndex="0" id="Tlz-wg-iz2"/>
+                        <segue destination="yPU-Wo-vCd" kind="presentation" id="Tlz-wg-iz2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyv-Ol-5JE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,7 +109,7 @@
                     <navigationItem key="navigationItem" title="Title" id="Sfv-bY-vD8">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="nva-Gv-NNZ">
                             <connections>
-                                <action selector="stopBtnPressed:" destination="yPU-Wo-vCd" id="xb0-Jb-Gcx"/>
+                                <action selector="stopBtnPressed:" destination="yPU-Wo-vCd" id="mTL-h5-AyK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

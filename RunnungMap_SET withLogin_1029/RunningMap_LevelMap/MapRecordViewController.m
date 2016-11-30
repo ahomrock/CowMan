@@ -37,9 +37,7 @@
 
 }
 - (IBAction)stopBtnPressed:(UIBarButtonItem *)sender {
-
-
-    [self dismissViewControllerAnimated:true completion:nil] ;
+    [self.navigationController popViewControllerAnimated:true] ;
 }
 
 -(void)viewDidAppear:(BOOL)animated {

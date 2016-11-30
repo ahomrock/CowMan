@@ -28,6 +28,7 @@
 + (instancetype)create ;
 - (BOOL)start ;
 - (void)clear ;
+- (BOOL)stop ;
 
 -(CLLocation*)getUserLocation ;
 -(void)rotateArrowView:(UIView *)view degrees:(CGFloat)degrees;

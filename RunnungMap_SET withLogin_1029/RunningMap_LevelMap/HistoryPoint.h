@@ -10,8 +10,11 @@
 
 @interface HistoryPoint : NSObject
 
+
+@property (nonatomic,strong)NSString *game_id ;
 @property(nonatomic,strong)NSString *mapTitle ;
 @property(nonatomic,strong)NSString *totalTime ;
+
 @property(nonatomic,strong)NSMutableArray *locationPaths ;
 @property(nonatomic,strong)NSMutableArray *locationPathTimeStamp ;
 @property(nonatomic,strong)NSMutableArray *getTargetLocate ;

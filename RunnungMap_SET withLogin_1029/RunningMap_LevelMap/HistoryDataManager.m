@@ -7,6 +7,8 @@
 //
 
 #import "HistoryDataManager.h"
+#import "AH_SQLiteManager.h"
+#import <CoreLocation/CoreLocation.h>
 @interface HistoryDataManager()
 
 @end
@@ -43,7 +45,5 @@
     [self didChangeValueForKey:@"message"] ;
     
 }
-
-
 
 @end

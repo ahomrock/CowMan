@@ -14,6 +14,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "UIViewController+OrientationState.h"
 
+#import "AH_SQLiteManager.h"
 @interface MainViewController ()
 
 @end
@@ -22,6 +23,7 @@
 
 
 - (void)defaultSetting_loadingView {
+    AH_SQLiteManager *sqlManager = [AH_SQLiteManager sharedInstance] ;
     AASquaresLoading * loadingSquare = [[AASquaresLoading alloc]initWithTarget:self.view size:50 ] ;
     loadingSquare.backgroundColor = [UIColor blackColor];
     loadingSquare.color = [UIColor whiteColor] ;

@@ -14,8 +14,8 @@
 		0330D8121DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8111DB9E0FB00449BCA /* CLLocation+CoordinateToImage.m */; };
 		0330D81D1DBB058100449BCA /* SelectMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0330D81B1DBB058100449BCA /* SelectMap.storyboard */; };
 		0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0330D8241DBB0C3500449BCA /* LevelMapsManager.m */; };
+		034829B31DEC6D170012C297 /* AH_SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 034829B21DEC6D170012C297 /* AH_SQLiteManager.m */; };
 		03496AAF1DBEEA1000096E6F /* SetRMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03496AAE1DBEEA1000096E6F /* SetRMTableViewController.m */; };
-		03496AB01DBEEA1000096E6F /* SetRMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03496AAE1DBEEA1000096E6F /* SetRMTableViewController.m */; };
 		03496AB41DBEEAB600096E6F /* Set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03496AB21DBEEAB600096E6F /* Set.storyboard */; };
 		036443361DAE792F00610CDE /* gameMap_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443321DAE792F00610CDE /* gameMap_01.jpg */; };
 		036443371DAE792F00610CDE /* gameMap_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 036443331DAE792F00610CDE /* gameMap_02.jpg */; };
@@ -90,7 +90,6 @@
 		30BB4BE91DB1D24100ECDEA5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BE81DB1D24100ECDEA5 /* Reachability.m */; };
 		30BB4BEF1DB1D47800ECDEA5 /* InternetDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BEE1DB1D47800ECDEA5 /* InternetDetection.m */; };
 		30BB4BF71DB1F6D800ECDEA5 /* ImageAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB4BF61DB1F6D800ECDEA5 /* ImageAnnotationView.m */; };
-		A8A53E2103754F841488788A /* Pods_RunningMap_Gaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC01D0A84FA23F7FA03DE54E /* Pods_RunningMap_Gaming.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +128,8 @@
 		0330D81C1DBB058100449BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RunningMap_LevelMap/Base.lproj/SelectMap.storyboard; sourceTree = "<group>"; };
 		0330D8231DBB0C3500449BCA /* LevelMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMapsManager.h; sourceTree = "<group>"; };
 		0330D8241DBB0C3500449BCA /* LevelMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMapsManager.m; sourceTree = "<group>"; };
+		034829B11DEC6D170012C297 /* AH_SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_SQLiteManager.h; sourceTree = "<group>"; };
+		034829B21DEC6D170012C297 /* AH_SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_SQLiteManager.m; sourceTree = "<group>"; };
 		03496AAD1DBEEA1000096E6F /* SetRMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRMTableViewController.h; sourceTree = "<group>"; };
 		03496AAE1DBEEA1000096E6F /* SetRMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRMTableViewController.m; sourceTree = "<group>"; };
 		03496AB31DBEEAB600096E6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RunningMap_LevelMap/Base.lproj/Set.storyboard; sourceTree = "<group>"; };
@@ -214,6 +215,7 @@
 		03F2F7861DB076B800F509C8 /* NSUserDefaults+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+Extension.m"; path = "RunningMap_Gaming/NSUserDefaults+Extension.m"; sourceTree = "<group>"; };
 		03F2F82A1DB10CF900F509C8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Login_FrameWork/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		03F2F82B1DB10CF900F509C8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Login_FrameWork/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		03F597951DED72E700B95793 /* AH_SQL_DEFINE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_SQL_DEFINE.h; sourceTree = "<group>"; };
 		03FD70CE1DABB593000497D5 /* RunningMap_Gaming.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RunningMap_Gaming.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FD70CF1DABB593000497D5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		03FD70D21DABB593000497D5 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -221,7 +223,6 @@
 		03FD70D61DABB593000497D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		03FD70D81DABB593000497D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185B88C75182DF95355CE17D /* Pods-RunningMap_LevelMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningMap_LevelMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningMap_LevelMap/Pods-RunningMap_LevelMap.debug.xcconfig"; sourceTree = "<group>"; };
-		2C1790E5A7DD6E7FC9F1992F /* Pods-RunningMap_Gaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningMap_Gaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningMap_Gaming/Pods-RunningMap_Gaming.release.xcconfig"; sourceTree = "<group>"; };
 		30339A0E1DB8E45600F6563B /* SetFirebaseCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetFirebaseCoordinate.h; sourceTree = "<group>"; };
 		30339A0F1DB8E45600F6563B /* SetFirebaseCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetFirebaseCoordinate.m; sourceTree = "<group>"; };
 		30339A101DB8E45600F6563B /* GetFirebaseCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFirebaseCoordinate.h; sourceTree = "<group>"; };
@@ -235,7 +236,6 @@
 		30BB4BF51DB1F6D800ECDEA5 /* ImageAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnnotationView.h; sourceTree = "<group>"; };
 		30BB4BF61DB1F6D800ECDEA5 /* ImageAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnnotationView.m; sourceTree = "<group>"; };
 		581BC9600F1B310DF3B2A81B /* Pods-RunningMap_LevelMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningMap_LevelMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunningMap_LevelMap/Pods-RunningMap_LevelMap.release.xcconfig"; sourceTree = "<group>"; };
-		AF85602F259FCBEF1D3B2AED /* Pods-RunningMap_Gaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningMap_Gaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunningMap_Gaming/Pods-RunningMap_Gaming.debug.xcconfig"; sourceTree = "<group>"; };
 		CC01D0A84FA23F7FA03DE54E /* Pods_RunningMap_Gaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningMap_Gaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5C90C22E5376975E21458F /* Pods_RunningMap_LevelMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningMap_LevelMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -260,7 +260,6 @@
 				038F56FD1DAFB0CC00009E27 /* CoreLocation.framework in Frameworks */,
 				03FD70D01DABB593000497D5 /* NotificationCenter.framework in Frameworks */,
 				03CE88031DBBCF34007A6640 /* MapKit.framework in Frameworks */,
-				A8A53E2103754F841488788A /* Pods_RunningMap_Gaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +413,9 @@
 			children = (
 				039C2E361DC33C3400D32FA1 /* UIViewController+OrientationState.h */,
 				039C2E371DC33C3400D32FA1 /* UIViewController+OrientationState.m */,
+				034829B11DEC6D170012C297 /* AH_SQLiteManager.h */,
+				034829B21DEC6D170012C297 /* AH_SQLiteManager.m */,
+				03F597951DED72E700B95793 /* AH_SQL_DEFINE.h */,
 				039168121DB5E93F00592593 /* HistoryData */,
 				03D422FD1DB3356F0068BFA2 /* HistoryViewController.h */,
 				03D422FE1DB3356F0068BFA2 /* HistoryViewController.m */,
@@ -620,8 +622,6 @@
 		A55EDCE743F0DB8144D39FEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF85602F259FCBEF1D3B2AED /* Pods-RunningMap_Gaming.debug.xcconfig */,
-				2C1790E5A7DD6E7FC9F1992F /* Pods-RunningMap_Gaming.release.xcconfig */,
 				185B88C75182DF95355CE17D /* Pods-RunningMap_LevelMap.debug.xcconfig */,
 				581BC9600F1B310DF3B2A81B /* Pods-RunningMap_LevelMap.release.xcconfig */,
 			);
@@ -657,11 +657,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03FD70DC1DABB593000497D5 /* Build configuration list for PBXNativeTarget "RunningMap_Gaming" */;
 			buildPhases = (
-				2B06E4707FBC717F4BA16773 /* [CP] Check Pods Manifest.lock */,
 				03FD70CA1DABB593000497D5 /* Sources */,
 				03FD70CB1DABB593000497D5 /* Frameworks */,
 				03FD70CC1DABB593000497D5 /* Resources */,
-				EEC49EEF6834938D1DDC9395 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -683,9 +681,9 @@
 				TargetAttributes = {
 					03F126CE1D97C1A500531F90 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 984QK6CYX6;
+						DevelopmentTeam = 5Q668XB8GW;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -700,8 +698,8 @@
 					};
 					03FD70CD1DABB593000497D5 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 984QK6CYX6;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 5Q668XB8GW;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -791,21 +789,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RunningMap_LevelMap/Pods-RunningMap_LevelMap-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2B06E4707FBC717F4BA16773 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		50A3767881578F1F47F20A7E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -834,21 +817,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EEC49EEF6834938D1DDC9395 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RunningMap_Gaming/Pods-RunningMap_Gaming-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -884,6 +852,7 @@
 				03F127121D97D1A300531F90 /* AH_PhotoDataManager.m in Sources */,
 				0330D8251DBB0C3500449BCA /* LevelMapsManager.m in Sources */,
 				03496AAF1DBEEA1000096E6F /* SetRMTableViewController.m in Sources */,
+				034829B31DEC6D170012C297 /* AH_SQLiteManager.m in Sources */,
 				03CE880A1DBC6F2C007A6640 /* SeverConnectManager.m in Sources */,
 				03F126F41D97C8EF00531F90 /* RankingPoint.m in Sources */,
 				03D422FB1DB281AC0068BFA2 /* MapRecordViewController.m in Sources */,
@@ -906,7 +875,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CE87FC1DBBBE2B007A6640 /* LevelMapsManager.h in Sources */,
-				03496AB01DBEEA1000096E6F /* SetRMTableViewController.m in Sources */,
 				03CE87FD1DBBBE2B007A6640 /* LevelMapsManager.m in Sources */,
 				03CE87FE1DBBBE2B007A6640 /* LevelMapPoint.h in Sources */,
 				03CE87FF1DBBBE2B007A6640 /* LevelMapPoint.m in Sources */,
@@ -1083,7 +1051,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunningMap_LevelMap/RunningMap_LevelMap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 984QK6CYX6;
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1094,8 +1062,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "730c0bde-c961-47be-9888-31f64d768f06";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = "RunningMap_LevelMap/RunningMap_LevelMap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1111,7 +1079,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunningMap_LevelMap/RunningMap_LevelMap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 984QK6CYX6;
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1122,8 +1090,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "730c0bde-c961-47be-9888-31f64d768f06";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = "RunningMap_LevelMap/RunningMap_LevelMap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1132,11 +1100,10 @@
 		};
 		03FD70DD1DABB593000497D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF85602F259FCBEF1D3B2AED /* Pods-RunningMap_Gaming.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 984QK6CYX6;
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1146,19 +1113,18 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8d627169-670a-4936-8eeb-eef58b9b8bde";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		03FD70DE1DABB593000497D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C1790E5A7DD6E7FC9F1992F /* Pods-RunningMap_Gaming.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RunningMap_Gaming/RunningMap_Gaming.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 984QK6CYX6;
+				DEVELOPMENT_TEAM = 5Q668XB8GW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Login_FrameWork",
@@ -1168,8 +1134,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aHom.RunningMap-LevelMap.RunningMap-Gaming";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8d627169-670a-4936-8eeb-eef58b9b8bde";
+				PROVISIONING_PROFILE_SPECIFIER = Provision_aHom_RunningMap_Gaming_Development;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

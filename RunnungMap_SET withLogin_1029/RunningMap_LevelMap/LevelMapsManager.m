@@ -8,7 +8,7 @@
 
 #import "LevelMapsManager.h"
 #import "GetFirebaseCoordinate.h"
-#import <Firebase.h>
+//#import <Firebase.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SeverConnectManager.h"
 @implementation LevelMapsManager

@@ -26,7 +26,7 @@
 #import "RunningMap_LevelMap-Swift.h"
 
 #import "SeverConnectManager.h"
-
+#import "AH_SQLiteManager.h"
 #define MAP_INDEX 0
 typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     MapLocateSIGN_FORLOCATE_A ,
@@ -329,6 +329,14 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
         [self startOrResumeStopwatch:nil] ;
 
+        int zero  = (int)[HistoryDataManager sharedInstance].historyPoints.count / 10 ;
+
+        NSString *zStr = @"0" ;
+        for(int i = zero ; i < 3 ; i++ )
+            zStr = [zStr stringByAppendingString:@"0"] ;
+        NSString *game_id = [NSString stringWithFormat:@"RM16%@%d",zStr,(int)[HistoryDataManager sharedInstance].historyPoints.count +1 ]  ;
+
+        historyPoint.game_id = game_id ;
         historyPoint.totalTime = _stopWatchLabel.text ;
         historyPoint.mapTitle = _mapTitleLabel.text ;
         for(int i = 0 ; i < ah_locationPoint.allLocations.count ; i++ )
@@ -337,12 +345,14 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
         [[HistoryDataManager sharedInstance].historyPoints addObject:historyPoint] ;
         [[HistoryDataManager sharedInstance] setMessage:[NSString stringWithFormat:@"%lu",(unsigned long)[HistoryDataManager sharedInstance].historyPoints.count ]] ;
 
+         [[AH_SQLiteManager sharedInstance]copyHistoryPointToSqlite] ;
+
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GET" message:@"FINISH" preferredStyle:UIAlertControllerStyleAlert] ;
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             [self giveUpBtnPressed:nil] ;
             [[SeverConnectManager sharedInstance] uploadHistoryData];
-            
+
         }] ;
 
 
@@ -355,7 +365,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
 
 - (IBAction)giveUpBtnPressed:(UIBarButtonItem *)sender {
-
+    [ah_locationPoint stop] ;
 
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:GROUP_SUITE_NAME];
 

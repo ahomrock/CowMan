@@ -58,6 +58,12 @@
 
 }
 
+-(BOOL)stop {
+    [_locationManager stopUpdatingHeading] ;
+    [_locationManager stopUpdatingLocation] ;
+    return true ;
+}
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
 
