@@ -40,6 +40,8 @@
         loc.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;     // 取得精確度
         loc.locationManager.activityType = CLActivityTypeFitness; //選擇行動方式
         //loc.locationManager.distanceFilter = 100.0f;
+
+        loc.headingLabelLeftConstrain = [[NSLayoutConstraint alloc ]init] ;
     }
     return loc;
 }

@@ -83,6 +83,8 @@
     // Add the image to be used as the compass on the GUI
     [ah_locationPoint setArrowImageView:_imageView];
     [ah_locationPoint setDistanceLabel:_distanceLabel] ;
+
+    
         // Set the coordinates of the location to be used for calculating the angle
 
     [ah_locationPoint start];
