@@ -58,7 +58,10 @@
     if(indexPath.row == 0 ) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TopCell" ];
 
-        cell.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.1);
+        UIImage *image = [UIImage imageNamed:@"HistoryPIC.png"];
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:image] ;
+        [cell addSubview:imageView];
+        cell.frame = imageView.frame ;
         cell.backgroundColor = [UIColor blackColor];
     }
     else {
@@ -83,7 +86,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0 )
-        return 200 ;
+        return 400 ;
     return 100 ;
 }
 

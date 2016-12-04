@@ -64,6 +64,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 // StopWatchLabel
 @property (weak, nonatomic) IBOutlet UILabel *stopWatchLabel;
 @property (weak, nonatomic) IBOutlet UIButton *btnStartPauseStopWatch;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headingLabelLeftConstrain;
+
 @end
 
 
@@ -158,7 +162,7 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 
     //NSLog(@"zczxcas :%f",theTarget.coordinate.latitude) ;
 
-
+    
 
     [self createTargetPointWithLat:theTarget.coordinate.latitude withLon:theTarget.coordinate.longitude] ;
     // Create the image for the compass
@@ -172,6 +176,8 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
     // Add the image to be used as the compass on the GUI
     [ah_locationPoint setArrowImageView:mainStateView];
     [ah_locationPoint setDistanceLabel:labelHeading] ;
+    [_headingLabelLeftConstrain setConstant:1] ;
+    [ah_locationPoint setHeadingLabelLeftConstrain:_headingLabelLeftConstrain] ;
     // Set the coordinates of the location to be used for calculating the angle
     ah_locationPoint.latitudeOfTargetedPoint = theTarget.coordinate.latitude;
     ah_locationPoint.longitudeOfTargetedPoint = theTarget.coordinate.longitude ;
@@ -295,6 +301,10 @@ typedef NS_ENUM(NSInteger, MapLocateSIGN) {
 #pragma mark - Navigation Bar Method
 
 - (IBAction)getTheTargetBtnPressed:(UIBarButtonItem *)sender {
+    if(_headingLabelLeftConstrain.constant <5 ) {
+        return ;
+    }
+
 
     if ( ah_locationPoint == nil || ah_locationPoint.pathsLocations == nil )
         return ;

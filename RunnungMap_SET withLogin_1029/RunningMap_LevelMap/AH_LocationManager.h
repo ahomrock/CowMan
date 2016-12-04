@@ -21,6 +21,9 @@
 @property (nonatomic) CLLocationDegrees latitudeOfTargetedPoint;
 @property (nonatomic) CLLocationDegrees longitudeOfTargetedPoint;
 @property (nonatomic,strong) UILabel *distanceLabel ;
+@property (nonatomic,strong) NSLayoutConstraint *headingLabelLeftConstrain;
+
+
 
 @property NSMutableArray *allLocations ;
 @property NSMutableArray *pathsLocations ;

@@ -27,6 +27,7 @@
 		036443431DAF3D2C00610CDE /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036443421DAF3D2C00610CDE /* CountDownViewController.m */; };
 		037DA8B61DAC78D700381E7F /* AH_MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037DA8B51DAC78D700381E7F /* AH_MapView.m */; };
 		037DA8BC1DACCE7500381E7F /* AH_PerformAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037DA8BB1DACCE7500381E7F /* AH_PerformAnimationManager.m */; };
+		0389B2311DF3AF5300996FB3 /* HistoryPIC.png in Resources */ = {isa = PBXBuildFile; fileRef = 0389B2301DF3AF5300996FB3 /* HistoryPIC.png */; };
 		038F56FD1DAFB0CC00009E27 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E49ABB1DAA185E00A2F55E /* CoreLocation.framework */; };
 		038F571C1DAFBC2B00009E27 /* AH_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 038F57191DAFBC2B00009E27 /* AH_LocationManager.m */; };
 		038F571D1DAFBC2B00009E27 /* AH_LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 038F57191DAFBC2B00009E27 /* AH_LocationManager.m */; };
@@ -148,6 +149,7 @@
 		037DA8B51DAC78D700381E7F /* AH_MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_MapView.m; sourceTree = "<group>"; };
 		037DA8BA1DACCE7500381E7F /* AH_PerformAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_PerformAnimationManager.h; sourceTree = "<group>"; };
 		037DA8BB1DACCE7500381E7F /* AH_PerformAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_PerformAnimationManager.m; sourceTree = "<group>"; };
+		0389B2301DF3AF5300996FB3 /* HistoryPIC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryPIC.png; sourceTree = "<group>"; };
 		038F57181DAFBC2B00009E27 /* AH_LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AH_LocationManager.h; sourceTree = "<group>"; };
 		038F57191DAFBC2B00009E27 /* AH_LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AH_LocationManager.m; sourceTree = "<group>"; };
 		038F571A1DAFBC2B00009E27 /* CLLocation+bearing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+bearing.h"; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				03E49ABD1DAA227500A2F55E /* compass.png */,
+				0389B2301DF3AF5300996FB3 /* HistoryPIC.png */,
 				30BB4BE61DB12CC100ECDEA5 /* loginImage */,
 				036443401DAF272100610CDE /* IMG_CountDown */,
 				03F2F78C1DB085A000F509C8 /* selectMap */,
@@ -769,6 +772,7 @@
 				036443381DAE792F00610CDE /* selectMap01.jpg in Resources */,
 				03A39A471DA9FA6500D579CA /* Running.storyboard in Resources */,
 				0364433D1DAF271700610CDE /* count_1.png in Resources */,
+				0389B2311DF3AF5300996FB3 /* HistoryPIC.png in Resources */,
 				0364433F1DAF271700610CDE /* count_3.png in Resources */,
 				30BB4BE51DB12CB900ECDEA5 /* sun1.png in Resources */,
 				03F126E21D97C1A500531F90 /* Assets.xcassets in Resources */,

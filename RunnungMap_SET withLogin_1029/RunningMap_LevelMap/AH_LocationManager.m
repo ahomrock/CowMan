@@ -83,20 +83,26 @@
         distance = [userLocation distanceFromLocation:targetLocation] ;
 
         NSLog(@"distance %f", distance) ;
-        if ( distance < USER_TARGET_DISTANCE )
+        if ( distance < USER_TARGET_DISTANCE ) {
             _distanceLabel.textColor = [UIColor redColor] ;
-        else
+
+           [ _headingLabelLeftConstrain setConstant:50 ];
+        }
+        else {
             _distanceLabel.textColor = [UIColor whiteColor] ;
+           [ _headingLabelLeftConstrain setConstant:1 ];
+        }
         _distanceLabel.text = [NSString stringWithFormat:@"%.2f m",distance] ;
     } else {
         _distanceLabel.textColor = [UIColor yellowColor] ;
         _distanceLabel.text = @"Searching.....";
+         [ _headingLabelLeftConstrain setConstant:1 ];
     }
 
-
    // [[NSNotificationCenter defaultCenter] removeObserver:self];
-
 }
+
+
 
 -(CLLocation*)getUserLocation {
     return userLocation ;
